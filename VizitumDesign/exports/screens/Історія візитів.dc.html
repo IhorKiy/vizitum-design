@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin: 0; background: #E9E6DF; font-family: Manrope, Helvetica, sans-serif; }
+a { color: #0E5C46; text-decoration: none; }
+a:hover { color: #0A4535; }
+::-webkit-scrollbar { width: 0; height: 0; }
+</style>
+</helmet>
+<div style="width: 390px; min-height: 844px; margin: 0 auto; background: #F5F3EE; position: relative; display: flex; flex-direction: column; overflow: hidden; color: #16191A;">
+
+  <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #FFFFFF; border-bottom: 1px solid #E4E0D7; position: sticky; top: 0; z-index: 20;">
+    <div style="width: 36px; height: 36px; border-radius: 9px; background: #0E5C46; color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 14px; letter-spacing: -0.01em;">DT</div>
+    <div style="flex: 1; line-height: 1.15;">
+      <div style="font-weight: 800; font-size: 16px;">Demo Team</div>
+      <div style="font-size: 13px; color: #7C8382; font-weight: 500;">Vizitum</div>
+    </div>
+    <div style="width: 38px; height: 38px; border: 1px solid #D9D5CB; border-radius: 10px; display: grid; place-items: center; gap: 4px; align-content: center;">
+      <div style="width: 16px; height: 2px; background: #16191A; border-radius: 2px;"></div>
+      <div style="width: 16px; height: 2px; background: #16191A; border-radius: 2px;"></div>
+      <div style="width: 16px; height: 2px; background: #16191A; border-radius: 2px;"></div>
+    </div>
+  </div>
+
+  <div style="padding: 18px 16px 6px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+    <h1 style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.6px;">Історія візитів</h1>
+    <button onClick="{{ cyclePeriod }}" style="border: 1px solid #D9D5CB; background: #FFFFFF; border-radius: 999px; padding: 7px 12px; font-family: inherit; font-size: 13px; font-weight: 700; color: #3C4341; display: flex; align-items: center; gap: 6px; cursor: pointer; white-space: nowrap;" style-hover="border-color: #0E5C46; color: #0E5C46;">{{ periodLabel }} <span style="font-size: 9px; color: #9AA09E;">▼</span></button>
+  </div>
+
+  <div style="display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px 12px; position: sticky; top: 65px; z-index: 15; background: linear-gradient(#F5F3EE 78%, rgba(245,243,238,0));">
+    <sc-for list="{{ chips }}" as="c" hint-placeholder-count="4">
+      <button onClick="{{ c.onClick }}" style="{{ c.style }}" style-hover="filter: brightness(0.97);">
+        <span>{{ c.label }}</span><span style="{{ c.countStyle }}">{{ c.count }}</span>
+      </button>
+    </sc-for>
+    <button onClick="{{ toggleFilters }}" style="flex: none; display: flex; align-items: center; gap: 6px; border: 1px dashed #C9C4B8; background: transparent; color: #6B7371; border-radius: 999px; padding: 9px 14px; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer;" style-hover="border-color: #0E5C46; color: #0E5C46;">Фільтри</button>
+  </div>
+
+  <sc-if value="{{ filtersOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="margin: 0 16px 12px; padding: 14px; background: #FFFFFF; border: 1px solid #E4E0D7; border-radius: 14px; display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 1px; color: #9AA09E;">ТОЧКА</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <div style="padding: 7px 12px; border-radius: 999px; background: #F1EEE7; font-size: 13px; font-weight: 600;">Клініка Медіка Центр</div>
+        <div style="padding: 7px 12px; border-radius: 999px; background: #F1EEE7; font-size: 13px; font-weight: 600;">Аптека Життя Оболонь</div>
+      </div>
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 1px; color: #9AA09E; margin-top: 4px;">АВТОР</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <div style="padding: 7px 12px; border-radius: 999px; background: #F1EEE7; font-size: 13px; font-weight: 600;">Усі учасники</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="display: flex; flex-direction: column; gap: 10px; padding: 0 16px 150px;">
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+    <sc-if value="{{ g.header }}" hint-placeholder-val="{{ true }}">
+      <div onClick="{{ g.onToggle }}" style="position: sticky; top: 122px; z-index: 10; display: flex; align-items: center; gap: 10px; padding: 10px 0 6px; background: linear-gradient(#F5F3EE 72%, rgba(245,243,238,0)); cursor: pointer;">
+        <div style="display: flex; align-items: baseline; gap: 5px; white-space: nowrap;">
+          <span style="font-size: 15px; font-weight: 800; letter-spacing: -0.2px; color: #3C4341;">{{ g.headerDay }}</span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.6px; color: #6B7371;">{{ g.headerMonth }}</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 6px; white-space: nowrap;">
+          <sc-for list="{{ g.summaryParts }}" as="p" hint-placeholder-count="2">
+            <div style="display: flex; align-items: baseline; gap: 4px;">
+              <span style="font-size: 13px; font-weight: 800; color: {{ p.color }};">{{ p.n }}</span>
+              <span style="font-size: 12px; font-weight: 600; color: #9AA09E;">{{ p.label }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="flex: 1; height: 1px; background: #DFDACE;"></div>
+        <div style="{{ g.chevStyle }}">⌄</div>
+      </div>
+    </sc-if>
+    <sc-for list="{{ g.visible }}" as="v" hint-placeholder-count="2">
+      <div onClick="{{ v.onClick }}" style="{{ v.cardStyle }}" style-hover="border-color: #C2BCAE;">
+        <div style="{{ v.plateStyle }}">
+          <div style="font-size: 21px; font-weight: 800; line-height: 1;">{{ v.day }}</div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 1.2px; margin-top: 3px; opacity: 0.75;">{{ v.month }}</div>
+        </div>
+        <div style="flex: 1; min-width: 0; padding: 13px 12px 13px 14px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="font-size: 16px; font-weight: 800; letter-spacing: -0.2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ v.place }}</div>
+            <div style="{{ v.dotStyle }}"></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 5px; margin-top: 4px; color: #7C8382; font-size: 13.5px; font-weight: 500;">
+            <span style="font-size: 12px;">◎</span>
+            <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ v.address }}</span>
+          </div>
+          <sc-if value="{{ v.note }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ v.noteStyle }}">{{ v.note }}</div>
+          </sc-if>
+        </div>
+        <div style="align-self: center; padding-right: 14px; color: #B7BCBA; font-size: 17px;">›</div>
+      </div>
+    </sc-for>
+    </div>
+    </sc-for>
+
+    <button onClick="{{ loadEarlier }}" style="margin-top: 8px; width: 100%; padding: 15px; border: 1px solid #D9D5CB; background: #FFFFFF; border-radius: 14px; font-family: inherit; font-size: 14.5px; font-weight: 700; color: #0E5C46; cursor: pointer;" style-hover="background: #F1EEE7;">Раніший період: {{ earlierLabel }}</button>
+  </div>
+
+  <div style="position: sticky; bottom: 0; margin-top: auto; background: #FFFFFF; border-top: 1px solid #E7E5E0; display: grid; grid-template-columns: 1fr 1fr 76px 1fr 1fr; align-items: end; padding: 0 6px 14px; z-index: 20;">
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#8A8F98" stroke-width="1.8" stroke-linejoin="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Головна</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#8A8F98" stroke-width="1.8" /><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Задачі</span>
+    </div>
+    <div style="display:flex; justify-content:center; align-items:flex-end">
+      <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round" /></svg>
+      </div>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#8A8F98" stroke-width="1.8" /><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Планування</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <div style="position:absolute; top:0; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#14604a" stroke-width="1.8" /><path d="M12 7.6V12l3 2" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <span style="font-size:13px; font-weight:600; color:#14604a">Історія</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844},&quot;grouping&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;day&quot;,&quot;flat&quot;],&quot;default&quot;:&quot;day&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Список&quot;}}">
+const DATA = [
+  { day: "4", month: "СЕРП", place: "Клініка Медіка Центр", address: "вул. Хрещатик, 12, Київ", status: "progress" },
+  { day: "4", month: "СЕРП", place: "Клініка Медіка Центр", address: "вул. Хрещатик, 12, Київ", status: "cancelled", note: "Причина: Точку зачинено" },
+  { day: "4", month: "СЕРП", place: "Клініка Медіка Центр", address: "вул. Хрещатик, 12, Київ", status: "done" },
+  { day: "30", month: "ЛИП", place: "Аптека Життя Оболонь", address: "просп. Оболонський, 21, Київ", status: "done" },
+  { day: "30", month: "ЛИП", place: "Клініка Медіка Центр", address: "вул. Хрещатик, 12, Київ", status: "done" },
+  { day: "29", month: "ЛИП", place: "Лабораторія Аналіт Голосіїв", address: "вул. Льва Толстого, 9, Київ", status: "progress" },
+  { day: "29", month: "ЛИП", place: "Аптека Життя Оболонь", address: "просп. Оболонський, 21, Київ", status: "done" },
+  { day: "17", month: "ЛИП", place: "Клініка Медіка Центр", address: "вул. Хрещатик, 12, Київ", status: "cancelled", note: "Причина: Немає представника" },
+  { day: "13", month: "ЛИП", place: "Лабораторія Аналіт Голосіїв", address: "вул. Льва Толстого, 9, Київ", status: "done" }
+];
+
+const TONE = {
+  done:      { plateBg: "#EDEAE2", plateFg: "#3C4341", stripe: "transparent",  dot: "#0E5C46" },
+  progress:  { plateBg: "#E4EFEA", plateFg: "#0E5C46", stripe: "#B8862B",      dot: "#B8862B" },
+  cancelled: { plateBg: "#F7E9E7", plateFg: "#9B3A2C", stripe: "transparent",  dot: "#9B3A2C" }
+};
+
+const PERIODS = ["Тиждень", "30 днів", "Квартал"];
+
+class Component extends DCLogic {
+  state = { filter: "all", filtersOpen: false, period: 1, open: {} };
+
+  renderVals() {
+    const { filter, period } = this.state;
+    const counts = {
+      all: DATA.length,
+      progress: DATA.filter(v => v.status === "progress").length,
+      done: DATA.filter(v => v.status === "done").length,
+      cancelled: DATA.filter(v => v.status === "cancelled").length
+    };
+    const defs = [
+      ["all", "Усі"], ["progress", "У процесі"], ["done", "Завершено"], ["cancelled", "Скасовано"]
+    ];
+
+    const chips = defs.map(([key, label]) => {
+      const on = filter === key;
+      return {
+        label, count: counts[key],
+        onClick: () => this.setState({ filter: key }),
+        style: `flex:none;display:flex;align-items:center;gap:7px;border-radius:999px;padding:9px 14px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;border:1px solid ${on ? "#0E5C46" : "#D9D5CB"};background:${on ? "#0E5C46" : "#FFFFFF"};color:${on ? "#FFFFFF" : "#3C4341"};`,
+        countStyle: `font-size:12.5px;font-weight:800;color:${on ? "rgba(255,255,255,0.72)" : "#9AA09E"};`
+      };
+    });
+
+    const visits = DATA.filter(v => filter === "all" || v.status === filter).map((v, i) => {
+      const t = TONE[v.status];
+      return {
+        ...v,
+        note: v.note || false,
+        onClick: () => {},
+        cardStyle: `display:flex;align-items:stretch;background:#FFFFFF;border:1px solid #E4E0D7;border-left:3px solid ${t.stripe === "transparent" ? "#E4E0D7" : t.stripe};border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .15s;`,
+        plateStyle: `flex:none;width:62px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:${t.plateBg};color:${t.plateFg};`,
+        dotStyle: `flex:none;width:8px;height:8px;border-radius:50%;background:${t.dot};`,
+        noteStyle: `margin-top:6px;font-size:13px;font-weight:600;color:${t.dot};`
+      };
+    });
+
+    const byDay = this.props.grouping !== "flat";
+    const MONTHS = { "СЕРП": "СЕРПНЯ", "ЛИП": "ЛИПНЯ" };
+    let groups;
+    if (byDay) {
+      groups = [];
+      visits.forEach(v => {
+        const key = v.day + v.month;
+        let g = groups.find(x => x.key === key);
+        if (!g) {
+          g = { key, header: v.day + " " + (MONTHS[v.month] || v.month), headerDay: v.day, headerMonth: (MONTHS[v.month] || v.month).toLowerCase(), count: 0, items: [] };
+          groups.push(g);
+        }
+        g.items.push(v);
+        g.count = g.items.length;
+      });
+      groups.forEach((g, i) => {
+        const open = this.state.open[g.key] !== undefined ? this.state.open[g.key] : i === 0;
+        const nDone = g.items.filter(v => v.status === "done").length;
+        const nProg = g.items.filter(v => v.status === "progress").length;
+        g.visible = open ? g.items : [];
+        g.onToggle = () => this.setState(s => ({ open: { ...s.open, [g.key]: !open } }));
+        const nCanc = g.items.filter(v => v.status === "cancelled").length;
+        g.summaryParts = open ? [] : [
+          { key: g.key + "d", n: nDone, label: "завершено", color: "#14604a" },
+          { key: g.key + "p", n: nProg, label: "у процесі", color: "#B8860B" },
+          { key: g.key + "c", n: nCanc, label: "скасовано", color: "#8C2F2F" }
+        ].filter(p => p.n > 0);
+        g.summary = "";
+        g.summaryStyle = "display:none;";
+        g.chevStyle = `font-size:15px;color:#9AA09E;line-height:1;transform:rotate(${open ? 180 : 0}deg);transition:transform .18s;`;
+      });
+    } else {
+      groups = [{ key: "all", header: false, count: visits.length, items: visits, visible: visits, onToggle: () => {}, summaryParts: [], summary: "", summaryStyle: "", chevStyle: "display:none;" }];
+    }
+
+    return {
+      chips, visits, groups,
+      filtersOpen: this.state.filtersOpen,
+      toggleFilters: () => this.setState(s => ({ filtersOpen: !s.filtersOpen })),
+      periodLabel: PERIODS[period],
+      cyclePeriod: () => this.setState(s => ({ period: (s.period + 1) % PERIODS.length })),
+      earlierLabel: "9 черв. – 8 лип.",
+      loadEarlier: () => {}
+    };
+  }
+}
+</script>
+</body>
+</html>

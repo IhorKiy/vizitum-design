@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#E7E5DE; font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+</style>
+</helmet>
+<div style="width:393px; height:852px; margin:0 auto; background:#F3F2ED; overflow:hidden; display:flex; flex-direction:column">
+
+  <div style="flex:none; background:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #E6E4DD">
+    <div style="width:40px; height:40px; border-radius:11px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+    <div style="flex:1; display:flex; flex-direction:column">
+      <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+      <div style="font-size:13px; color:#8A887F">Vizitum</div>
+    </div>
+    <div style="width:40px; height:40px; border:1px solid #C7D6D0; border-radius:11px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; cursor:pointer">
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+    </div>
+  </div>
+
+  <div style="flex:1; min-height:0; overflow-y:auto; padding:18px 16px 20px; display:flex; flex-direction:column; gap:16px">
+
+    <div style="display:flex; flex-direction:column; gap:6px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <div style="width:32px; height:44px; flex:none; display:flex; align-items:center; cursor:pointer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19 12H5.5m0 0 5.2-5.2M5.5 12l5.2 5.2" stroke="#14604a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div style="flex:1; min-width:0; font-size:24px; font-weight:800; color:#14181a; letter-spacing:-.02em; text-wrap:pretty">Стрий <span style="color:#8A8F98; font-weight:700">(9)</span></div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:flex-end; gap:4px">
+        <div style="width:40px; height:40px; border-radius:11px; background:#DDE8E3; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#CFE0D9">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8" /><path d="M4 10.6h16M8.5 3.9v3.3M15.5 3.9v3.3M12 13.5v4M10 15.5h4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" /></svg>
+        </div>
+        <div style="width:40px; height:40px; border-radius:11px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#EAE7E0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.5 19.5h4L19 9a2.5 2.5 0 0 0-3.5-3.5L5 16v3.5Z" stroke="#5A615F" stroke-width="1.7" stroke-linejoin="round" /></svg>
+        </div>
+        <div style="width:40px; height:40px; border-radius:11px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#F7ECEC">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5h15M9.5 6.5V4.2h5v2.3M6.5 6.5l1.1 13h8.8l1.1-13" stroke="#B23A3A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div onClick="{{ toggleInfo }}" style="width:40px; height:40px; border-radius:11px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#EAE7E0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.4" stroke="#5A615F" stroke-width="1.7" /><path d="M12 11v5.4" stroke="#5A615F" stroke-width="1.7" stroke-linecap="round" /><circle cx="12" cy="8" r="1.15" fill="#5A615F" /></svg>
+        </div>
+      </div>
+    </div>
+
+
+    <div style="display:flex; flex-direction:column; gap:9px">
+      <sc-if value="{{ infoOpen }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex; align-items:flex-start; gap:10px; padding:13px 14px; background:#fff; border:1px solid #C7D6D0; border-radius:14px; box-shadow:0 8px 22px rgba(22,25,26,.08)">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" style="flex:none; margin-top:1px"><circle cx="12" cy="12" r="8.4" stroke="#14604a" stroke-width="1.7" /><path d="M12 11v5.4" stroke="#14604a" stroke-width="1.7" stroke-linecap="round" /><circle cx="12" cy="8" r="1.15" fill="#14604a" /></svg>
+          <div style="flex:1; min-width:0; font-size:14px; line-height:1.45; color:#3C4442; font-weight:500">Точки можна перетягувати за смужку, щоб змінити порядок обходу.</div>
+          <div onClick="{{ toggleInfo }}" style="flex:none; font-size:17px; color:#8A8F98; cursor:pointer; line-height:1">✕</div>
+        </div>
+      </sc-if>
+
+      <div style="display:flex; flex-direction:column; gap:8px">
+
+        <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+          <div style="flex:none; display:flex; flex-direction:column; align-items:center; gap:7px">
+            <div style="width:32px; height:32px; border-radius:50%; background:#DDE8E3; color:#14604a; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center">1</div>
+            <svg width="10" height="15" viewBox="0 0 10 15" fill="#C9C7BE" style="cursor:grab"><circle cx="2" cy="2" r="1.3" /><circle cx="8" cy="2" r="1.3" /><circle cx="2" cy="7.5" r="1.3" /><circle cx="8" cy="7.5" r="1.3" /><circle cx="2" cy="13" r="1.3" /><circle cx="8" cy="13" r="1.3" /></svg>
+          </div>
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:5px">
+            <div style="font-size:16px; font-weight:800; color:#14181a">Клініка Медіка Центр</div>
+            <div style="display:flex; align-items:center; gap:6px">
+              <svg width="13" height="15" viewBox="0 0 14 16" fill="none"><path d="M7 15c3.4-4.1 5-6.6 5-9A5 5 0 1 0 2 6c0 2.4 1.6 4.9 5 9Z" stroke="#8A8F98" stroke-width="1.3" /><circle cx="7" cy="6" r="1.9" stroke="#8A8F98" stroke-width="1.3" /></svg>
+              <span style="font-size:13px; color:#5A615F; font-weight:500">вул. Хрещатик, 12, Київ</span>
+            </div>
+            <div style="align-self:flex-start; padding:3px 9px; border-radius:7px; background:#EDEBE5; font-size:12px; font-weight:800; color:#5A615F">Медіка</div>
+          </div>
+          <div style="width:36px; height:36px; flex:none; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#F7ECEC">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5h15M9.5 6.5V4.2h5v2.3M6.5 6.5l1.1 13h8.8l1.1-13" stroke="#8A8F98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+          <div style="flex:none; display:flex; flex-direction:column; align-items:center; gap:7px">
+            <div style="width:32px; height:32px; border-radius:50%; background:#DDE8E3; color:#14604a; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center">2</div>
+            <svg width="10" height="15" viewBox="0 0 10 15" fill="#C9C7BE" style="cursor:grab"><circle cx="2" cy="2" r="1.3" /><circle cx="8" cy="2" r="1.3" /><circle cx="2" cy="7.5" r="1.3" /><circle cx="8" cy="7.5" r="1.3" /><circle cx="2" cy="13" r="1.3" /><circle cx="8" cy="13" r="1.3" /></svg>
+          </div>
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:5px">
+            <div style="font-size:16px; font-weight:800; color:#14181a">Дентал Про Голосіїв</div>
+            <div style="display:flex; align-items:center; gap:6px">
+              <svg width="13" height="15" viewBox="0 0 14 16" fill="none"><path d="M7 15c3.4-4.1 5-6.6 5-9A5 5 0 1 0 2 6c0 2.4 1.6 4.9 5 9Z" stroke="#8A8F98" stroke-width="1.3" /><circle cx="7" cy="6" r="1.9" stroke="#8A8F98" stroke-width="1.3" /></svg>
+              <span style="font-size:13px; color:#5A615F; font-weight:500">вул. Велика Васильківська, 44, Київ</span>
+            </div>
+          </div>
+          <div style="width:36px; height:36px; flex:none; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#F7ECEC">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5h15M9.5 6.5V4.2h5v2.3M6.5 6.5l1.1 13h8.8l1.1-13" stroke="#8A8F98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+          <div style="flex:none; display:flex; flex-direction:column; align-items:center; gap:7px">
+            <div style="width:32px; height:32px; border-radius:50%; background:#DDE8E3; color:#14604a; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center">3</div>
+            <svg width="10" height="15" viewBox="0 0 10 15" fill="#C9C7BE" style="cursor:grab"><circle cx="2" cy="2" r="1.3" /><circle cx="8" cy="2" r="1.3" /><circle cx="2" cy="7.5" r="1.3" /><circle cx="8" cy="7.5" r="1.3" /><circle cx="2" cy="13" r="1.3" /><circle cx="8" cy="13" r="1.3" /></svg>
+          </div>
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:5px">
+            <div style="font-size:16px; font-weight:800; color:#14181a">Аптека «Вітамін»</div>
+            <div style="display:flex; align-items:center; gap:6px">
+              <svg width="13" height="15" viewBox="0 0 14 16" fill="none"><path d="M7 15c3.4-4.1 5-6.6 5-9A5 5 0 1 0 2 6c0 2.4 1.6 4.9 5 9Z" stroke="#8A8F98" stroke-width="1.3" /><circle cx="7" cy="6" r="1.9" stroke="#8A8F98" stroke-width="1.3" /></svg>
+              <span style="font-size:13px; color:#5A615F; font-weight:500">вул. Січових Стрільців, 7, Київ</span>
+            </div>
+            <div style="align-self:flex-start; padding:3px 9px; border-radius:7px; background:#EDEBE5; font-size:12px; font-weight:800; color:#5A615F">Медіка</div>
+          </div>
+          <div style="width:36px; height:36px; flex:none; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#F7ECEC">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5h15M9.5 6.5V4.2h5v2.3M6.5 6.5l1.1 13h8.8l1.1-13" stroke="#8A8F98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+          <div style="flex:none; display:flex; flex-direction:column; align-items:center; gap:7px">
+            <div style="width:32px; height:32px; border-radius:50%; background:#DDE8E3; color:#14604a; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center">4</div>
+            <svg width="10" height="15" viewBox="0 0 10 15" fill="#C9C7BE" style="cursor:grab"><circle cx="2" cy="2" r="1.3" /><circle cx="8" cy="2" r="1.3" /><circle cx="2" cy="7.5" r="1.3" /><circle cx="8" cy="7.5" r="1.3" /><circle cx="2" cy="13" r="1.3" /><circle cx="8" cy="13" r="1.3" /></svg>
+          </div>
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:5px">
+            <div style="font-size:16px; font-weight:800; color:#14181a">Крамниця «На розі»</div>
+            <div style="display:flex; align-items:center; gap:6px">
+              <svg width="13" height="15" viewBox="0 0 14 16" fill="none"><path d="M7 15c3.4-4.1 5-6.6 5-9A5 5 0 1 0 2 6c0 2.4 1.6 4.9 5 9Z" stroke="#8A8F98" stroke-width="1.3" /><circle cx="7" cy="6" r="1.9" stroke="#8A8F98" stroke-width="1.3" /></svg>
+              <span style="font-size:13px; color:#5A615F; font-weight:500">вул. Антоновича, 18, Київ</span>
+            </div>
+          </div>
+          <div style="width:36px; height:36px; flex:none; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#F7ECEC">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5h15M9.5 6.5V4.2h5v2.3M6.5 6.5l1.1 13h8.8l1.1-13" stroke="#8A8F98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+          <div style="flex:none; display:flex; flex-direction:column; align-items:center; gap:7px">
+            <div style="width:32px; height:32px; border-radius:50%; background:#DDE8E3; color:#14604a; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center">5</div>
+            <svg width="10" height="15" viewBox="0 0 10 15" fill="#C9C7BE" style="cursor:grab"><circle cx="2" cy="2" r="1.3" /><circle cx="8" cy="2" r="1.3" /><circle cx="2" cy="7.5" r="1.3" /><circle cx="8" cy="7.5" r="1.3" /><circle cx="2" cy="13" r="1.3" /><circle cx="8" cy="13" r="1.3" /></svg>
+          </div>
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:5px">
+            <div style="font-size:16px; font-weight:800; color:#14181a">Кав'ярня «Терен»</div>
+            <div style="display:flex; align-items:center; gap:6px">
+              <svg width="13" height="15" viewBox="0 0 14 16" fill="none"><path d="M7 15c3.4-4.1 5-6.6 5-9A5 5 0 1 0 2 6c0 2.4 1.6 4.9 5 9Z" stroke="#8A8F98" stroke-width="1.3" /><circle cx="7" cy="6" r="1.9" stroke="#8A8F98" stroke-width="1.3" /></svg>
+              <span style="font-size:13px; color:#5A615F; font-weight:500">вул. Ярославська, 3, Київ</span>
+            </div>
+          </div>
+          <div style="width:36px; height:36px; flex:none; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#F7ECEC">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5h15M9.5 6.5V4.2h5v2.3M6.5 6.5l1.1 13h8.8l1.1-13" stroke="#8A8F98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+          <div style="flex:none; display:flex; flex-direction:column; align-items:center; gap:7px">
+            <div style="width:32px; height:32px; border-radius:50%; background:#DDE8E3; color:#14604a; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center">6</div>
+            <svg width="10" height="15" viewBox="0 0 10 15" fill="#C9C7BE" style="cursor:grab"><circle cx="2" cy="2" r="1.3" /><circle cx="8" cy="2" r="1.3" /><circle cx="2" cy="7.5" r="1.3" /><circle cx="8" cy="7.5" r="1.3" /><circle cx="2" cy="13" r="1.3" /><circle cx="8" cy="13" r="1.3" /></svg>
+          </div>
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:5px">
+            <div style="font-size:16px; font-weight:800; color:#14181a">Супермаркет «Лівий берег»</div>
+            <div style="display:flex; align-items:center; gap:6px">
+              <svg width="13" height="15" viewBox="0 0 14 16" fill="none"><path d="M7 15c3.4-4.1 5-6.6 5-9A5 5 0 1 0 2 6c0 2.4 1.6 4.9 5 9Z" stroke="#8A8F98" stroke-width="1.3" /><circle cx="7" cy="6" r="1.9" stroke="#8A8F98" stroke-width="1.3" /></svg>
+              <span style="font-size:13px; color:#5A615F; font-weight:500">Броварський просп., 102, Київ</span>
+            </div>
+            <div style="align-self:flex-start; padding:3px 9px; border-radius:7px; background:#EDEBE5; font-size:12px; font-weight:800; color:#5A615F">Медіка</div>
+          </div>
+          <div style="width:36px; height:36px; flex:none; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#F7ECEC">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5h15M9.5 6.5V4.2h5v2.3M6.5 6.5l1.1 13h8.8l1.1-13" stroke="#8A8F98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+          <div style="flex:none; display:flex; flex-direction:column; align-items:center; gap:7px">
+            <div style="width:32px; height:32px; border-radius:50%; background:#DDE8E3; color:#14604a; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center">7</div>
+            <svg width="10" height="15" viewBox="0 0 10 15" fill="#C9C7BE" style="cursor:grab"><circle cx="2" cy="2" r="1.3" /><circle cx="8" cy="2" r="1.3" /><circle cx="2" cy="7.5" r="1.3" /><circle cx="8" cy="7.5" r="1.3" /><circle cx="2" cy="13" r="1.3" /><circle cx="8" cy="13" r="1.3" /></svg>
+          </div>
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:5px">
+            <div style="font-size:16px; font-weight:800; color:#14181a">Магазин «Схід»</div>
+            <div style="display:flex; align-items:center; gap:6px">
+              <svg width="13" height="15" viewBox="0 0 14 16" fill="none"><path d="M7 15c3.4-4.1 5-6.6 5-9A5 5 0 1 0 2 6c0 2.4 1.6 4.9 5 9Z" stroke="#8A8F98" stroke-width="1.3" /><circle cx="7" cy="6" r="1.9" stroke="#8A8F98" stroke-width="1.3" /></svg>
+              <span style="font-size:13px; color:#5A615F; font-weight:500">вул. Київська, 15, Бровари</span>
+            </div>
+          </div>
+          <div style="width:36px; height:36px; flex:none; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#F7ECEC">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5h15M9.5 6.5V4.2h5v2.3M6.5 6.5l1.1 13h8.8l1.1-13" stroke="#8A8F98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+          <div style="flex:none; display:flex; flex-direction:column; align-items:center; gap:7px">
+            <div style="width:32px; height:32px; border-radius:50%; background:#DDE8E3; color:#14604a; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center">8</div>
+            <svg width="10" height="15" viewBox="0 0 10 15" fill="#C9C7BE" style="cursor:grab"><circle cx="2" cy="2" r="1.3" /><circle cx="8" cy="2" r="1.3" /><circle cx="2" cy="7.5" r="1.3" /><circle cx="8" cy="7.5" r="1.3" /><circle cx="2" cy="13" r="1.3" /><circle cx="8" cy="13" r="1.3" /></svg>
+          </div>
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:5px">
+            <div style="font-size:16px; font-weight:800; color:#14181a">Кіоск «Преса»</div>
+            <div style="display:flex; align-items:center; gap:6px">
+              <svg width="13" height="15" viewBox="0 0 14 16" fill="none"><path d="M7 15c3.4-4.1 5-6.6 5-9A5 5 0 1 0 2 6c0 2.4 1.6 4.9 5 9Z" stroke="#8A8F98" stroke-width="1.3" /><circle cx="7" cy="6" r="1.9" stroke="#8A8F98" stroke-width="1.3" /></svg>
+              <span style="font-size:13px; color:#5A615F; font-weight:500">просп. Перемоги, 61, Київ</span>
+            </div>
+          </div>
+          <div style="width:36px; height:36px; flex:none; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#F7ECEC">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5h15M9.5 6.5V4.2h5v2.3M6.5 6.5l1.1 13h8.8l1.1-13" stroke="#8A8F98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+          <div style="flex:none; display:flex; flex-direction:column; align-items:center; gap:7px">
+            <div style="width:32px; height:32px; border-radius:50%; background:#DDE8E3; color:#14604a; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center">9</div>
+            <svg width="10" height="15" viewBox="0 0 10 15" fill="#C9C7BE" style="cursor:grab"><circle cx="2" cy="2" r="1.3" /><circle cx="8" cy="2" r="1.3" /><circle cx="2" cy="7.5" r="1.3" /><circle cx="8" cy="7.5" r="1.3" /><circle cx="2" cy="13" r="1.3" /><circle cx="8" cy="13" r="1.3" /></svg>
+          </div>
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:5px">
+            <div style="font-size:16px; font-weight:800; color:#14181a">Склад «Троєщина»</div>
+            <div style="display:flex; align-items:center; gap:6px">
+              <svg width="13" height="15" viewBox="0 0 14 16" fill="none"><path d="M7 15c3.4-4.1 5-6.6 5-9A5 5 0 1 0 2 6c0 2.4 1.6 4.9 5 9Z" stroke="#8A8F98" stroke-width="1.3" /><circle cx="7" cy="6" r="1.9" stroke="#8A8F98" stroke-width="1.3" /></svg>
+              <span style="font-size:13px; color:#5A615F; font-weight:500">вул. Закревського, 9, Київ</span>
+            </div>
+          </div>
+          <div style="width:36px; height:36px; flex:none; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#F7ECEC">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5h15M9.5 6.5V4.2h5v2.3M6.5 6.5l1.1 13h8.8l1.1-13" stroke="#8A8F98" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div style="flex:none; background:#fff; border-top:1px solid #E7E5E0; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px 14px">
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#8A8F98" stroke-width="1.8" stroke-linejoin="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Головна</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#8A8F98" stroke-width="1.8" /><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Задачі</span>
+    </div>
+    <div style="display:flex; justify-content:center; align-items:flex-end">
+      <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round" /></svg>
+      </div>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#8A8F98" stroke-width="1.8" /><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Планування</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#8A8F98" stroke-width="1.8" /><path d="M12 7.6V12l3 2" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Історія</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:393,&quot;height&quot;:852}}">class Component extends DCLogic {
+  state = { infoOpen: false };
+  renderVals() {
+    return {
+      infoOpen: this.state.infoOpen,
+      toggleInfo: () => this.setState(s => ({ infoOpen: !s.infoOpen }))
+    };
+  }
+}</script>
+</body>
+</html>

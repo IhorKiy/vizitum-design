@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#E7E5DE; font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+</style>
+</helmet>
+<div style="position:relative; width:393px; height:852px; margin:0 auto; background:#F3F2ED; overflow:hidden; display:flex; flex-direction:column">
+
+  <div style="flex:1; min-height:0; overflow:hidden; padding:16px 16px 22px; display:flex; flex-direction:column; gap:14px; filter:blur(2px); opacity:.5">
+    <div style="font-size:22px; font-weight:800; color:#14181a">Аптека Життя Оболонь</div>
+    <div style="height:52px; background:#B4453A; border-radius:14px"></div>
+    <div style="height:96px; background:#fff; border:1px solid #E7E5E0; border-radius:14px"></div>
+  </div>
+
+  <div style="position:absolute; inset:0; background:rgba(22,25,26,.5); display:flex; align-items:center; justify-content:center; padding:0 26px">
+    <div style="width:100%; background:#F7F6F2; border-radius:20px; box-shadow:0 20px 50px rgba(22,25,26,.28); padding:26px 22px 20px; display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center">
+      <div style="width:56px; height:56px; border-radius:17px; background:#F6E9E7; display:flex; align-items:center; justify-content:center">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="9" y="2.8" width="6" height="10.4" rx="3" stroke="#B4453A" stroke-width="1.8" /><path d="M5.5 11.4a6.5 6.5 0 0 0 13 0M12 17.9v3.3" stroke="#B4453A" stroke-width="1.8" stroke-linecap="round" /></svg>
+      </div>
+      <div style="font-size:18.5px; font-weight:800; color:#14181a; letter-spacing:-.01em">Зупинити запис і вийти?</div>
+      <div style="font-size:14.5px; line-height:1.55; font-weight:500; color:#6B7371; text-wrap:pretty">Триває запис 01:12. Якщо вийти, ми його збережемо — повернетесь і надішлете.</div>
+      <div style="width:100%; display:flex; flex-direction:column; gap:9px; margin-top:6px">
+        <div style="height:50px; background:#14604a; border-radius:13px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#0d4636">
+          <span style="font-size:15.5px; font-weight:800; color:#fff">Зупинити й вийти</span>
+        </div>
+        <div style="box-sizing:border-box; height:50px; background:#fff; border:1.5px solid #C7D6D0; border-radius:13px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#E6EFEB">
+          <span style="font-size:15px; font-weight:800; color:#14604a">Лишитись</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:393,&quot;height&quot;:852}}"></script>
+</body>
+</html>

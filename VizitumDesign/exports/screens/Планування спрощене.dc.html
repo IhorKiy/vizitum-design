@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body { margin:0; background:#e9e7e2; font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+</style>
+</helmet>
+<section style="padding:40px; display:flex; flex-wrap:nowrap; gap:40px; align-items:flex-start">
+
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; width:390px">
+      <div style="font-size:17px; font-weight:800; color:#14181a; letter-spacing:-.2px">Тижневе — спрощене</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:#8a8f98">390 × 844</div>
+    </div>
+
+    <div style="position:relative; width:390px; height:844px; background:#f4f3f0; border-radius:36px; box-shadow:0 24px 60px -20px rgba(16,24,40,.35), 0 0 0 1px rgba(16,24,40,.06); overflow:hidden; display:flex; flex-direction:column">
+      <div style="display:flex; align-items:center; gap:12px; padding:16px 18px 14px; background:#fff; border-bottom:1px solid #e7e5e0">
+        <div style="width:36px; height:36px; border-radius:9px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13.5px; letter-spacing:-.01em">DT</div>
+        <div style="flex:1; line-height:1.15">
+          <div style="font-size:15px; font-weight:800; color:#14181a">Demo Team</div>
+          <div style="font-size:12px; color:#8a8f98">Vizitum</div>
+        </div>
+        <div style="width:36px; height:36px; border-radius:9px; border:1px solid #dcdad4; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px">
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+        </div>
+      </div>
+
+      <div style="flex:1; overflow:hidden; display:flex; flex-direction:column">
+        <div style="padding:16px 18px 12px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+          <div style="font-size:24px; font-weight:800; color:#14181a; letter-spacing:-.02em">Планування</div>
+          <div style="display:flex; gap:8px">
+              <div style="width:38px; height:38px; border-radius:11px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2.6" stroke="#14604a" stroke-width="1.8"></rect><path d="M15.2 5.6V5A1.6 1.6 0 0 0 13.6 3.4H5.6A1.6 1.6 0 0 0 4 5v8.6A1.6 1.6 0 0 0 5.6 15.2h.6" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+              </div>
+              <div style="width:38px; height:38px; border-radius:11px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8"></rect><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+              </div>
+          </div>
+        </div>
+
+        <div style="padding:2px 18px 14px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+          <div style="width:32px; height:32px; border-radius:9px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">‹</div>
+          <div style="font-size:16px; font-weight:800; color:#14181a">3 — 9 серпня</div>
+          <div style="width:32px; height:32px; border-radius:9px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">›</div>
+        </div>
+
+        <div style="flex:1; overflow:hidden; padding:0 14px; display:flex; flex-direction:column; gap:8px">
+          <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+            <div style="width:56px; flex:none; align-self:stretch; background:#E6EFEB; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:13px 0">
+              <div style="font-size:19px; font-weight:800; color:#14604a; line-height:1">3</div>
+              <div style="font-size:10.5px; font-weight:700; letter-spacing:.05em; color:#5a8f78">ПН</div>
+            </div>
+            <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:10px; padding:13px 0">
+              <div style="display:flex; align-items:center; gap:10px">
+                <div style="flex:1; min-width:0; display:flex; align-items:center">
+                  <div style="font-size:14.5px; font-weight:700; color:#14181a">Київ — Лівий берег</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">10</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+              </div>
+              <div style="height:1px; background:#f0eee9"></div>
+              <div style="display:flex; align-items:center"><span style="font-size:13px; font-weight:700; color:#14604a; cursor:pointer">+ Додати маршрут</span></div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+            <div style="width:56px; flex:none; align-self:stretch; background:#E6EFEB; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:13px 0">
+              <div style="font-size:19px; font-weight:800; color:#14604a; line-height:1">4</div>
+              <div style="font-size:10.5px; font-weight:700; letter-spacing:.05em; color:#5a8f78">ВТ</div>
+            </div>
+            <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:10px; padding:13px 0">
+              <div style="display:flex; align-items:center; gap:10px">
+                <div style="flex:1; min-width:0; display:flex; align-items:center">
+                  <div style="font-size:14.5px; font-weight:700; color:#14181a">Бровари + Троєщина</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">8</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+              </div>
+              <div style="height:1px; background:#f0eee9"></div>
+              <div style="display:flex; align-items:center; gap:10px">
+                <div style="flex:1; min-width:0; display:flex; align-items:center">
+                  <div style="font-size:14.5px; font-weight:700; color:#14181a">Дарниця — склади</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">4</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+              </div>
+              <div style="height:1px; background:#f0eee9"></div>
+              <div style="display:flex; align-items:center"><span style="font-size:13px; font-weight:700; color:#14604a; cursor:pointer">+ Додати маршрут</span></div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+            <div style="width:56px; flex:none; align-self:stretch; background:#E6EFEB; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:13px 0">
+              <div style="font-size:19px; font-weight:800; color:#14604a; line-height:1">5</div>
+              <div style="font-size:10.5px; font-weight:700; letter-spacing:.05em; color:#5a8f78">СР</div>
+            </div>
+            <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:10px; padding:13px 0">
+              <div style="display:flex; align-items:center; gap:10px">
+                <div style="flex:1; min-width:0; display:flex; align-items:center">
+                  <div style="font-size:14.5px; font-weight:700; color:#14181a">Лівобережна — північ</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">7</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+              </div>
+              <div style="height:1px; background:#f0eee9"></div>
+              <div style="display:flex; align-items:center"><span style="font-size:13px; font-weight:700; color:#14604a; cursor:pointer">+ Додати маршрут</span></div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1.5px solid #14604a; box-shadow:0 6px 18px -8px rgba(20,96,74,.4)">
+            <div style="width:56px; flex:none; align-self:stretch; background:#14604a; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:13px 0">
+              <div style="font-size:19px; font-weight:800; color:#fff; line-height:1">6</div>
+              <div style="font-size:10.5px; font-weight:700; letter-spacing:.05em; color:#cfe8de">ЧТ</div>
+            </div>
+            <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:10px; padding:13px 0">
+              <div style="display:flex; align-items:center; gap:10px">
+                <div style="flex:1; min-width:0">
+                  <div style="display:flex; align-items:center; gap:6px">
+                    <div style="font-size:14.5px; font-weight:700; color:#14181a">Поділ — центр</div>
+                    <div style="padding:1px 6px; border-radius:5px; background:#e6efeb; color:#14604a; font-size:10px; font-weight:800; letter-spacing:.03em">СЬОГОДНІ</div>
+                  </div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#14604a">12</span><span style="color:#14604a; font-size:17px; font-weight:600">›</span></div>
+              </div>
+              <div style="height:1px; background:#dbe7e2"></div>
+              <div style="display:flex; align-items:center"><span style="font-size:13px; font-weight:700; color:#14604a; cursor:pointer">+ Додати маршрут</span></div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; border:1.5px dashed #d3cfc6">
+            <div style="width:44px; flex:none; text-align:center; border-radius:10px; padding:6px 0">
+              <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ПТ</div>
+              <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">7</div>
+            </div>
+            <div style="width:1px; background:#e2dfd8"></div>
+            <div style="flex:1; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:800; color:#14604a">+ Призначити маршрут</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; border:1.5px dashed #d3cfc6">
+            <div style="width:44px; flex:none; text-align:center; border-radius:10px; padding:6px 0">
+              <div style="font-size:10.5px; font-weight:700; color:#b6a99a">СБ</div>
+              <div style="font-size:19px; font-weight:800; color:#8f8878; line-height:1.1">8</div>
+            </div>
+            <div style="width:1px; background:#e2dfd8"></div>
+            <div style="flex:1; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:800; color:#a89c8c">+ Призначити маршрут</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; border:1.5px dashed #d3cfc6">
+            <div style="width:44px; flex:none; text-align:center; border-radius:10px; padding:6px 0">
+              <div style="font-size:10.5px; font-weight:700; color:#b6a99a">НД</div>
+              <div style="font-size:19px; font-weight:800; color:#8f8878; line-height:1.1">9</div>
+            </div>
+            <div style="width:1px; background:#e2dfd8"></div>
+            <div style="flex:1; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:800; color:#a89c8c">+ Призначити маршрут</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border-top:1px solid #e7e5e0; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px 14px; box-shadow:0 -8px 20px -12px rgba(16,24,40,.12)">
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#8A8F98" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Головна</span>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#8A8F98" stroke-width="1.8"></rect><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Задачі</span>
+        </div>
+        <div style="display:flex; justify-content:center; align-items:flex-end">
+          <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round"></path></svg>
+          </div>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <div style="position:absolute; top:0; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8"></rect><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+          <span style="font-size:13px; font-weight:600; color:#14604a">Планування</span>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#8A8F98" stroke-width="1.8"></circle><path d="M12 7.6V12l3 2" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Історія</span>
+        </div>
+      </div>
+    </div>
+    <div style="width:390px; font-size:13.5px; line-height:1.5; color:#6B7371; font-weight:500">Усі стани дня на одному екрані: один маршрут, два маршрути (вт), сьогодні, порожній робочий день, вихідні (не заблоковані).</div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; width:390px">
+      <div style="font-size:17px; font-weight:800; color:#14181a; letter-spacing:-.2px">Тижневе — порожнє</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:#8a8f98">390 × 844</div>
+    </div>
+
+    <div style="position:relative; width:390px; height:844px; background:#f4f3f0; border-radius:36px; box-shadow:0 24px 60px -20px rgba(16,24,40,.35), 0 0 0 1px rgba(16,24,40,.06); overflow:hidden; display:flex; flex-direction:column">
+      <div style="display:flex; align-items:center; gap:12px; padding:16px 18px 14px; background:#fff; border-bottom:1px solid #e7e5e0">
+        <div style="width:36px; height:36px; border-radius:9px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13.5px; letter-spacing:-.01em">DT</div>
+        <div style="flex:1; line-height:1.15">
+          <div style="font-size:15px; font-weight:800; color:#14181a">Demo Team</div>
+          <div style="font-size:12px; color:#8a8f98">Vizitum</div>
+        </div>
+        <div style="width:36px; height:36px; border-radius:9px; border:1px solid #dcdad4; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px">
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+        </div>
+      </div>
+
+      <div style="flex:1; overflow:hidden; display:flex; flex-direction:column">
+        <div style="padding:16px 18px 12px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+          <div style="font-size:24px; font-weight:800; color:#14181a; letter-spacing:-.02em">Планування</div>
+          <div style="display:flex; gap:8px">
+            <div style="width:38px; height:38px; border-radius:11px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2.6" stroke="#14604a" stroke-width="1.8"></rect><path d="M15.2 5.6V5A1.6 1.6 0 0 0 13.6 3.4H5.6A1.6 1.6 0 0 0 4 5v8.6A1.6 1.6 0 0 0 5.6 15.2h.6" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+            </div>
+            <div style="width:38px; height:38px; border-radius:11px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8"></rect><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding:2px 18px 14px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+          <div style="width:32px; height:32px; border-radius:9px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">‹</div>
+          <div style="font-size:16px; font-weight:800; color:#14181a">3 — 9 серпня</div>
+          <div style="width:32px; height:32px; border-radius:9px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">›</div>
+        </div>
+
+        <div style="margin:0 14px 4px; padding:9px 14px; background:#fff; border-radius:12px; border:1px solid #e7e5e0">
+          <div style="font-size:13px; line-height:1.45; font-weight:600; color:#8a8f98">Тиждень ще не заплановано. Призначте маршрут на день, виберіть маршрут у розділі Маршрути або скопіюйте попередній тиждень через календар.</div>
+        </div>
+
+        <div style="flex:1; overflow:hidden; padding:0 14px; display:flex; flex-direction:column; gap:8px">
+          <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; border:1.5px dashed #d3cfc6">
+            <div style="width:44px; flex:none; text-align:center; border-radius:10px; padding:6px 0">
+              <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ПН</div>
+              <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">3</div>
+            </div>
+            <div style="width:1px; background:#e2dfd8"></div>
+            <div style="flex:1; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:800; color:#14604a">+ Призначити маршрут</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; border:1.5px dashed #d3cfc6">
+            <div style="width:44px; flex:none; text-align:center; border-radius:10px; padding:6px 0">
+              <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ВТ</div>
+              <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">4</div>
+            </div>
+            <div style="width:1px; background:#e2dfd8"></div>
+            <div style="flex:1; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:800; color:#14604a">+ Призначити маршрут</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; border:1.5px dashed #d3cfc6">
+            <div style="width:44px; flex:none; text-align:center; border-radius:10px; padding:6px 0">
+              <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">СР</div>
+              <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">5</div>
+            </div>
+            <div style="width:1px; background:#e2dfd8"></div>
+            <div style="flex:1; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:800; color:#14604a">+ Призначити маршрут</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; background:#fff; border:1.5px solid #14604a; box-shadow:0 6px 18px -8px rgba(20,96,74,.4)">
+            <div style="width:38px; text-align:center; flex-shrink:0">
+              <div style="font-size:10.5px; font-weight:700; color:#14604a">ЧТ</div>
+              <div style="font-size:19px; font-weight:800; color:#14604a; line-height:1.1">6</div>
+            </div>
+            <div style="width:1px; background:#dbe7e2"></div>
+            <div style="flex:1; display:flex; align-items:center; gap:6px">
+              <div style="font-size:14px; font-weight:800; color:#14604a">+ Призначити маршрут</div>
+              <div style="padding:1px 6px; border-radius:5px; background:#e6efeb; color:#14604a; font-size:10px; font-weight:800; letter-spacing:.03em">СЬОГОДНІ</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; border:1.5px dashed #d3cfc6">
+            <div style="width:44px; flex:none; text-align:center; border-radius:10px; padding:6px 0">
+              <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ПТ</div>
+              <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">7</div>
+            </div>
+            <div style="width:1px; background:#e2dfd8"></div>
+            <div style="flex:1; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:800; color:#14604a">+ Призначити маршрут</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; border:1.5px dashed #d3cfc6">
+            <div style="width:44px; flex:none; text-align:center; border-radius:10px; padding:6px 0">
+              <div style="font-size:10.5px; font-weight:700; color:#b6a99a">СБ</div>
+              <div style="font-size:19px; font-weight:800; color:#8f8878; line-height:1.1">8</div>
+            </div>
+            <div style="width:1px; background:#e2dfd8"></div>
+            <div style="flex:1; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:800; color:#a89c8c">+ Призначити маршрут</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; border:1.5px dashed #d3cfc6">
+            <div style="width:44px; flex:none; text-align:center; border-radius:10px; padding:6px 0">
+              <div style="font-size:10.5px; font-weight:700; color:#b6a99a">НД</div>
+              <div style="font-size:19px; font-weight:800; color:#8f8878; line-height:1.1">9</div>
+            </div>
+            <div style="width:1px; background:#e2dfd8"></div>
+            <div style="flex:1; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:800; color:#a89c8c">+ Призначити маршрут</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border-top:1px solid #e7e5e0; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px 14px; box-shadow:0 -8px 20px -12px rgba(16,24,40,.12)">
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#8A8F98" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Головна</span>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#8A8F98" stroke-width="1.8"></rect><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Задачі</span>
+        </div>
+        <div style="display:flex; justify-content:center; align-items:flex-end">
+          <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round"></path></svg>
+          </div>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <div style="position:absolute; top:0; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8"></rect><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+          <span style="font-size:13px; font-weight:600; color:#14604a">Планування</span>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#8A8F98" stroke-width="1.8"></circle><path d="M12 7.6V12l3 2" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Історія</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="width:390px; font-size:13.5px; line-height:1.5; color:#6B7371; font-weight:500">Перший вхід: підказка з двома шляхами — призначити маршрут на день або скопіювати попередній тиждень.</div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; width:390px">
+      <div style="font-size:17px; font-weight:800; color:#14181a; letter-spacing:-.2px">Штора «Місяць» — огляд</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:#8a8f98">390 × 844</div>
+    </div>
+
+    <div style="position:relative; width:390px; height:844px; background:#f4f3f0; border-radius:36px; box-shadow:0 24px 60px -20px rgba(16,24,40,.35), 0 0 0 1px rgba(16,24,40,.06); overflow:hidden; display:flex; flex-direction:column">
+      <div style="display:flex; align-items:center; gap:12px; padding:16px 18px 14px; background:#fff; border-bottom:1px solid #e7e5e0">
+        <div style="width:36px; height:36px; border-radius:9px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13.5px; letter-spacing:-.01em">DT</div>
+        <div style="flex:1; line-height:1.15">
+          <div style="font-size:15px; font-weight:800; color:#14181a">Demo Team</div>
+          <div style="font-size:12px; color:#8a8f98">Vizitum</div>
+        </div>
+        <div style="width:36px; height:36px; border-radius:9px; border:1px solid #dcdad4; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px">
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+        </div>
+      </div>
+
+      <div style="flex:1; overflow:hidden; display:flex; flex-direction:column">
+        <div style="flex:none">
+          <div style="padding:16px 18px 12px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+            <div style="font-size:24px; font-weight:800; color:#14181a; letter-spacing:-.02em">Планування</div>
+            <div style="display:flex; gap:8px">
+              <div style="width:38px; height:38px; border-radius:11px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8"></rect><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+              </div>
+            </div>
+          </div>
+          <div style="padding:2px 18px 14px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+            <div style="width:32px; height:32px; border-radius:9px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">‹</div>
+            <div style="font-size:16px; font-weight:800; color:#14181a">3 — 9 серпня</div>
+            <div style="width:32px; height:32px; border-radius:9px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">›</div>
+          </div>
+          <div style="padding:0 14px; display:flex; flex-direction:column; gap:8px">
+            <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ПН</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">3</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Київ — Лівий берег</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">10</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+            <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ВТ</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">4</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Бровари + Троєщина</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">8</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+            <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">СР</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">5</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Лівобережна — північ</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">7</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+            <div style="display:flex; gap:10px; padding:13px 12px; background:#fff; border-radius:14px; border:1.5px solid #14604a">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ЧТ</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">6</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center; gap:8px">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Поділ — центр</div>
+                <div style="padding:2px 7px; border-radius:6px; background:#e4efe9; font-size:11px; font-weight:700; color:#14604a">сьогодні</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">12</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute; inset:0; z-index:1; background:rgba(22,25,26,.42)"></div>
+
+        <div style="position:absolute; z-index:3; left:0; right:0; bottom:0; height:470px; background:#f4f3f0; border-radius:26px 26px 36px 36px; box-shadow:0 -14px 40px rgba(16,24,40,.22); display:flex; flex-direction:column">
+          <div style="align-self:center; width:38px; height:4px; border-radius:2px; background:#d8d5cd; margin:10px 0 2px"></div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 18px 0">
+            <div style="font-size:20px; font-weight:800; color:#14181a; letter-spacing:-.02em">Місяць</div>
+            <div style="padding:8px 14px; border-radius:11px; border:1px solid #dcdad4; background:#fff; font-size:13.5px; font-weight:700; color:#14604a">Вибрати дні</div>
+          </div>
+
+        <div style="margin:14px 14px 0; padding:14px 12px 14px; background:#fff; border-radius:16px; border:1px solid #e7e5e0">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; padding:0 2px">
+            <div style="width:30px; height:30px; border-radius:8px; border:1px solid #dcdad4; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">‹</div>
+            <div style="font-size:15px; font-weight:800; color:#14181a">серпень 2026</div>
+            <div style="width:30px; height:30px; border-radius:8px; border:1px solid #dcdad4; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">›</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:6px">
+            <div style="text-align:center; font-size:10.5px; font-weight:700; color:#9aa0a6">ПН</div>
+            <div style="text-align:center; font-size:10.5px; font-weight:700; color:#9aa0a6">ВТ</div>
+            <div style="text-align:center; font-size:10.5px; font-weight:700; color:#9aa0a6">СР</div>
+            <div style="text-align:center; font-size:10.5px; font-weight:700; color:#9aa0a6">ЧТ</div>
+            <div style="text-align:center; font-size:10.5px; font-weight:700; color:#9aa0a6">ПТ</div>
+            <div style="text-align:center; font-size:10.5px; font-weight:700; color:#b6a99a">СБ</div>
+            <div style="text-align:center; font-size:10.5px; font-weight:700; color:#b6a99a">НД</div>
+
+            <div></div><div></div><div></div><div></div><div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">1</div><div style="width:5px; height:5px"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">2</div><div style="width:5px; height:5px"></div></div>
+
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">3</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">4</div><div style="display:flex; gap:3px"><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">5</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+            <div style="height:46px; border-radius:11px; background:#14604a; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:800; color:#fff">6</div><div style="width:5px; height:5px; border-radius:50%; background:#a9d6c6"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">7</div><div style="width:5px; height:5px; border-radius:50%; background:transparent"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">8</div><div style="width:5px; height:5px"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">9</div><div style="width:5px; height:5px"></div></div>
+
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">10</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">11</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">12</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">13</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">14</div><div style="width:5px; height:5px"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">15</div><div style="width:5px; height:5px"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">16</div><div style="width:5px; height:5px"></div></div>
+
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">17</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">18</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">19</div><div style="width:5px; height:5px"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">20</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">21</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">22</div><div style="width:5px; height:5px"></div></div>
+            <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">23</div><div style="width:5px; height:5px"></div></div>
+          </div>
+        </div>
+
+        <div style="padding:14px 14px 0">
+            <div style="height:46px; border-radius:12px; background:#fff; border:1px solid #dcdad4; display:flex; align-items:center; justify-content:center; gap:8px">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2.6" stroke="#14604a" stroke-width="1.8"></rect><path d="M15.2 5.6V5A1.6 1.6 0 0 0 13.6 3.4H5.6A1.6 1.6 0 0 0 4 5v8.6A1.6 1.6 0 0 0 5.6 15.2h.6" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+              <span style="font-size:14px; font-weight:700; color:#14604a">Копіювати місяць</span>
+            </div>
+          </div>
+        <div style="padding:12px 24px 0; font-size:13px; line-height:1.45; font-weight:500; color:#8a8f98; text-align:center">Крапка — на день призначено маршрут. Тап на день відкриває його в тижні.</div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border-top:1px solid #e7e5e0; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px 14px">
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#8A8F98" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Головна</span>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#8A8F98" stroke-width="1.8"></rect><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Задачі</span>
+        </div>
+        <div style="display:flex; justify-content:center; align-items:flex-end">
+          <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round"></path></svg>
+          </div>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <div style="position:absolute; top:0; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8"></rect><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+          <span style="font-size:13px; font-weight:600; color:#14604a">Планування</span>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#8A8F98" stroke-width="1.8"></circle><path d="M12 7.6V12l3 2" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Історія</span>
+        </div>
+      </div>
+    </div>
+    <div style="width:390px; font-size:13.5px; line-height:1.5; color:#6B7371; font-weight:500">Місяць більше не вкладка: штора з тижневого екрана. Крапки показують стан планування, тап на день веде в тиждень.</div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; width:390px">
+      <div style="font-size:17px; font-weight:800; color:#14181a; letter-spacing:-.2px">Штора «Місяць» — вибір днів</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:#8a8f98">390 × 844</div>
+    </div>
+
+    <div style="position:relative; width:390px; height:844px; background:#f4f3f0; border-radius:36px; box-shadow:0 24px 60px -20px rgba(16,24,40,.35), 0 0 0 1px rgba(16,24,40,.06); overflow:hidden; display:flex; flex-direction:column">
+      <div style="display:flex; align-items:center; gap:12px; padding:16px 18px 14px; background:#fff; border-bottom:1px solid #e7e5e0">
+        <div style="width:36px; height:36px; border-radius:9px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13.5px; letter-spacing:-.01em">DT</div>
+        <div style="flex:1; line-height:1.15">
+          <div style="font-size:15px; font-weight:800; color:#14181a">Demo Team</div>
+          <div style="font-size:12px; color:#8a8f98">Vizitum</div>
+        </div>
+        <div style="width:36px; height:36px; border-radius:9px; border:1px solid #dcdad4; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px">
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+        </div>
+      </div>
+
+      <div style="flex:1; overflow:hidden; display:flex; flex-direction:column">
+        <div style="flex:none">
+          <div style="padding:16px 18px 12px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+            <div style="font-size:24px; font-weight:800; color:#14181a; letter-spacing:-.02em">Планування</div>
+            <div style="display:flex; gap:8px">
+              <div style="width:38px; height:38px; border-radius:11px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8"></rect><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+              </div>
+            </div>
+          </div>
+          <div style="padding:2px 18px 14px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+            <div style="width:32px; height:32px; border-radius:9px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">‹</div>
+            <div style="font-size:16px; font-weight:800; color:#14181a">3 — 9 серпня</div>
+            <div style="width:32px; height:32px; border-radius:9px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">›</div>
+          </div>
+          <div style="padding:0 14px; display:flex; flex-direction:column; gap:8px">
+            <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ПН</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">3</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Київ — Лівий берег</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">10</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+            <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ВТ</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">4</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Бровари + Троєщина</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">8</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+            <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">СР</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">5</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Лівобережна — північ</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">7</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+            <div style="display:flex; gap:10px; padding:13px 12px; background:#fff; border-radius:14px; border:1.5px solid #14604a">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ЧТ</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">6</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center; gap:8px">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Поділ — центр</div>
+                <div style="padding:2px 7px; border-radius:6px; background:#e4efe9; font-size:11px; font-weight:700; color:#14604a">сьогодні</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">12</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute; inset:0; z-index:1; background:rgba(22,25,26,.42)"></div>
+
+        <div style="position:absolute; z-index:3; left:0; right:0; bottom:0; height:520px; background:#f4f3f0; border-radius:26px 26px 36px 36px; box-shadow:0 -14px 40px rgba(16,24,40,.22); display:flex; flex-direction:column">
+          <div style="align-self:center; width:38px; height:4px; border-radius:2px; background:#d8d5cd; margin:10px 0 2px"></div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 18px 0">
+            <div style="font-size:20px; font-weight:800; color:#14181a; letter-spacing:-.02em">Вибрано 3 дні</div>
+            <div style="font-size:13.5px; font-weight:700; color:#8a8f98">Скасувати</div>
+          </div>
+
+          <div style="margin:14px 14px 0; padding:14px 12px 14px; background:#fff; border-radius:16px; border:1.5px solid #14604a">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; padding:0 2px">
+              <div style="width:30px; height:30px; border-radius:8px; border:1px solid #dcdad4; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">‹</div>
+              <div style="font-size:15px; font-weight:800; color:#14181a">серпень 2026</div>
+              <div style="width:30px; height:30px; border-radius:8px; border:1px solid #dcdad4; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">›</div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:6px">
+              <div style="text-align:center; font-size:10.5px; font-weight:700; color:#9aa0a6">ПН</div>
+              <div style="text-align:center; font-size:10.5px; font-weight:700; color:#9aa0a6">ВТ</div>
+              <div style="text-align:center; font-size:10.5px; font-weight:700; color:#9aa0a6">СР</div>
+              <div style="text-align:center; font-size:10.5px; font-weight:700; color:#9aa0a6">ЧТ</div>
+              <div style="text-align:center; font-size:10.5px; font-weight:700; color:#9aa0a6">ПТ</div>
+              <div style="text-align:center; font-size:10.5px; font-weight:700; color:#b6a99a">СБ</div>
+              <div style="text-align:center; font-size:10.5px; font-weight:700; color:#b6a99a">НД</div>
+
+              <div></div><div></div><div></div><div></div><div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">1</div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">2</div></div>
+
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">3</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">4</div><div style="display:flex; gap:3px"><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">5</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+              <div style="height:46px; border-radius:11px; background:#14604a; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:800; color:#fff">6</div><div style="width:5px; height:5px; border-radius:50%; background:#a9d6c6"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">7</div><div style="width:5px; height:5px; border-radius:50%; background:transparent"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">8</div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">9</div></div>
+
+              <div style="height:46px; border-radius:11px; background:#14604a; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:800; color:#fff">10</div><div style="width:5px; height:5px; border-radius:50%; background:#a9d6c6"></div></div>
+              <div style="height:46px; border-radius:11px; background:#14604a; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:800; color:#fff">11</div><div style="width:5px; height:5px; border-radius:50%; background:#a9d6c6"></div></div>
+              <div style="height:46px; border-radius:11px; background:#14604a; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:800; color:#fff">12</div><div style="width:5px; height:5px; border-radius:50%; background:#a9d6c6"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">13</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">14</div><div style="width:5px; height:5px"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">15</div><div style="width:5px; height:5px"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">16</div><div style="width:5px; height:5px"></div></div>
+
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">17</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">18</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">19</div><div style="width:5px; height:5px"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">20</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">21</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">22</div><div style="width:5px; height:5px"></div></div>
+              <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#8f8878">23</div><div style="width:5px; height:5px"></div></div>
+            </div>
+          </div>
+
+          <div style="flex: 1; height: 50px"></div>
+          <div style="padding:0 14px 26px">
+            <div style="height:54px; border-radius:14px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-size:15.5px; font-weight:800; box-shadow:0 8px 18px rgba(20,96,74,.22)">Призначити на 3 дні</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border-top:1px solid #e7e5e0; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px 14px">
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#8A8F98" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Головна</span>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#8A8F98" stroke-width="1.8"></rect><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Задачі</span>
+        </div>
+        <div style="display:flex; justify-content:center; align-items:flex-end">
+          <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round"></path></svg>
+          </div>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <div style="position:absolute; top:0; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8"></rect><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+          <span style="font-size:13px; font-weight:600; color:#14604a">Планування</span>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#8A8F98" stroke-width="1.8"></circle><path d="M12 7.6V12l3 2" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round"></path></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Історія</span>
+        </div>
+      </div>
+    </div>
+    <div style="width:390px; font-size:13.5px; line-height:1.5; color:#6B7371; font-weight:500">«Вибрати дні» → мультивибір, дія внизу штори називає кількість.</div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; width:390px">
+      <div style="font-size:17px; font-weight:800; color:#14181a; letter-spacing:-.2px">Штора «Копіювати тиждень»</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:#8a8f98">390 × 844</div>
+    </div>
+
+    <div style="position:relative; width:390px; height:844px; background:#f4f3f0; border-radius:36px; box-shadow:0 24px 60px -20px rgba(16,24,40,.35), 0 0 0 1px rgba(16,24,40,.06); overflow:hidden; display:flex; flex-direction:column">
+      <div style="display:flex; align-items:center; gap:12px; padding:16px 18px 14px; background:#fff; border-bottom:1px solid #e7e5e0">
+        <div style="width:36px; height:36px; border-radius:9px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13.5px; letter-spacing:-.01em">DT</div>
+        <div style="flex:1; line-height:1.15">
+          <div style="font-size:15px; font-weight:800; color:#14181a">Demo Team</div>
+          <div style="font-size:12px; color:#8a8f98">Vizitum</div>
+        </div>
+        <div style="width:36px; height:36px; border-radius:9px; border:1px solid #dcdad4; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px">
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+        </div>
+      </div>
+
+      <div style="flex:1; overflow:hidden; display:flex; flex-direction:column">
+        <div style="flex:none">
+          <div style="padding:16px 18px 12px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+            <div style="font-size:24px; font-weight:800; color:#14181a; letter-spacing:-.02em">Планування</div>
+            <div style="display:flex; gap:8px">
+              <div style="width:38px; height:38px; border-radius:11px; border:1.5px solid #14604a; background:#e4efe9; display:flex; align-items:center; justify-content:center">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8"></rect><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+              </div>
+            </div>
+          </div>
+          <div style="padding:2px 18px 14px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+            <div style="width:32px; height:32px; border-radius:9px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">‹</div>
+            <div style="font-size:16px; font-weight:800; color:#14181a">3 — 9 серпня</div>
+            <div style="width:32px; height:32px; border-radius:9px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center; color:#14604a; font-size:15px; font-weight:700">›</div>
+          </div>
+          <div style="padding:0 14px; display:flex; flex-direction:column; gap:8px">
+            <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ПН</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">3</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Київ — Лівий берег</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">10</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+            <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ВТ</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">4</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Бровари + Троєщина</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">8</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+            <div style="display:flex; gap:12px; padding:0 12px 0 0; overflow:hidden; background:#fff; border-radius:14px; border:1px solid #e7e5e0">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">СР</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">5</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Лівобережна — північ</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">7</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+            <div style="display:flex; gap:10px; padding:13px 12px; background:#fff; border-radius:14px; border:1.5px solid #14604a">
+              <div style="width:38px; text-align:center; flex-shrink:0">
+                <div style="font-size:10.5px; font-weight:700; color:#9aa0a6">ЧТ</div>
+                <div style="font-size:19px; font-weight:800; color:#14181a; line-height:1.1">6</div>
+              </div>
+              <div style="width:1px; background:#eceae5"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center; gap:8px">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Поділ — центр</div>
+                <div style="padding:2px 7px; border-radius:6px; background:#e4efe9; font-size:11px; font-weight:700; color:#14604a">сьогодні</div>
+              </div>
+              <div style="align-self:center; display:flex; align-items:center; gap:8px"><span style="font-size:13.5px; font-weight:700; color:#8a8f98">12</span><span style="color:#c4bfb5; font-size:17px; font-weight:600">›</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute; inset:0; z-index:1; background:rgba(22,25,26,.42)"></div>
+
+        <div style="position:absolute; z-index:3; left:0; right:0; bottom:0; height:700px; background:#f4f3f0; border-radius:26px 26px 36px 36px; box-shadow:0 -14px 40px rgba(16,24,40,.22); display:flex; flex-direction:column">
+          <div style="align-self:center; width:38px; height:4px; border-radius:2px; background:#d8d5cd; margin:10px 0 2px"></div>
+          <div style="padding:10px 18px 0">
+            <div style="font-size:20px; font-weight:800; color:#14181a; letter-spacing:-.02em">Копіювати тиждень</div>
+            <div style="margin-top:5px; font-size:13.5px; font-weight:600; color:#8a8f98">З 3 — 9 серпня</div>
+          </div>
+
+          <div style="margin:14px 14px 0; padding:12px 14px; background:#fff; border-radius:14px; border:1px solid #e7e5e0; display:flex; flex-direction:column; gap:8px">
+            <div style="display:flex; align-items:center; gap:10px; font-size:13.5px; font-weight:600; color:#14181a"><span style="width:26px; flex:none; color:#8a8f98; font-weight:700">пн</span>Київ — Лівий берег</div>
+            <div style="display:flex; align-items:center; gap:10px; font-size:13.5px; font-weight:600; color:#14181a"><span style="width:26px; flex:none; color:#8a8f98; font-weight:700">вт</span>Бровари + Троєщина</div>
+            <div style="display:flex; align-items:center; gap:10px; font-size:13.5px; font-weight:600; color:#14181a"><span style="width:26px; flex:none; color:#8a8f98; font-weight:700">ср</span>Лівобережна — північ</div>
+            <div style="display:flex; align-items:center; gap:10px; font-size:13.5px; font-weight:600; color:#14181a"><span style="width:26px; flex:none; color:#8a8f98; font-weight:700">чт</span>Поділ — центр</div>
+          </div>
+
+          <div style="margin:16px 14px 0; background:#fff; border-radius:16px; border:1px solid #e7e5e0; overflow:hidden">
+            <div style="display:flex; align-items:center; gap:12px; padding:15px 14px">
+              <div style="width:20px; height:20px; border-radius:50%; border:2px solid #14604a; display:flex; align-items:center; justify-content:center; flex-shrink:0">
+                <div style="width:10px; height:10px; border-radius:50%; background:#14604a"></div>
+              </div>
+              <div style="flex:1; min-width:0">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">10 — 16 серпня</div>
+                <div style="margin-top:2px; font-size:12.5px; font-weight:600; color:#8a8f98">Наступний тиждень · порожній</div>
+              </div>
+            </div>
+            <div style="height:1px; background:#f0eee9; margin:0 14px"></div>
+            <div style="display:flex; align-items:center; gap:12px; padding:15px 14px">
+              <div style="width:20px; height:20px; border-radius:50%; border:2px solid #d5d2ca; flex-shrink:0"></div>
+              <div style="flex:1; min-width:0">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">17 — 23 серпня</div>
+                <div style="margin-top:2px; font-size:12.5px; font-weight:600; color:#c08a3e">5 маршрутів буде замінено</div>
+              </div>
+            </div>
+            <div style="height:1px; background:#f0eee9; margin:0 14px"></div>
+            <div style="display:flex; align-items:center; gap:12px; padding:15px 14px">
+              <div style="width:20px; height:20px; border-radius:50%; border:2px solid #d5d2ca; flex-shrink:0"></div>
+              <div style="flex:1; min-width:0">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Інший тиждень</div>
+                <div style="margin-top:2px; font-size:12.5px; font-weight:600; color:#8a8f98">Вибрати в календарі</div>
+              </div>
+              <div style="color:#c4bfb5; font-size:17px; font-weight:600">›</div>
+            </div>
+          </div>
+
+          <div style="padding:14px 20px 0; font-size:12.5px; line-height:1.45; font-weight:500; color:#8a8f98">Копіюються тільки призначені маршрути. Виконані візити та задачі не переносяться.</div>
+
+          <div style="flex:1"></div>
+          <div style="padding:0 14px 26px; display:flex; gap:10px">
+            <div style="flex:1.7; height:54px; border-radius:14px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-size:15.5px; font-weight:800; box-shadow:0 8px 18px rgba(20,96,74,.22)">Копіювати</div>
+            <div style="flex:1; height:54px; border-radius:14px; background:#fff; border:1.5px solid #dcdad4; display:flex; align-items:center; justify-content:center; font-size:15.5px; font-weight:800; color:#5c6360">Скасувати</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width:390px; font-size:13.5px; line-height:1.5; color:#6B7371; font-weight:500">Викликається зі штори місяця. Джерело показано списком, ціль — вибором, з попередженням про заміну.</div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; width:390px">
+      <div style="font-size:17px; font-weight:800; color:#14181a; letter-spacing:-.2px">Штора «Копіювати місяць»</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:#8a8f98">390 × 844</div>
+    </div>
+
+    <div style="position:relative; width:390px; height:844px; background:#f4f3f0; border-radius:36px; box-shadow:0 24px 60px -20px rgba(16,24,40,.35), 0 0 0 1px rgba(16,24,40,.06); overflow:hidden; display:flex; flex-direction:column">
+      <div style="display:flex; align-items:center; gap:12px; padding:16px 18px 14px; background:#fff; border-bottom:1px solid #e7e5e0">
+        <div style="width:36px; height:36px; border-radius:9px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13.5px; letter-spacing:-.01em">DT</div>
+        <div style="flex:1; line-height:1.15">
+          <div style="font-size:15px; font-weight:800; color:#14181a">Demo Team</div>
+          <div style="font-size:12px; color:#8a8f98">Vizitum</div>
+        </div>
+        <div style="width:36px; height:36px; border-radius:9px; border:1px solid #dcdad4; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px">
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+          <div style="width:15px; height:1.6px; background:#14181a"></div>
+        </div>
+      </div>
+
+      <div style="flex:1; overflow:hidden; display:flex; flex-direction:column">
+        <div style="flex:none">
+          <div style="padding:16px 18px 12px; display:flex; align-items:center; justify-content:space-between; gap:12px">
+            <div style="font-size:24px; font-weight:800; color:#14181a; letter-spacing:-.02em">Планування</div>
+            <div style="display:flex; gap:8px">
+              <div style="width:38px; height:38px; border-radius:11px; border:1.5px solid #14604a; background:#e4efe9; display:flex; align-items:center; justify-content:center">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#14604a" stroke-width="1.8"></rect><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round"></path></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute; inset:0; z-index:1; background:rgba(22,25,26,.42)"></div>
+
+        <div style="position:absolute; z-index:3; left:0; right:0; bottom:0; height:640px; background:#f4f3f0; border-radius:26px 26px 36px 36px; box-shadow:0 -14px 40px rgba(16,24,40,.22); display:flex; flex-direction:column">
+          <div style="align-self:center; width:38px; height:4px; border-radius:2px; background:#d8d5cd; margin:10px 0 2px"></div>
+          <div style="padding:10px 18px 0">
+            <div style="font-size:20px; font-weight:800; color:#14181a; letter-spacing:-.02em">Копіювати місяць</div>
+            <div style="margin-top:5px; font-size:13.5px; font-weight:600; color:#8a8f98">Із серпня 2026</div>
+          </div>
+
+          <div style="margin:16px 14px 0; background:#fff; border-radius:16px; border:1px solid #e7e5e0; overflow:hidden">
+            <div style="display:flex; align-items:center; gap:12px; padding:15px 14px">
+              <div style="width:20px; height:20px; border-radius:50%; border:2px solid #14604a; display:flex; align-items:center; justify-content:center; flex-shrink:0">
+                <div style="width:10px; height:10px; border-radius:50%; background:#14604a"></div>
+              </div>
+              <div style="flex:1; min-width:0">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Вересень 2026</div>
+                <div style="margin-top:2px; font-size:12.5px; font-weight:600; color:#8a8f98">Наступний місяць · порожній</div>
+              </div>
+            </div>
+            <div style="height:1px; background:#f0eee9; margin:0 14px"></div>
+            <div style="display:flex; align-items:center; gap:12px; padding:15px 14px">
+              <div style="width:20px; height:20px; border-radius:50%; border:2px solid #d5d2ca; flex-shrink:0"></div>
+              <div style="flex:1; min-width:0">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Жовтень 2026</div>
+                <div style="margin-top:2px; font-size:12.5px; font-weight:600; color:#c08a3e">18 маршрутів буде замінено</div>
+              </div>
+            </div>
+            <div style="height:1px; background:#f0eee9; margin:0 14px"></div>
+            <div style="display:flex; align-items:center; gap:12px; padding:15px 14px">
+              <div style="width:20px; height:20px; border-radius:50%; border:2px solid #d5d2ca; flex-shrink:0"></div>
+              <div style="flex:1; min-width:0">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a">Інший місяць</div>
+                <div style="margin-top:2px; font-size:12.5px; font-weight:600; color:#8a8f98">Вибрати в календарі</div>
+              </div>
+              <div style="color:#c4bfb5; font-size:17px; font-weight:600">›</div>
+            </div>
+          </div>
+
+          <div style="padding:14px 20px 0; font-size:12.5px; line-height:1.45; font-weight:500; color:#8a8f98">Копіюються тільки призначені маршрути на кожен день місяця. Виконані візити та задачі не переносяться.</div>
+
+          <div style="flex:1"></div>
+          <div style="padding:0 14px 26px; display:flex; gap:10px">
+            <div style="flex:1.7; height:54px; border-radius:14px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-size:15.5px; font-weight:800; box-shadow:0 8px 18px rgba(20,96,74,.22)">Копіювати</div>
+            <div style="flex:1; height:54px; border-radius:14px; background:#fff; border:1.5px solid #dcdad4; display:flex; align-items:center; justify-content:center; font-size:15.5px; font-weight:800; color:#5c6360">Скасувати</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width:390px; font-size:13.5px; line-height:1.5; color:#6B7371; font-weight:500">Викликається зі штори місяця. Ціль — вибір цілого місяця замість тижня, решта логіки та попередження ті самі.</div>
+  </div>
+
+</section>
+</x-dc>
+</body>
+</html>

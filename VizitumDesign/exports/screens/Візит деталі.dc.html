@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#EFEDE7; font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+</style>
+</helmet>
+
+<div style="width:393px; height:852px; background:#F7F6F2; display:flex; flex-direction:column; overflow:hidden">
+
+  <div style="flex:none; background:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #E6E4DD">
+    <div style="width:40px; height:40px; border-radius:11px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+    <div style="flex:1; display:flex; flex-direction:column">
+      <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+      <div style="font-size:13px; color:#8A887F">Vizitum</div>
+    </div>
+    <div style="width:40px; height:40px; border:1px solid #C7D6D0; border-radius:11px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; cursor:pointer">
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+    </div>
+  </div>
+
+  <div style="flex:1; min-height:0; overflow-y:auto; padding:16px 16px 22px; display:flex; flex-direction:column; gap:14px">
+
+    <div style="display:flex; align-items:flex-start; gap:10px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex:none; margin-top:4px; cursor:pointer"><path d="M19 12H5.5m0 0 5.2-5.2M5.5 12l5.2 5.2" stroke="#14604a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:3px">
+        <div style="font-size:22px; font-weight:800; color:#14181a; letter-spacing:-.02em; text-wrap:pretty">Ашан Лівобережна</div>
+        <div style="font-size:14.5px; color:#8A8F98; font-weight:600">пр. Соборності, 24 · Ашан</div>
+      </div>
+    </div>
+
+    <div style="padding:14px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:15px; display:flex; flex-direction:column; gap:11px">
+      <div style="display:flex; align-items:center; gap:9px">
+        <div style="width:26px; height:26px; flex:none; border-radius:50%; background:#E4EFE9; display:flex; align-items:center; justify-content:center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="m5 12.6 4.2 4.2L19 7" stroke="#14604a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div style="flex:1; font-size:16px; font-weight:800; color:#14181a">Візит завершено</div>
+        <div style="font-size:13.5px; font-weight:700; color:#14604a">Замовлення є</div>
+      </div>
+      <div style="height:1px; background:#F0EEE9"></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
+        <div style="display:flex; flex-direction:column; gap:2px">
+          <div style="font-size:12.5px; font-weight:700; color:#8A8F98">Дата</div>
+          <div style="font-size:14.5px; font-weight:700; color:#14181a">6 серпня, чт</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:2px">
+          <div style="font-size:12.5px; font-weight:700; color:#8A8F98">Час на точці</div>
+          <div style="font-size:14.5px; font-weight:700; color:#14181a">11:20 – 11:48</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:2px">
+          <div style="font-size:12.5px; font-weight:700; color:#8A8F98">Маршрут</div>
+          <div style="font-size:14.5px; font-weight:700; color:#14181a">Лівобережна — північ</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:2px">
+          <div style="font-size:12.5px; font-weight:700; color:#8A8F98">Відправлено</div>
+          <div style="font-size:14.5px; font-weight:700; color:#14181a">11:48</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:12px">
+      <div style="width:3px; flex:none; border-radius:2px; background:#14604a"></div>
+      <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:7px">
+        <div style="font-size:15.5px; font-weight:800; color:#14181a">Домовленість на наступний візит</div>
+        <div style="font-size:14.5px; line-height:1.6; color:#5A615F; font-weight:500; text-wrap:pretty">Обіцяв взяти новинку в наступну поставку. Власник буде у вівторок після 14:00.</div>
+      </div>
+    </div>
+
+    <div style="padding:14px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px; display:flex; flex-direction:column; gap:8px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <div style="width:32px; height:32px; flex:none; border-radius:10px; background:#EDEBE5; display:flex; align-items:center; justify-content:center">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="4.5" y="4.5" width="15" height="15" rx="2.6" stroke="#5A615F" stroke-width="1.8" /><path d="M9 9.5h6M9 14.5h4" stroke="#5A615F" stroke-width="1.8" stroke-linecap="round" /></svg>
+        </div>
+        <div style="flex:1; font-size:15.5px; font-weight:800; color:#14181a">Немає в наявності</div>
+        <div style="font-size:13.5px; font-weight:700; color:#8A8F98">2 позиції</div>
+      </div>
+      <div style="font-size:14.5px; line-height:1.6; color:#5A615F; font-weight:500">Сік мультифрукт 1 л · Вода негазована 0,5 л</div>
+    </div>
+
+    <div style="padding:14px 15px; background:#fff; border:1.5px solid #E8C9C4; border-radius:14px; display:flex; flex-direction:column; gap:10px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <div style="width:32px; height:32px; flex:none; border-radius:10px; background:#FBF0EE; display:flex; align-items:center; justify-content:center">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 4.6 21 19.4H3L12 4.6Z" stroke="#B4453A" stroke-width="1.8" stroke-linejoin="round" /><path d="M12 10v4.2M12 16.6v.2" stroke="#B4453A" stroke-width="1.9" stroke-linecap="round" /></svg>
+        </div>
+        <div style="flex:1; font-size:15.5px; font-weight:800; color:#14181a">Проблема</div>
+        <div style="font-size:13px; font-weight:800; color:#B4453A">Прострочка</div>
+      </div>
+      <div style="font-size:14.5px; line-height:1.6; color:#5A615F; font-weight:500">Повернення 3 ящики</div>
+      <div style="display:flex; gap:8px">
+        <div style="width:72px; height:72px; flex:none; border-radius:11px; background:#E3DFD6; display:flex; align-items:center; justify-content:center; cursor:pointer">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 8.4h3.6L9.2 6h5.6l1.6 2.4H20v10H4v-10Z" stroke="#A8ACA9" stroke-width="1.6" stroke-linejoin="round" /><circle cx="12" cy="13" r="3" stroke="#A8ACA9" stroke-width="1.6" /></svg>
+        </div>
+        <div style="width:72px; height:72px; flex:none; border-radius:11px; background:#E3DFD6; display:flex; align-items:center; justify-content:center; cursor:pointer">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 8.4h3.6L9.2 6h5.6l1.6 2.4H20v10H4v-10Z" stroke="#A8ACA9" stroke-width="1.6" stroke-linejoin="round" /><circle cx="12" cy="13" r="3" stroke="#A8ACA9" stroke-width="1.6" /></svg>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:14px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px; display:flex; flex-direction:column; gap:8px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <div style="width:32px; height:32px; flex:none; border-radius:10px; background:#EDEBE5; display:flex; align-items:center; justify-content:center">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="9" y="2.8" width="6" height="10.4" rx="3" stroke="#5A615F" stroke-width="1.9" /><path d="M5.5 11.4a6.5 6.5 0 0 0 13 0M12 17.9v3.3" stroke="#5A615F" stroke-width="1.9" stroke-linecap="round" /></svg>
+        </div>
+        <div style="flex:1; font-size:15.5px; font-weight:800; color:#14181a">Нотатки візиту</div>
+        <div style="font-size:13px; font-weight:700; color:#8A8F98">з голосу · 0:42</div>
+      </div>
+      <div style="font-size:14.5px; line-height:1.6; color:#5A615F; font-weight:500; text-wrap:pretty">Товарознавець просив прайс на новинки. Скаржилися на затримку поставки минулого тижня.</div>
+    </div>
+
+  </div>
+
+  <div style="flex:none; display:flex; gap:10px; padding:12px 16px 16px; background:#fff; border-top:1px solid #E6E4DD; box-shadow:0 -8px 20px -12px rgba(16,24,40,.14)">
+    <div style="flex:1; box-sizing:border-box; height:52px; background:#fff; border:1.5px solid #D5D0C4; border-radius:13px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#EDEBE5">
+      <span style="font-size:15.5px; font-weight:700; color:#5A615F">До історії</span>
+    </div>
+    <div style="flex:1.4; box-sizing:border-box; height:52px; background:#14604a; border-radius:13px; display:flex; align-items:center; justify-content:center; gap:9px; cursor:pointer; box-shadow:0 8px 18px rgba(20,96,74,.22)" style-hover="background:#0d4636">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s6.5-6.1 6.5-10.4A6.5 6.5 0 0 0 5.5 10.6C5.5 14.9 12 21 12 21Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" /><circle cx="12" cy="10.4" r="2.3" stroke="#fff" stroke-width="1.8" /></svg>
+      <span style="font-size:16px; font-weight:800; color:#fff">Новий візит у точку</span>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:393,&quot;height&quot;:852}}"></script>
+</body>
+</html>

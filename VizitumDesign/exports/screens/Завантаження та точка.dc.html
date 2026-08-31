@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#E9E7E2; font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+@keyframes shimmer { 0% { opacity:.55 } 50% { opacity:1 } 100% { opacity:.55 } }
+</style>
+</helmet>
+
+<section style="padding:40px; display:flex; flex-wrap:nowrap; gap:36px; align-items:flex-start">
+
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; width:393px">
+      <div style="font-size:17px; font-weight:800; color:#14181a; letter-spacing:-.2px">Завантаження — скелетон</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:#8a8f98">393 × 852</div>
+    </div>
+    <div style="width:393px; height:852px; background:#F3F2ED; border-radius:26px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 18px 40px rgba(22,25,26,.1)">
+      <div style="flex:none; background:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #E6E4DD">
+        <div style="width:40px; height:40px; border-radius:11px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+        <div style="flex:1; display:flex; flex-direction:column">
+          <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+          <div style="font-size:13px; color:#8A887F">Vizitum</div>
+        </div>
+        <div style="width:40px; height:40px; border:1px solid #C7D6D0; border-radius:11px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px">
+          <div style="width:17px; height:2px; background:#14604a"></div>
+          <div style="width:17px; height:2px; background:#14604a"></div>
+          <div style="width:17px; height:2px; background:#14604a"></div>
+        </div>
+      </div>
+      <div style="flex:1; min-height:0; padding:18px 16px 20px; display:flex; flex-direction:column; gap:14px">
+        <div style="font-size:24px; font-weight:800; color:#14181a; letter-spacing:-.02em">Задачі на сьогодні</div>
+        <div style="display:flex; gap:8px">
+          <div style="width:92px; height:34px; border-radius:11px; background:#E2E0DA; animation:shimmer 1.4s ease-in-out infinite"></div>
+          <div style="width:82px; height:34px; border-radius:11px; background:#E7E5DF; animation:shimmer 1.4s ease-in-out .15s infinite"></div>
+          <div style="width:74px; height:34px; border-radius:11px; background:#E7E5DF; animation:shimmer 1.4s ease-in-out .3s infinite"></div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="background:#fff; border:1px solid #E7E5E0; border-radius:15px; padding:15px; display:flex; gap:12px">
+            <div style="width:22px; height:22px; border-radius:50%; background:#E4E2DC; flex:none; animation:shimmer 1.4s ease-in-out infinite"></div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:9px">
+              <div style="height:15px; width:62%; border-radius:6px; background:#E4E2DC; animation:shimmer 1.4s ease-in-out infinite"></div>
+              <div style="height:12px; width:84%; border-radius:6px; background:#EBE9E3; animation:shimmer 1.4s ease-in-out .1s infinite"></div>
+              <div style="height:12px; width:38%; border-radius:6px; background:#EBE9E3; animation:shimmer 1.4s ease-in-out .2s infinite"></div>
+            </div>
+          </div>
+          <div style="background:#fff; border:1px solid #E7E5E0; border-radius:15px; padding:15px; display:flex; gap:12px">
+            <div style="width:22px; height:22px; border-radius:50%; background:#E4E2DC; flex:none; animation:shimmer 1.4s ease-in-out .1s infinite"></div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:9px">
+              <div style="height:15px; width:54%; border-radius:6px; background:#E4E2DC; animation:shimmer 1.4s ease-in-out .1s infinite"></div>
+              <div style="height:12px; width:78%; border-radius:6px; background:#EBE9E3; animation:shimmer 1.4s ease-in-out .2s infinite"></div>
+              <div style="height:12px; width:44%; border-radius:6px; background:#EBE9E3; animation:shimmer 1.4s ease-in-out .3s infinite"></div>
+            </div>
+          </div>
+          <div style="background:#fff; border:1px solid #E7E5E0; border-radius:15px; padding:15px; display:flex; gap:12px">
+            <div style="width:22px; height:22px; border-radius:50%; background:#E9E7E1; flex:none; animation:shimmer 1.4s ease-in-out .2s infinite"></div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:9px">
+              <div style="height:15px; width:58%; border-radius:6px; background:#E9E7E1; animation:shimmer 1.4s ease-in-out .2s infinite"></div>
+              <div style="height:12px; width:70%; border-radius:6px; background:#EEECE7; animation:shimmer 1.4s ease-in-out .3s infinite"></div>
+            </div>
+          </div>
+          <div style="background:#fff; border:1px solid #EBE9E4; border-radius:15px; padding:15px; display:flex; gap:12px; opacity:.6">
+            <div style="width:22px; height:22px; border-radius:50%; background:#ECEAE5; flex:none"></div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:9px">
+              <div style="height:15px; width:50%; border-radius:6px; background:#ECEAE5"></div>
+              <div style="height:12px; width:66%; border-radius:6px; background:#F1EFEA"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:none; background:#fff; border-top:1px solid #E7E5E0; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px 14px">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#8A8F98" stroke-width="1.8" stroke-linejoin="round" /></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Головна</span>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <div style="position:absolute; top:0; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#14604a" stroke-width="1.8" /><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="font-size:13px; font-weight:600; color:#14604a">Задачі</span>
+        </div>
+        <div style="display:flex; justify-content:center; align-items:flex-end">
+          <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round" /></svg>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#8A8F98" stroke-width="1.8" /><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Планування</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#8A8F98" stroke-width="1.8" /><path d="M12 7.6V12l3 2" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Історія</span>
+        </div>
+      </div>
+    </div>
+    <div style="width:393px; font-size:13.5px; line-height:1.5; color:#6B7371; font-weight:500">Перший вхід і оновлення списку: шапка й таб-бар одразу справжні, вміст — плейсхолдери в розмір карток.</div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; width:393px">
+      <div style="font-size:17px; font-weight:800; color:#14181a; letter-spacing:-.2px">Точка — після візиту</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:#8a8f98">393 × 852</div>
+    </div>
+    <div style="width:393px; height:852px; background:#F3F2ED; border-radius:26px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 18px 40px rgba(22,25,26,.1)">
+      <div style="flex:none; background:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #E6E4DD">
+        <div style="width:40px; height:40px; border-radius:11px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+        <div style="flex:1; display:flex; flex-direction:column">
+          <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+          <div style="font-size:13px; color:#8A887F">Vizitum</div>
+        </div>
+        <div style="width:40px; height:40px; border:1px solid #C7D6D0; border-radius:11px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; cursor:pointer">
+          <div style="width:17px; height:2px; background:#14604a"></div>
+          <div style="width:17px; height:2px; background:#14604a"></div>
+          <div style="width:17px; height:2px; background:#14604a"></div>
+        </div>
+      </div>
+      <div style="flex:1; min-height:0; overflow:hidden; padding:16px 16px 20px; display:flex; flex-direction:column; gap:14px">
+        <div style="display:flex; align-items:center; gap:10px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex:none; cursor:pointer"><path d="M19 12H5.5m0 0 5.2-5.2M5.5 12l5.2 5.2" stroke="#14604a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <div style="flex:1; min-width:0">
+            <div style="font-size:21px; font-weight:800; color:#14181a; letter-spacing:-.02em">Медіка Лівобережна</div>
+            <div style="margin-top:2px; font-size:13.5px; font-weight:500; color:#8A8F98">пр. Соборності, 24 · Медіка</div>
+          </div>
+        </div>
+
+        <div style="background:#E4EFE9; border:1px solid #C7D6D0; border-radius:15px; padding:14px 15px; display:flex; flex-direction:column; gap:10px">
+          <div style="display:flex; align-items:center; gap:8px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex:none"><circle cx="12" cy="12" r="8.4" stroke="#14604a" stroke-width="1.8" /><path d="m8.4 12.2 2.6 2.6 4.6-5.2" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            <div style="flex:1; font-size:15.5px; font-weight:800; color:#14604a">Візит завершено сьогодні</div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:600; color:#14604a">14:32</div>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap">
+            <div style="padding:5px 10px; border-radius:9px; background:#fff; font-size:12.5px; font-weight:700; color:#14604a">Тривалість 38 хв</div>
+            <div style="padding:5px 10px; border-radius:9px; background:#fff; font-size:12.5px; font-weight:700; color:#14604a">Звіт надіслано</div>
+          </div>
+          <div style="height:44px; background:#14604a; border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#0d4636">
+            <span style="font-size:14.5px; font-weight:800; color:#fff">Переглянути звіт</span>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:9px">
+          <div style="background:#fff; border:1px solid #E7E5E0; border-radius:14px; padding:11px 6px; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer" style-hover="border-color:#C7D6D0">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M6 4h9l4 4v12H6z" stroke="#14604a" stroke-width="1.8" stroke-linejoin="round" /><path d="M9 12h6M9 15.5h4" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" /></svg>
+            <span style="font-size:11.5px; font-weight:700; color:#5A615F">Нотатка</span>
+          </div>
+          <div style="background:#fff; border:1px solid #E7E5E0; border-radius:14px; padding:11px 6px; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer" style-hover="border-color:#C7D6D0">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8.6" r="3.6" stroke="#14604a" stroke-width="1.8" /><path d="M5.6 19.4c.7-3.2 3.3-5 6.4-5s5.7 1.8 6.4 5" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" /></svg>
+            <span style="font-size:11.5px; font-weight:700; color:#5A615F">Контакти</span>
+          </div>
+          <div style="background:#fff; border:1px solid #E7E5E0; border-radius:14px; padding:11px 6px; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer" style-hover="border-color:#C7D6D0">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M5 18.5V11M10.3 18.5V6.5M15.6 18.5v-8M20 18.5V8.6" stroke="#14604a" stroke-width="1.9" stroke-linecap="round" /></svg>
+            <span style="font-size:11.5px; font-weight:700; color:#5A615F">Потенціал</span>
+          </div>
+          <div style="background:#fff; border:1px solid #E7E5E0; border-radius:14px; padding:11px 6px; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer" style-hover="border-color:#C7D6D0">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="4.5" y="4.5" width="15" height="15" rx="3" stroke="#14604a" stroke-width="1.8" /><path d="M4.5 9.6h15M9.6 9.6v9.9" stroke="#14604a" stroke-width="1.8" /></svg>
+            <span style="font-size:11.5px; font-weight:700; color:#5A615F">Асортимент</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:9px">
+          <div style="font-size:13px; font-weight:700; letter-spacing:.6px; color:#8A8F98">ПОПЕРЕДНІ ВІЗИТИ</div>
+          <div style="background:#fff; border:1px solid #E7E5E0; border-radius:14px; padding:13px 14px; display:flex; align-items:center; gap:12px; cursor:pointer" style-hover="border-color:#C7D6D0">
+            <div style="flex:1; min-width:0">
+              <div style="font-size:15px; font-weight:800; color:#14181a">30 липня</div>
+              <div style="margin-top:2px; font-size:13px; font-weight:500; color:#8A8F98">Звіт з фото демозони · 41 хв</div>
+            </div>
+            <span style="color:#C4BFB5; font-size:17px; font-weight:600">›</span>
+          </div>
+          <div style="background:#fff; border:1px solid #E7E5E0; border-radius:14px; padding:13px 14px; display:flex; align-items:center; gap:12px; cursor:pointer" style-hover="border-color:#C7D6D0">
+            <div style="flex:1; min-width:0">
+              <div style="font-size:15px; font-weight:800; color:#14181a">16 липня</div>
+              <div style="margin-top:2px; font-size:13px; font-weight:500; color:#8A8F98">Звіт без фото · 27 хв</div>
+            </div>
+            <span style="color:#C4BFB5; font-size:17px; font-weight:600">›</span>
+          </div>
+        </div>
+      </div>
+      <div style="flex:none; background:#fff; border-top:1px solid #E7E5E0; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px 14px">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#8A8F98" stroke-width="1.8" stroke-linejoin="round" /></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Головна</span>
+        </div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <div style="position:absolute; top:0; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#14604a" stroke-width="1.8" /><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="font-size:13px; font-weight:600; color:#14604a">Задачі</span>
+        </div>
+        <div style="display:flex; justify-content:center; align-items:flex-end">
+          <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round" /></svg>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#8A8F98" stroke-width="1.8" /><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Планування</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#8A8F98" stroke-width="1.8" /><path d="M12 7.6V12l3 2" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="font-size:13px; font-weight:500; color:#8A8F98">Історія</span>
+        </div>
+      </div>
+    </div>
+    <div style="width:393px; font-size:13.5px; line-height:1.5; color:#6B7371; font-weight:500">Повторний вхід у точку того ж дня: замість кнопки старту — підсумок завершеного візиту й доступ до звіту.</div>
+  </div>
+
+</section>
+
+</x-dc>
+</body>
+</html>

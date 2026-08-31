@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#EFEDE7; font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+</style>
+</helmet>
+
+<div style="position:relative; width:393px; height:852px; background:#F7F6F2; overflow:hidden; display:flex; flex-direction:column">
+
+  <div style="flex:none; background:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #E6E4DD">
+    <div style="width:40px; height:40px; border-radius:11px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+    <div style="flex:1; display:flex; flex-direction:column">
+      <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+      <div style="font-size:13px; color:#8A887F">Vizitum</div>
+    </div>
+    <div style="width:40px; height:40px; border:1px solid #C7D6D0; border-radius:11px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px">
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+    </div>
+  </div>
+
+  <div style="flex:1; padding:16px; display:flex; flex-direction:column; gap:12px; filter:blur(2px); opacity:.55">
+    <div style="display:flex; align-items:center; gap:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex:none"><path d="M19 12H5.5m0 0 5.2-5.2M5.5 12l5.2 5.2" stroke="#14604a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <div style="font-size:26px; font-weight:800; color:#14181a; letter-spacing:-.02em">Стрий <span style="color:#8A8F98">(9)</span></div>
+    </div>
+    <div style="padding:14px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px; font-size:16px; font-weight:800; color:#14181a">Вітасан Центральна</div>
+    <div style="padding:14px 15px; background:#fff; border:1.5px solid #E8C9C4; border-radius:14px; font-size:16px; font-weight:800; color:#14181a">Аптека Життя Грушевського</div>
+    <div style="padding:14px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px; font-size:16px; font-weight:800; color:#14181a">Лабораторія Аналіт Стрийська</div>
+  </div>
+
+  <div style="position:absolute; inset:0; background:rgba(20,24,26,.32); display:flex; align-items:center; justify-content:center; padding:0 22px">
+    <div style="width:100%; background:#F7F6F2; border-radius:20px; box-shadow:0 22px 50px rgba(22,25,26,.28); padding:22px 20px 18px; display:flex; flex-direction:column; gap:12px">
+      <div style="width:44px; height:44px; border-radius:13px; background:#FBF0EE; display:flex; align-items:center; justify-content:center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5.5 7.5h13M9.5 7.5V5.4A1.4 1.4 0 0 1 10.9 4h2.2a1.4 1.4 0 0 1 1.4 1.4v2.1M7.2 7.5l.8 11a1.4 1.4 0 0 0 1.4 1.3h5.2a1.4 1.4 0 0 0 1.4-1.3l.8-11" stroke="#B4453A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+      <div style="font-size:20px; font-weight:800; color:#14181a; letter-spacing:-.02em">Прибрати «Аптека Життя Грушевського» з маршруту?</div>
+      <div style="font-size:14.5px; line-height:1.55; color:#5A615F; font-weight:500; text-wrap:pretty">Точка залишиться в довіднику й в інших маршрутах. У маршруті «Стрий» стане 8 точок.</div>
+      <div style="display:flex; gap:10px; padding-top:6px">
+        <div style="flex:1; box-sizing:border-box; height:50px; border:1.5px solid #D5D0C4; border-radius:13px; background:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#EDEBE5">
+          <span style="font-size:15.5px; font-weight:700; color:#5A615F">Скасувати</span>
+        </div>
+        <div style="flex:1; box-sizing:border-box; height:50px; background:#B4453A; border-radius:13px; display:flex; align-items:center; justify-content:center; cursor:pointer" style-hover="background:#9C3A30">
+          <span style="font-size:15.5px; font-weight:800; color:#fff">Прибрати</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:393,&quot;height&quot;:852}}"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#EFEDE7; font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+</style>
+</helmet>
+
+<div style="width:393px; height:852px; background:#F7F6F2; display:flex; flex-direction:column; overflow:hidden">
+
+  <div style="flex:none; background:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #E6E4DD">
+    <div style="width:40px; height:40px; border-radius:11px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+    <div style="flex:1; display:flex; flex-direction:column">
+      <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+      <div style="font-size:13px; color:#8A887F">Vizitum</div>
+    </div>
+    <div style="width:40px; height:40px; border:1px solid #C7D6D0; border-radius:11px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; cursor:pointer">
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+    </div>
+  </div>
+
+  <div style="flex:1; min-height:0; overflow-y:auto; padding:16px 16px 22px; display:flex; flex-direction:column; gap:16px">
+
+    <div style="display:flex; align-items:center; gap:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex:none; cursor:pointer"><path d="M19 12H5.5m0 0 5.2-5.2M5.5 12l5.2 5.2" stroke="#14604a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <div style="font-size:26px; font-weight:800; color:#14181a; letter-spacing:-.02em">Довідка</div>
+    </div>
+
+    <div style="box-sizing:border-box; height:48px; background:#fff; border:1px solid #E0DDD5; border-radius:13px; display:flex; align-items:center; gap:10px; padding:0 14px">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" style="flex:none"><circle cx="11" cy="11" r="6.4" stroke="#A8ACA9" stroke-width="1.9" /><path d="m16 16 4 4" stroke="#A8ACA9" stroke-width="1.9" stroke-linecap="round" /></svg>
+      <div style="flex:1; font-size:15.5px; color:#A8ACA9; font-weight:500">Пошук у довідці</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:9px">
+      <div style="font-size:13px; font-weight:800; letter-spacing:.06em; color:#8A8F98">ГОЛОСОВІ НОТАТКИ ТА AI</div>
+
+      <div style="background:#fff; border:1.5px solid #C7D6D0; border-radius:14px; overflow:hidden">
+        <div style="display:flex; align-items:flex-start; gap:12px; padding:14px 15px; cursor:pointer">
+          <div style="flex:1; min-width:0; font-size:15.5px; font-weight:800; color:#14181a; line-height:1.35; text-wrap:pretty">Що відбувається з голосовими нотатками, перш ніж я їх запишу?</div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex:none; margin-top:3px"><path d="m6 14.5 6-6 6 6" stroke="#14604a" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div style="padding:0 15px 15px; font-size:14.5px; line-height:1.6; color:#5A615F; font-weight:500; text-wrap:pretty">Запис зберігається на пристрої й передається на обробку лише коли ви натискаєте «Зберегти звіт». AI перетворює мову в текст і розкладає її по полях звіту — результат ви бачите й можете виправити перед збереженням.</div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px; padding:14px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px; cursor:pointer" style-hover="border-color:#C7D6D0">
+        <div style="flex:1; min-width:0; font-size:15.5px; font-weight:800; color:#14181a; line-height:1.35; text-wrap:pretty">Що робити, коли чернетка від AI слабка?</div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex:none; margin-top:3px"><path d="m6 9.5 6 6 6-6" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px; padding:14px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px; cursor:pointer" style-hover="border-color:#C7D6D0">
+        <div style="flex:1; min-width:0; font-size:15.5px; font-weight:800; color:#14181a; line-height:1.35; text-wrap:pretty">Що робити, коли AI недоступний?</div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex:none; margin-top:3px"><path d="m6 9.5 6 6 6-6" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px; padding:14px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px; cursor:pointer" style-hover="border-color:#C7D6D0">
+        <div style="flex:1; min-width:0; font-size:15.5px; font-weight:800; color:#14181a; line-height:1.35; text-wrap:pretty">Що означає «AI-обробка може використати нотатки візиту» на картці візиту?</div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex:none; margin-top:3px"><path d="m6 9.5 6 6 6-6" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px; padding:14px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px; cursor:pointer" style-hover="border-color:#C7D6D0">
+        <div style="flex:1; min-width:0; font-size:15.5px; font-weight:800; color:#14181a; line-height:1.35; text-wrap:pretty">Що означає «Чернетка потребує перевірки»?</div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex:none; margin-top:3px"><path d="m6 9.5 6 6 6-6" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:12px; padding:14px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px; cursor:pointer" style-hover="border-color:#C7D6D0">
+      <div style="width:36px; height:36px; flex:none; border-radius:11px; background:#EDEBE5; display:flex; align-items:center; justify-content:center">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4.5 5.5h15v11h-8.4L6.5 20v-3.5H4.5v-11Z" stroke="#5A615F" stroke-width="1.8" stroke-linejoin="round" /></svg>
+      </div>
+      <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:2px">
+        <div style="font-size:16px; font-weight:800; color:#14181a">Не знайшли відповіді?</div>
+        <div style="font-size:13px; color:#8A8F98; font-weight:600">Написати в підтримку</div>
+      </div>
+      <div style="font-size:19px; font-weight:600; color:#C4BFB5">›</div>
+    </div>
+
+  </div>
+
+  <div style="flex:none; background:#fff; border-top:1px solid #E6E4DD; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px 14px; box-shadow:0 -8px 20px -12px rgba(16,24,40,.12)">
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#8A8F98" stroke-width="1.8" stroke-linejoin="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Головна</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#8A8F98" stroke-width="1.8" /><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Задачі</span>
+    </div>
+    <div style="display:flex; justify-content:center; align-items:flex-end">
+      <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round" /></svg>
+      </div>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="14" rx="3" stroke="#8A8F98" stroke-width="1.8" /><path d="M4 10.5h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Планування</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#8A8F98" stroke-width="1.8" /><path d="M12 7.6V12l3 2" stroke="#8A8F98" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#8A8F98">Історія</span>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:393,&quot;height&quot;:852}}"></script>
+</body>
+</html>

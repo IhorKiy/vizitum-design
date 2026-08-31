@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#E7E5DE; font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+@keyframes vzPulse { 0%,100% { transform:scale(1); opacity:.5 } 50% { transform:scale(1.14); opacity:.15 } }
+</style>
+</helmet>
+<div style="position:relative; width:393px; height:852px; margin:0 auto; background:#F3F2ED; overflow:hidden; display:flex; flex-direction:column">
+
+  <div style="flex:none; background:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #E6E4DD">
+    <div style="width:40px; height:40px; border-radius:11px; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+    <div style="flex:1; display:flex; flex-direction:column">
+      <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+      <div style="font-size:13px; color:#8A887F">Vizitum</div>
+    </div>
+    <div style="width:40px; height:40px; border:1px solid #C7D6D0; border-radius:11px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; cursor:pointer">
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+    </div>
+  </div>
+
+  <div style="flex:1; min-height:0; overflow:hidden; padding:16px 16px 22px; display:flex; flex-direction:column; gap:14px; filter:blur(2px); opacity:.5">
+    <div style="display:flex; align-items:flex-start; gap:10px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex:none; margin-top:4px"><path d="M19 12H5.5m0 0 5.2-5.2M5.5 12l5.2 5.2" stroke="#14604a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:2px">
+        <div style="font-size:22px; font-weight:800; color:#14181a; letter-spacing:-.02em">Аптека Життя Оболонь</div>
+        <div style="font-size:14.5px; color:#8A8F98; font-weight:600">просп. Героїв Дніпра, 24, Київ</div>
+      </div>
+    </div>
+    <div style="font-size:19px; font-weight:800; color:#14181a; letter-spacing:-.01em">Звіт про візит</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
+      <div style="height:72px; background:#fff; border:1.5px solid #C7D6D0; border-radius:13px"></div>
+      <div style="height:72px; background:#fff; border:1.5px solid #E0DDD5; border-radius:13px"></div>
+    </div>
+    <div style="height:62px; background:#fff; border:1px solid #E7E5E0; border-radius:14px"></div>
+    <div style="height:62px; background:#fff; border:1px solid #E7E5E0; border-radius:14px"></div>
+    <div style="height:62px; background:#fff; border:1px solid #E7E5E0; border-radius:14px"></div>
+  </div>
+
+  <div style="position:absolute; inset:0; background:rgba(22,25,26,.34)"></div>
+
+  <div style="position:absolute; left:0; right:0; bottom:0; background:#F7F6F2; border-radius:22px 22px 0 0; box-shadow:0 -14px 40px rgba(22,25,26,.22); display:flex; flex-direction:column">
+    <div style="align-self:center; width:38px; height:4px; border-radius:2px; background:#D8D5CD; margin:10px 0 2px"></div>
+
+    <div style="padding:16px 20px 0; display:flex; align-items:center; gap:10px">
+      <div style="width:9px; height:9px; border-radius:50%; background:#9A7B1E"></div>
+      <div style="flex:1; font-size:18px; font-weight:800; color:#14181a; letter-spacing:-.01em">Запис звіту</div>
+      <div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:17px; font-weight:700; color:#9A7B1E; letter-spacing:.02em">2:40</div>
+    </div>
+
+    <div style="padding:22px 20px 4px; display:flex; align-items:center; justify-content:center; gap:3px; height:96px">
+      <div style="width:4px; height:16px; border-radius:2px; background:#C7D6D0"></div>
+      <div style="width:4px; height:30px; border-radius:2px; background:#C7D6D0"></div>
+      <div style="width:4px; height:22px; border-radius:2px; background:#C7D6D0"></div>
+      <div style="width:4px; height:44px; border-radius:2px; background:#A8C4B8"></div>
+      <div style="width:4px; height:58px; border-radius:2px; background:#A8C4B8"></div>
+      <div style="width:4px; height:34px; border-radius:2px; background:#A8C4B8"></div>
+      <div style="width:4px; height:48px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:70px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:52px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:78px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:40px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:64px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:28px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:54px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:36px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:66px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:24px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:46px; border-radius:2px; background:#14604a"></div>
+      <div style="width:4px; height:32px; border-radius:2px; background:#A8C4B8"></div>
+      <div style="width:4px; height:20px; border-radius:2px; background:#A8C4B8"></div>
+      <div style="width:4px; height:14px; border-radius:2px; background:#C7D6D0"></div>
+      <div style="width:4px; height:26px; border-radius:2px; background:#C7D6D0"></div>
+      <div style="width:4px; height:12px; border-radius:2px; background:#C7D6D0"></div>
+    </div>
+
+    <div style="padding:6px 24px 0; display:flex; align-items:center; justify-content:center; gap:7px">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex:none"><circle cx="12" cy="12" r="8.6" stroke="#9A7B1E" stroke-width="1.8" /><path d="M12 7.4v5l3.2 2" stroke="#9A7B1E" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <span style="font-size:14.5px; font-weight:800; color:#9A7B1E">Лишилося 20 секунд</span>
+    </div>
+
+    <div style="padding:26px 20px 6px; display:flex; align-items:center; justify-content:center; gap:34px">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer">
+        <div style="width:52px; height:52px; border-radius:50%; background:#fff; border:1.5px solid #D5D0C4; display:flex; align-items:center; justify-content:center" style-hover="background:#EDEBE5">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="m6 6 12 12M18 6 6 18" stroke="#5A615F" stroke-width="2.2" stroke-linecap="round" /></svg>
+        </div>
+        <span style="font-size:13px; font-weight:700; color:#8A8F98">Скасувати</span>
+      </div>
+
+      <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer">
+        <div style="position:absolute; top:-9px; width:90px; height:90px; border-radius:50%; background:#B4453A; opacity:.18; animation:vzPulse 1.8s ease-in-out infinite"></div>
+        <div style="position:relative; width:72px; height:72px; border-radius:50%; background:#B4453A; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 24px rgba(180,69,58,.32)">
+          <div style="width:24px; height:24px; border-radius:5px; background:#fff"></div>
+        </div>
+        <span style="font-size:13px; font-weight:800; color:#B4453A">Зупинити</span>
+      </div>
+
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer">
+        <div style="width:52px; height:52px; border-radius:50%; background:#fff; border:1.5px solid #C7D6D0; display:flex; align-items:center; justify-content:center" style-hover="background:#E6EFEB">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5.5v13M15 5.5v13" stroke="#14604a" stroke-width="2.4" stroke-linecap="round" /></svg>
+        </div>
+        <span style="font-size:13px; font-weight:700; color:#14604a">Пауза</span>
+      </div>
+    </div>
+
+    <div style="padding:20px 20px 30px; display:flex; align-items:center; justify-content:center; gap:8px">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex:none"><circle cx="12" cy="12" r="8.4" stroke="#A8ACA9" stroke-width="1.8" /><path d="M12 7.6v5l3 2" stroke="#A8ACA9" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <span style="font-size:13px; font-weight:600; color:#8A8F98">Після зупинки поля звіту заповняться автоматично</span>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:393,&quot;height&quot;:852}}"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#E9E7E2; font-family:Manrope,system-ui,sans-serif; }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+</style>
+</helmet>
+<div style="padding:40px">
+  <div style="font-size:22px; font-weight:800; color:#14181a; margin-bottom:4px">Голосовий звіт — сценарії</div>
+  <div style="font-size:14px; color:#6B7371; margin-bottom:30px">Кожен рядок — один шлях представника, зліва праворуч у порядку кроків</div>
+
+  <div style="display:flex; flex-direction:column; gap:44px">
+
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:1.4px; color:#14604a; margin-bottom:14px">СЦЕНАРІЙ 1 · УСПІШНИЙ ЗАПИС ОНЛАЙН</div>
+      <div style="display:flex; align-items:flex-start; gap:8px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">1. Старт</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">2. Запис триває</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт запис" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">3. Обробка запису</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт обробка" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">4. Форма заповнена</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт заповнено" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">5. Тап ▶ — прослуховування</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт прослуховування" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:1.4px; color:#9A7B1E; margin-bottom:14px">СЦЕНАРІЙ 2 · НАБЛИЖАЄТЬСЯ ЛІМІТ ЗАПИСУ (3 ХВ)</div>
+      <div style="display:flex; align-items:flex-start; gap:8px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">1. Запис триває</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт запис" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">2. Лишилось 20 секунд</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт запис ліміт" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">3. Зупинено автоматично → обробка</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт обробка" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:1.4px; color:#14604a; margin-bottom:14px">СЦЕНАРІЙ 3 · ЗАПИС БЕЗ ЗВ'ЯЗКУ</div>
+      <div style="display:flex; align-items:flex-start; gap:8px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">1. Записує офлайн</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт запис офлайн" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">2. Обробка — не надіслано</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт обробка офлайн" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">3. Заповнено вручну, звіт збережено</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт офлайн вручну" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:1.4px; color:#B4453A; margin-bottom:14px">СЦЕНАРІЙ 4 · ДЗВІНОК ПЕРЕРИВАЄ ЗАПИС</div>
+      <div style="display:flex; align-items:flex-start; gap:8px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">1. Запис триває</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт запис" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">2. Дзвінок перервав</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт запис перервано" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">3. «Використати» → обробка</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт обробка" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:1.4px; color:#B4453A; margin-bottom:14px">СЦЕНАРІЙ 5 · СПРОБА ВИЙТИ ПІД ЧАС ЗАПИСУ</div>
+      <div style="display:flex; align-items:flex-start; gap:8px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">1. Запис триває</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт запис" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">2. Тап «Назад»</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт вихід під час запису" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:1.4px; color:#9A7B1E; margin-bottom:14px">СЦЕНАРІЙ 6 · ОБРОБКА ЗАВИСАЄ</div>
+      <div style="display:flex; align-items:flex-start; gap:8px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">1. Обробка (0–60 с)</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт обробка" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">2. Довше 60 с</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт обробка зависла" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:1.4px; color:#9A7B1E; margin-bottom:14px">СЦЕНАРІЙ 7 · МОВУ РОЗПІЗНАНО, ПОЛІВ НЕМАЄ</div>
+      <div style="display:flex; align-items:flex-start; gap:8px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">1. Обробка</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт обробка" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">2. Показуємо транскрипт</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт транскрипт" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:1.4px; color:#B4453A; margin-bottom:14px">СЦЕНАРІЙ 8 · ЗАПИС ВИЙШОВ ПОРОЖНІМ</div>
+      <div style="display:flex; align-items:flex-start; gap:8px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">1. Запис триває</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт запис" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">2. Голосу не розпізнано</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт запис порожній" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:1.4px; color:#9A7B1E; margin-bottom:14px">СЦЕНАРІЙ 9 · МІКРОФОН ЗАБЛОКОВАНО</div>
+      <div style="display:flex; align-items:flex-start; gap:8px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">1. Старт</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">2. Тап на мікрофон</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт мікрофон заблоковано" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:1.4px; color:#9A7B1E; margin-bottom:14px">СЦЕНАРІЙ 10 · ЗБЕРЕЖЕННЯ, КОЛИ ЗАПИС ЩЕ НЕ НАДІСЛАНО</div>
+      <div style="display:flex; align-items:flex-start; gap:8px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">1. Заповнено вручну (сценарій 2, крок 3)</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт офлайн вручну" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+        <div style="align-self:center; font-size:22px; color:#A8ACA9; margin-top:120px">→</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="font-size:14px; font-weight:700; color:#14181a; width:393px">2. Не натиснув «Надіслати», тапнув «Зберегти звіт»</div>
+          <div style="border-radius:20px; overflow:hidden; border:1px solid #D5D0C4; width:393px"><dc-import name="Візит звіт зберегти без запису" hint-size="393px,852px" style="width:393px; height:852px"></dc-import></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
