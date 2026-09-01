@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #E9E6DF; font-family: Manrope, Helvetica, sans-serif; }
+a { color: #14604a; text-decoration: none; }
+a:hover { color: #0d4636; }
+</style>
+</helmet>
+<div style="padding: 56px 56px 120px; display: flex; flex-direction: column; gap: 56px; color: #16191A; min-width: 1200px;">
+
+  <div style="display: flex; flex-direction: column; gap: 14px; max-width: 720px;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #8A9190;">VIZITUM · ЗАСТОСУНОК ПРЕДСТАВНИКІВ</div>
+    <h1 style="margin: 0; font-size: 44px; font-weight: 800; letter-spacing: -1.2px;">Усі екрани</h1>
+    <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: #5A615F; font-weight: 500; text-wrap: pretty;">Фінальні версії екранів, зібрані з окремих сесій і розставлені в порядку нижньої навігації. Кожен екран живий і клікабельний — фільтри, скрол, штора задачі працюють просто тут.</p>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #8A9190;">00 · ПЕРШИЙ ВХІД</div>
+      <div style="flex: 1; height: 1px; background: #D5D0C4;"></div>
+    </div>
+    <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #e9e7e2; width: 1350px; flex: none;">
+      <dc-import name="login" hint-size="1350px,1045px" style="width: 1350px; height: 1045px;"></dc-import>
+    </div>
+    <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #e9e7e2; width: 1350px; flex: none;">
+      <dc-import name="onboarding-welcome" hint-size="1350px,1045px" style="width: 1350px; height: 1045px;"></dc-import>
+    </div>
+    <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #e9e7e2; width: 1350px; flex: none;">
+      <dc-import name="onboarding-permissions" hint-size="1350px,1045px" style="width: 1350px; height: 1045px;"></dc-import>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #14604a;">01 · ГОЛОВНА</div>
+      <div style="flex: 1; height: 1px; background: #D5D0C4;"></div>
+    </div>
+    <div style="display: flex; flex-wrap: nowrap; gap: 32px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Один маршрут, шапка-підпис, кольорові смужки статусу задач.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — декілька маршрутів</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-multiple-routes" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Кожен маршрут — колапс із назвою і власним лічильником; перший завжди розгорнутий; загальний лічильник зверху рахує задачі по всіх маршрутах.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — порожньо</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-empty" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">День без призначеного маршруту: перехід у планування або окрема точка на день.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Свайп по картці точки</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-swipe" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Стан після свайпу вліво: дії «Відвідано» і «Видалити» під карткою.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Непрочитане оголошення</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-announcement" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Блок над маршрутом дня зі лічильником; після «Прочитано» зникає.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — декілька непрочитаних оголошень</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-announcements-multiple" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Найновіше — розгорнутою карткою з дією «Прочитано»; решта — компактний список; лічильник рахує всі непрочитані.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — альтернативний варіант 2</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-planning-transition" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Банер «Тижневий план» у стрічці замість таба; нижнє меню — «Маршрути» замість «Планування».</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — альтернативний варіант 3</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-announcements-redesign" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Оголошення — єдиний список з тоншою ієрархією; кілька маршрутів на день з вкладками; хендли для перетягування точок.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — альтернативний варіант 4</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-route-focus" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Оголошення згорнуто в один рядок-дайджест; маршрути — горизонтальні вкладки зі скролом; плаский список точок.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #14604a;">01b · ВІЗИТ</div>
+      <div style="flex: 1; height: 1px; background: #D5D0C4;"></div>
+    </div>
+    <div style="display: flex; flex-wrap: nowrap; gap: 32px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит — старт</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          
+        <dc-import name="visit-start" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import></div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Картка точки перед початком візиту: контакти й довідники в іконках, «Почати візит» як головна дія, відкриті задачі точки.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит — активний</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-active" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Візит триває: таймер у шапці, «Завершити візит» поруч зі скасуванням, відкриті задачі точки картками як у розділі Задачі.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит → нотатка про точку</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-note" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Штора з першої іконки: спільна нотатка про точку, видима всім представникам.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит → контакти (порожньо)</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-contacts-empty" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Порожній стан контактів точки; додавання — основною кнопкою внизу штори, без «+» у заголовку.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит → додати контакт</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-contact-add" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Форма контакту: обов'язкове ім'я, телефон з префіксом +380, email і нотатка; дії закріплені внизу штори.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит → контакти</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-contacts" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Заповнений список: ім'я з діями редагування й видалення, телефон і пошта в один ряд, нотатка контакту нижче.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит → потенціал (порожньо)</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-potential" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Окрема сторінка з лічильником у заголовку, карткою точки та порожнім станом; додавання — кнопкою в самому порожньому стані, без другого FAB.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит → додати потенціал</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-potential-add" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Товарна група й дата оцінки обов'язкові, прогноз по місяцях — трьома полями в рядок.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит → потенціал (заповнено)</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-potential-filled" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Дві товарні групи: сума й дата оцінки в рядок, прогноз по місяцях плитками, коментар — за наявності.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит → асортимент</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-assortment" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Покриття обов'язкових товарів смугою в картці точки; кожна позиція — артикул, категорія і статус перевірки.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Візит → історія точки</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-point-history" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Картки в стилі задач: дата-плитка, час і тривалість у заголовку, підсумок візиту в другому рядку; перерваний позначено червоною смугою.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #14604a;">01b-2 · ЗВІТ ВІЗИТУ</div>
+      <div style="flex: 1; height: 1px; background: #D5D0C4;"></div>
+    </div>
+    <div style="display: flex; flex-wrap: nowrap; gap: 32px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт — усе згорнуто</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Запис голосом і всі поля на одному екрані: результат візиту, «Наступні кроки» та ще два блоки згорнуто, дата й збереження.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт — запис триває</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-recording" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Штора запису: таймер, рівень звуку, зупинка / пауза / скасування.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт — обробка запису</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-processing" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Після зупинки: відправка на сервер і розпізнавання кроками, з можливістю згорнути у фон.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Обробка — не надіслано</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-processing-offline" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Немає зв'язку: запис завершено, але не надіслано — автоматично відкриваємо форму для ручного заповнення.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Обробка — зависла</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-processing-stuck" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Після ~60 секунд обробки: запис у безпеці, ручний шлях лишається доступним.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Запис — перервано дзвінком</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-recording-interrupted" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Частковий запис — не помилка: програвач і вибір «Використати» / «Записати заново».</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Вихід під час запису</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-recording-exit" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Модалка замість мовчазної втрати запису при спробі покинути екран.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Транскрипт без полів</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-transcript" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Мову розпізнано, полів не знайдено: сам текст замість тихої відмови.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Форма заповнена з голосу</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-filled" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Бейдж «заповнено з голосу», крапки-індикатори на торкнутих полях, прослуховування й повторний запис у шапці.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Прослуховування запису</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-playback" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Плей/пауза, хвиля прогресу, «Опрацювати ще раз» і «Перезаписати».</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Наближається ліміт запису</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-recording-limit" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">За 20 секунд до 3-хвилинного ліміту таймер стає золотим із попередженням.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Запис вийшов порожнім</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-recording-empty" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Голосу не розпізнано: помилка з діями «Заповнити вручну» / «Записати ще раз».</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Мікрофон заблоковано</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-mic-blocked" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Дозволу немає: конкретний шлях у налаштування, «Заповнити вручну» — головна дія.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Заповнено вручну після офлайн-запису</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-offline-manual" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Панель «голосовий запис ще не опрацьовано» + «Опрацювати» замість бейджа автозаповнення.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Зберегти без надісланого запису</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-save-without-recording" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Підтвердження перед збереженням: запис буде видалено назавжди, якщо не надіслати спершу.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт → причина, візит вдалий</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-reason-success" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Тапнули «лайк» — під кнопками з'являються тапи причин успіху; набір тапів налаштовується.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт → причина, візит невдалий</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-reason-fail" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Тапнули «дизлайк» — тапи причин невдачі; той самий механізм, інший набір і колір.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт — «Наступні кроки» розгорнуто</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-next-steps" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Той самий блок відкритий: поле для запису, шеврон розвернутий вгору.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт — «Фотозвіт» розгорнуто</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-photoreport" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Два прикріплені фото з видаленням і плитка «Додати»; лічильник у заголовку блоку.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Фото — прев'ю</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #16191A; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-photo-preview" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Тап по мініатюрі: повний перегляд, перемикання свайпом або стрілками, видалення в шапці.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт → немає в наявності</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-shelf" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Блок розкрито: пояснення для точки без асортименту й вибір товару з каталогу.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт → немає в наявності (заповнено)</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-shelf-filled" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Той самий блок із доданими товарами: список позицій замість порожнього стану, лічильник у заголовку.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт → проблема</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-problem" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Тип проблеми чіпами, фото та короткий опис; блок підсвічено червоним.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт → проблема (заповнено)</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-problem-uploaded" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Тип обрано, фото прикріплене з кнопкою «Ще фото» й видаленням, опис заповнено.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт → нотатки візиту</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-notes" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Вільне поле для деталей розмови й заперечень.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #8A9190;">01c · МЕНЮ (БУРГЕР)</div>
+      <div style="flex: 1; height: 1px; background: #D5D0C4;"></div>
+    </div>
+    <div style="display: flex; flex-wrap: nowrap; gap: 32px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Бургер-меню</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="burger-menu" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Панель із профілем, шістьма розділами та виходом. Далі промалюємо кожен розділ окремо.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Меню → Оголошення</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="announcements" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Непрочитане виділене зеленою карткою з дією «Прочитано»; прочитані — звичайні картки з датою.</div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: nowrap; gap: 32px; align-items: flex-start;">
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Меню → Маршрути</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="routes" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Список багаторазових маршрутів із кількістю точок; створення — через ФАБ.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Маршрути — багато</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="routes-many" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Той самий екран на 7 маршрутів: ті самі картки й заголовок, додається лише пошук.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Маршрути — порожньо</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="routes-empty" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Перший вхід: пояснення, що таке маршрут, і одна дія — створити.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Маршрут — створення</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="route-create-sheet" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Штора з ФАБа: лише назва. Точки наповнюються потім, на екрані маршруту.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Маршрут — редагування</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="route-edit" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Назва з діями «перейменувати» / «видалити», список точок із перетягуванням.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Маршрут — без точок</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="route-empty" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Стан відразу після створення: підказка про порядок точок і кнопка «Додати точку».</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Маршрут → у план</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="route-to-plan" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Ярлик з екрана маршруту: кнопка «У план» відкриває вибір дати.</div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: nowrap; gap: 32px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Меню → Точки</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="points" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Довідник точок: пошук, статусні фільтри чипами, крапка статусу біля шеврона замість бейджа.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Меню → Товари</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="products" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Та сама структура, що й у точках: категорія та артикул під назвою, архівні — приглушені. Категорія — окремий селектор із хрестиком для скидання.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Товари → вибір категорії</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="products-categories" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Штора з пошуком по категоріях і кількістю товарів; «Скинути» повертає всі.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Довідка</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="help" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Питання групами, перше розкрите з відповіддю, пошук угорі та вихід у підтримку внизу.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Обліковий запис</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="account" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Профіль, зміна пароля, сповіщення, стан синхронізації, версія застосунку та вихід.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Обліковий запис → пароль</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="password-change" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Штора з трьома полями, індикатором надійності та попередженням про вихід з інших пристроїв.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #14604a;">02 · ЗАДАЧІ</div>
+      <div style="flex: 1; height: 1px; background: #D5D0C4;"></div>
+    </div>
+    <div style="display: flex; flex-wrap: nowrap; gap: 32px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 392px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Список задач</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">392 × 768</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #f4f2f0; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="tasks" hint-size="392px,768px" style="width: 392px; height: 768px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Скрол згортає шапку в компактний бар, заголовки груп липнуть під ним. Тап по картці відкриває штору, свайп вниз закриває.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 392px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Перегляд задачі — штора</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">392 × 470</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #f4f2f0; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="task-view-sheet" hint-size="392px,470px" style="width: 392px; height: 470px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Статус, дедлайн, точка, історія, «Виконано» / «Змінити».</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 392px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Редагування — штора</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">392 × 760</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #f4f2f0; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="task-edit-sheet" hint-size="392px,760px" style="width: 392px; height: 760px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Другий рівень шторки: дії у шапці, швидкі варіанти терміну, пріоритет — перемикач.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #14604a;">03 · ПЛАНУВАННЯ</div>
+      <div style="flex: 1; height: 1px; background: #D5D0C4;"></div>
+    </div>
+    <div style="display: flex; flex-wrap: nowrap; gap: 32px; align-items: flex-start;">
+      <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #e9e7e2; width: 2616px; flex: none;">
+        <dc-import name="planning-simplified" hint-size="2616px,1045px" style="width: 2616px; height: 1045px;"></dc-import>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px; flex: none;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">План → взяти маршрут</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="plan-from-route" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Основний шлях: у шторі додавання на день перемикач «Окрема точка / Маршрут», пошук і вибір маршруту.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px; flex: none;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">План → окрема точка</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="plan-from-point" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Другий таб: пошук по точках, під назвою — адреса й мережа.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Точка на день (разово)</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="point-for-day" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Додати точку лише в конкретний день без зміни самого маршруту — з'явиться окремою задачею.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #B4453A;">04 · СТАНИ ТА ПОМИЛКИ</div>
+      <div style="flex: 1; height: 1px; background: #D5D0C4;"></div>
+    </div>
+    <div style="display: flex; flex-wrap: nowrap; gap: 32px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт → не заповнено обов'язкове</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-error" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Спроба зберегти без результату візиту: обидві кнопки в помилці, підпис під ними, «Зберегти звіт» неактивна.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Проблема → фото додані</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-report-photo" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Два прикріплені фото з хрестиком видалення, ліміт 5 і заповнений опис.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Видалення маршруту</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="route-delete" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Діалог із наслідками: точки залишаються, призначені дні стають порожніми.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Прибрати точку з маршруту</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="point-delete" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Слабша дія за видалення маршруту: «Прибрати», і одразу видно нову кількість точок.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Скасування візиту</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-cancel" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Штора з обов'язковою причиною і необов'язковим коментарем.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Скасування → вибір причини</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-cancel-reason" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Розкритий список: чотири причини, вибрана підсвічена галочкою.</div>
+      </div>
+
+
+    </div>
+
+    <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #e9e7e2; width: 1780px; flex: none;">
+      <dc-import name="empty-states" hint-size="1780px,1045px" style="width: 1780px; height: 1045px;"></dc-import>
+    </div>
+
+    <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #e9e7e2; width: 930px; flex: none;">
+      <dc-import name="loading-and-point" hint-size="930px,1045px" style="width: 930px; height: 1045px;"></dc-import>
+    </div>
+
+    <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #e9e7e2; width: 1350px; flex: none;">
+      <dc-import name="creation-and-confirmation" hint-size="1350px,1045px" style="width: 1350px; height: 1045px;"></dc-import>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #14604a;">05 · ІСТОРІЯ</div>
+      <div style="flex: 1; height: 1px; background: #D5D0C4;"></div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 390px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Історія візитів</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">390 × 988</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F5F3EE; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-history" hint-size="390px,988px" style="width: 390px; height: 988px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Групування по днях, фільтри за статусом, перемикач періоду.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Історія → деталі візиту</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="visit-details" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Звіт лише для читання: підсумок з часом і маршрутом, домовленість, блоки полиці, проблеми з фото та нотатки.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<svg width="160" height="80" viewBox="0 0 160 80" preserveAspectRatio="none" style="position: absolute; left: 10px; top: 7px; width: 160px; height: 80px; overflow: visible; fill: none; stroke: #8a8378; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round"><defs><marker id="dc-arrow-head" orient="auto" markerWidth="5" markerHeight="5" refX="0.8" refY="2" overflow="visible"><path d="M-3.2 -1.7 L0.8 0 L-3.2 1.7" transform="translate(0 2)" fill="none" stroke="context-stroke" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></marker></defs><path d="M 0 80 L 160 0" marker-end="url(#dc-arrow-head)"></path></svg><div style="font-size: 16px; line-height: 1; position: absolute; left: 2px; top: 9px">Your text here</div></x-dc>
+</body>
+</html>
