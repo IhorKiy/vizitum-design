@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#F3F2ED; font-family:'Manrope',system-ui,sans-serif; }
+a { color:#0F6B52; }
+</style>
+</helmet>
+<div style="max-width:1100px; margin:0 auto; padding:40px 32px 80px; display:flex; flex-direction:column; gap:56px">
+
+  <div>
+    <div style="font-size:28px; font-weight:800; color:#14181a; margin-bottom:6px">Vizitum — UI Kit</div>
+    <div style="font-size:14px; color:#6B675E; max-width:640px; line-height:1.5">Довідник токенів, іконок і станів компонентів. Джерело істини для нових екранів — значення тут повинні збігатися з тим, що вже використано в `home-new-design-interactive.dc.html`, `home-day.dc.html`, `home-week.dc.html`, `home-month.dc.html`.</div>
+  </div>
+
+  <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:18px 22px">
+    <div style="font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:10px">Зміст</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:6px 24px; font-size:13.5px; font-weight:600">
+      <div style="color:#8A887F; font-size:11px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; margin-top:4px">Основа</div>
+      <div style="color:#8A887F; font-size:11px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; margin-top:4px">Компоненти</div>
+      <div style="color:#8A887F; font-size:11px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; margin-top:4px">Патерни й екрани</div>
+      <a href="#colors">Кольори</a>
+      <a href="#buttons">Кнопки — типи та стани</a>
+      <a href="#point-card">Картка точки — усі стани</a>
+      <a href="#type">Типографіка</a>
+      <a href="#badge">Бейдж сповіщень</a>
+      <a href="#calendar">Календар — місячна сітка</a>
+      <a href="#radii">Радіуси, тап-зони, тіні</a>
+      <a href="#toast">Toast</a>
+      <a href="#celebratory">Celebratory-оверлей</a>
+      <a href="#icons">Іконки — повний набір</a>
+      <a href="#header-nav">Хедер і нижня навігація</a>
+      <a href="#gaps">Відомі прогалини</a>
+    </div>
+  </div>
+
+  <div id="colors">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Кольори</div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px">
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; overflow:hidden">
+        <div style="height:56px; background:#0F6B52"></div>
+        <div style="padding:10px 12px"><div style="font-size:13px; font-weight:700; color:#14181a">Primary</div><div style="font-size:12px; color:#8A887F; font-family:monospace">#0F6B52</div></div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; overflow:hidden">
+        <div style="height:56px; background:#14604a"></div>
+        <div style="padding:10px 12px"><div style="font-size:13px; font-weight:700; color:#14181a">Primary (nav/FAB)</div><div style="font-size:12px; color:#8A887F; font-family:monospace">#14604a</div></div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; overflow:hidden">
+        <div style="height:56px; background:#B23A3A"></div>
+        <div style="padding:10px 12px"><div style="font-size:13px; font-weight:700; color:#14181a">Danger</div><div style="font-size:12px; color:#8A887F; font-family:monospace">#B23A3A</div></div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; overflow:hidden">
+        <div style="height:56px; background:#C98A22"></div>
+        <div style="padding:10px 12px"><div style="font-size:13px; font-weight:700; color:#14181a">Warning / due-today</div><div style="font-size:12px; color:#8A887F; font-family:monospace">#C98A22</div></div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; overflow:hidden">
+        <div style="height:56px; background:#E6EFEB"></div>
+        <div style="padding:10px 12px"><div style="font-size:13px; font-weight:700; color:#14181a">Primary tint (icon-кнопки, selected bg)</div><div style="font-size:12px; color:#8A887F; font-family:monospace">#E6EFEB</div></div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; overflow:hidden">
+        <div style="height:56px; background:#F0EFEA"></div>
+        <div style="padding:10px 12px"><div style="font-size:13px; font-weight:700; color:#14181a">Neutral tint (аватар-бабл, "Готово"-рядок)</div><div style="font-size:12px; color:#8A887F; font-family:monospace">#F0EFEA</div></div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; overflow:hidden">
+        <div style="height:56px; background:#F3F2ED; border-bottom:1px solid #E7E5DE"></div>
+        <div style="padding:10px 12px"><div style="font-size:13px; font-weight:700; color:#14181a">Screen background</div><div style="font-size:12px; color:#8A887F; font-family:monospace">#F3F2ED</div></div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; overflow:hidden">
+        <div style="height:56px; background:#14181a"></div>
+        <div style="padding:10px 12px"><div style="font-size:13px; font-weight:700; color:#14181a">Text primary</div><div style="font-size:12px; color:#8A887F; font-family:monospace">#14181a</div></div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; overflow:hidden">
+        <div style="height:56px; background:#5F6570"></div>
+        <div style="padding:10px 12px"><div style="font-size:13px; font-weight:700; color:#14181a">Text secondary (AA-fixed)</div><div style="font-size:12px; color:#8A887F; font-family:monospace">#5F6570 / #5F5B52</div></div>
+      </div>
+    </div>
+    <div style="font-size:12.5px; color:#8A887F; margin-top:10px; line-height:1.5">Секондарний текст навмисно темніший за типовий `#8A8F98` — виправлено для читабельності на сонці/вулиці (мін. 4.5:1 контраст). Правило кольору: акцентний зелений — лише для primary-дій, активних станів і навігації; secondary/neutral-кнопки завжди білий фон + рамка, без зеленого tint (рішення замовника — не перевантажувати екран зеленим).</div>
+  </div>
+
+  <div id="type">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Типографіка</div>
+    <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:20px 22px; display:flex; flex-direction:column; gap:14px">
+      <div style="display:flex; align-items:baseline; gap:16px"><div style="width:110px; font-size:12px; color:#8A887F; flex:none">22 / 800</div><div style="font-size:22px; font-weight:800; color:#14181a">Заголовок екрану — Привіт, Олено!</div></div>
+      <div style="display:flex; align-items:baseline; gap:16px"><div style="width:110px; font-size:12px; color:#8A887F; flex:none">15 / 800</div><div style="font-size:15px; font-weight:800; color:#14181a">Назва картки / точки маршруту</div></div>
+      <div style="display:flex; align-items:baseline; gap:16px"><div style="width:110px; font-size:12px; color:#8A887F; flex:none">14.5 / 700</div><div style="font-size:14.5px; font-weight:700; color:#14181a">Назва точки в рядку</div></div>
+      <div style="display:flex; align-items:baseline; gap:16px"><div style="width:110px; font-size:12px; color:#8A887F; flex:none">13 / 600</div><div style="font-size:13px; font-weight:600; color:#5F5B52">Другорядний текст, лічильники</div></div>
+      <div style="display:flex; align-items:baseline; gap:16px"><div style="width:110px; font-size:12px; color:#8A887F; flex:none">12 / 400-500</div><div style="font-size:12px; color:#5F5B52">Адреса, підпис, метадані</div></div>
+      <div style="display:flex; align-items:baseline; gap:16px"><div style="width:110px; font-size:12px; color:#8A887F; flex:none">11 / 700</div><div style="font-size:11px; font-weight:700; color:#6B675E">Мінімальний розмір — лише для міток у великій тап-зоні (свайп-кнопки)</div></div>
+    </div>
+  </div>
+
+  <div id="radii">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Радіуси, тап-зони, тіні</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px">
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:18px; display:flex; flex-direction:column; gap:12px; align-items:center">
+        <div style="display:flex; gap:10px; align-items:center">
+          <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB"></div>
+          <div style="width:44px; height:44px; border-radius:50%; background:#F0EFEA"></div>
+        </div>
+        <div style="font-size:12.5px; color:#8A887F; text-align:center">Мін. тап-зона: 44×44px. Радіус картки/кнопки: 11-14px (квадрат, tint `#E6EFEB`). Коло (`#F0EFEA`) — лише для аватар-бабла точки/FAB/галочки, не для icon-кнопок. Пігулки: 999px.</div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:18px; display:flex; flex-direction:column; gap:10px; align-items:center; justify-content:center">
+        <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+          <svg width="24" height="24" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="1.8" stroke-linecap="round" /></svg>
+        </div>
+        <div style="font-size:12.5px; color:#8A887F; text-align:center">FAB — єдиний приклад тіні в кіті: `box-shadow: 0 8px 20px rgba(20,96,74,.35)`. Інші елементи без тіней (пласкі картки + рамка).</div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:18px; display:flex; flex-direction:column; gap:12px; align-items:center; justify-content:center">
+        <div style="display:flex; align-items:center; gap:6px">
+          <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m14.5 6-6 6 6 6" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:0; padding:0 4px">
+            <div style="font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#0F6B52">цей тиждень</div>
+            <div style="font-size:15px; font-weight:800; color:#14181a; white-space:nowrap">3 — 9 серпня</div>
+          </div>
+          <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div style="width:44px; height:44px; border-radius:11px; border:1px solid #C7D6D0; background:#fff; display:flex; align-items:center; justify-content:center">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="8" y="8" width="12" height="12" rx="2.4" stroke="#0F6B52" stroke-width="1.8"></rect><path d="M16 8V6.4A2.4 2.4 0 0 0 13.6 4H6.4A2.4 2.4 0 0 0 4 6.4v7.2A2.4 2.4 0 0 0 6.4 16H8" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+        <div style="font-size:12.5px; color:#8A887F; text-align:center">Дата-навігатор (День/Тиждень/Місяць — та сама будова на всіх трьох): стрілки 44×44px + дата + роздільник + дія "копіювати" в одному рядку.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="icons">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Іконки — повний набір</div>
+    <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:20px 22px">
+
+      <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:18px">
+
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9.5a6 6 0 0 1 12 0c0 3.2 1.2 5 2 6H4c.8-1 2-2.8 2-6z" stroke="#14181a" stroke-width="1.8" stroke-linejoin="round" /><path d="M10 19.5a2 2 0 0 0 4 0" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Сповіщення</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Закрити</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="m6 9.5 6 6 6-6" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Шеврон (розгорнути)</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m14.5 6-6 6 6 6" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Шеврон (навігація дат)</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="19" height="19" viewBox="0 0 18 18" fill="none"><path d="M3.8 9.4 7.5 13.1 14.3 5.3" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Відвідано (свайп)</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Видалити (свайп)</span>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.3 8.3 6.7 11.7 12.7 4.7" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Галочка (стан)</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M4 9.5A8 8 0 0 1 18.5 6.5M20 9.5v-5m0 5h-5" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Відновити</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="8" y="8" width="12" height="12" rx="2.4" stroke="#14181a" stroke-width="1.8"></rect><path d="M16 8V6.4A2.4 2.4 0 0 0 13.6 4H6.4A2.4 2.4 0 0 0 4 6.4v7.2A2.4 2.4 0 0 0 6.4 16H8" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Копіювати</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3.2" stroke="#14181a" stroke-width="1.8"></rect><path d="M7.8 12.4 10.6 15.2 16.2 9" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Вибір (чекбокс)</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="10" rx="2.2" stroke="#14181a" stroke-width="1.8" /><path d="M1.5 5.5h11M4.5 1v2M9.5 1v2" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Задача (дедлайн)</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#14181a" stroke-width="1.8" /><path d="M7 4.2V7l1.8 1.3" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Прострочено</span>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#14181a" stroke-width="1.8" stroke-linejoin="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Головна (nav)</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3.2" stroke="#14181a" stroke-width="1.8" /><path d="M7.8 12.4 10.6 15.2 16.2 9" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Задачі (nav)</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.3 6.5h6.7a3.5 3.5 0 0 1 0 7h-2a3.5 3.5 0 0 0 0 7h6.7" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" /><circle cx="6.3" cy="6.5" r="1.8" stroke="#14181a" stroke-width="1.8" /><circle cx="17.7" cy="20.5" r="1.8" stroke="#14181a" stroke-width="1.8" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Маршрути (nav)</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#14181a" stroke-width="1.8" /><path d="M12 7.6V12l3 2" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Історія (nav)</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 5v16M5 13h16" stroke="#14181a" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="font-size:11px; color:#8A887F; text-align:center">FAB "+"</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <div style="width:22px; height:22px; display:flex; flex-direction:column; justify-content:center; gap:4px"><div style="width:17px; height:2px; border-radius:1px; background:#14181a"></div><div style="width:17px; height:2px; border-radius:1px; background:#14181a"></div><div style="width:17px; height:2px; border-radius:1px; background:#14181a"></div></div>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Бургер-меню</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px; width:22px; height:22px; align-content:center; justify-content:center"><span style="width:3px; height:3px; border-radius:50%; background:#14181a"></span><span style="width:3px; height:3px; border-radius:50%; background:#14181a"></span><span style="width:3px; height:3px; border-radius:50%; background:#14181a"></span><span style="width:3px; height:3px; border-radius:50%; background:#14181a"></span><span style="width:3px; height:3px; border-radius:50%; background:#14181a"></span><span style="width:3px; height:3px; border-radius:50%; background:#14181a"></span></div>
+          <span style="font-size:11px; color:#8A887F; text-align:center">Хендл drag (⋮⋮)</span>
+        </div>
+
+      </div>
+
+      <div style="font-size:12.5px; color:#8A887F; margin-top:18px; line-height:1.6; max-width:640px">
+        • Обводка (stroke): 1.8px усюди — без винятків. Заливка (fill) не використовується, крім суцільних кіл-плашок (аватар, FAB, галочка-в-крузі).<br/>
+        • Лінії: round linecap/linejoin — жодних гострих кутів.<br/>
+        • viewBox: 24×24 для більшості; 14×14/16×16/18×18 — для дрібних складених іконок (задача, прострочено, свайп-дії, галочка-стан), де геометрія оптимізована під менший розмір, а не масштабована з 24×24.<br/>
+        • Розмір рендеру: показано в реальному розмірі використання в застосунку (11-19px для дрібних складених іконок і свайп-дій, 22-24px для навігації, 26px для FAB) — інакше однаковий stroke-width при штучному збільшенні виглядає товщим, ніж є насправді.<br/>
+        • Заокруглення прямокутних іконок (rx): фіксована пропорція 20% від сторони фігури — 3.2px на 16px формах (чекбокс, "Задачі" nav), 2.4px на 12px (копіювати), 2.2px на ~11px (задача-дедлайн).<br/>
+        • Галочка (3 контексти — чекбокс/nav, свайп "Відвідано", коло-стан) — одна канонічна пропорція, масштабована під кожен viewBox.
+      </div>
+    </div>
+  </div>
+
+  <div id="buttons">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Кнопки — типи та стани</div>
+    <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:20px 22px; display:flex; flex-direction:column; gap:22px">
+
+      <div>
+        <div style="font-size:13px; font-weight:700; color:#14181a; margin-bottom:10px">Primary — суцільна заливка (одна функціональна дія екрана)</div>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; align-items:flex-start">
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="height:48px; padding:0 20px; box-sizing:border-box; border-radius:12px; background:#14604a; display:flex; align-items:center; font-size:14px; font-weight:800; color:#fff">Копіювати місяць</div>
+            <span style="font-size:11px; color:#8A887F">Default</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="height:48px; padding:0 20px; box-sizing:border-box; border-radius:12px; background:#0d4636; display:flex; align-items:center; font-size:14px; font-weight:800; color:#fff">Копіювати місяць</div>
+            <span style="font-size:11px; color:#8A887F">Hover</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="height:48px; padding:0 20px; box-sizing:border-box; border-radius:12px; background:#14604a; opacity:.9; display:flex; align-items:center; font-size:14px; font-weight:800; color:#fff">Копіювати місяць</div>
+            <span style="font-size:11px; color:#8A887F">Press (active)</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="height:48px; padding:0 20px; box-sizing:border-box; border-radius:12px; background:#E7E5DE; display:flex; align-items:center; font-size:14px; font-weight:800; color:#A8A499">Копіювати місяць</div>
+            <span style="font-size:11px; color:#8A887F">Disabled</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:13px; font-weight:700; color:#14181a; margin-bottom:10px">Secondary — рамка + білий фон (без кольорової/тонованої заливки)</div>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; align-items:flex-start">
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="height:48px; padding:0 20px; box-sizing:border-box; border-radius:12px; border:1.5px solid #14604a; background:#fff; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:#14604a">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3.2" stroke="#14604a" stroke-width="1.8"></rect><path d="M7.8 12.4 10.6 15.2 16.2 9" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              Вибрати дні для копіювання
+            </div>
+            <span style="font-size:11px; color:#8A887F">Default</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="height:48px; padding:0 20px; box-sizing:border-box; border-radius:12px; border:1.5px solid #14604a; background:#F3F2ED; display:flex; align-items:center; font-size:14px; font-weight:700; color:#14604a">Вибрати дні для копіювання</div>
+            <span style="font-size:11px; color:#8A887F">Hover</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="height:48px; padding:0 20px; box-sizing:border-box; border-radius:12px; border:1.5px solid #14604a; background:#fff; opacity:.7; display:flex; align-items:center; font-size:14px; font-weight:700; color:#14604a">Вибрати дні для копіювання</div>
+            <span style="font-size:11px; color:#8A887F">Press (active)</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="height:48px; padding:0 20px; box-sizing:border-box; border-radius:12px; border:1.5px solid #D6D3C9; background:#fff; display:flex; align-items:center; font-size:14px; font-weight:700; color:#B0AEA4">Вибрати дні для копіювання</div>
+            <span style="font-size:11px; color:#8A887F">Disabled</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:13px; font-weight:700; color:#14181a; margin-bottom:10px">Neutral outline — скасувати/закрити (ніколи зелений)</div>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; align-items:flex-start">
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="height:48px; padding:0 20px; box-sizing:border-box; border:1.5px solid #D5D0C4; border-radius:12px; display:flex; align-items:center; font-size:14px; font-weight:700; color:#5A615F">Скасувати</div>
+            <span style="font-size:11px; color:#8A887F">Default</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="height:48px; padding:0 20px; box-sizing:border-box; border:1.5px solid #D5D0C4; border-radius:12px; background:#fff; opacity:.7; display:flex; align-items:center; font-size:14px; font-weight:700; color:#5A615F">Скасувати</div>
+            <span style="font-size:11px; color:#8A887F">Press (active)</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center">
+            <div style="width:48px; height:48px; border-radius:11px; border:1px solid #dcdad4; background:#fff; display:flex; align-items:center; justify-content:center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="#5F5B52" stroke-width="1.8" stroke-linecap="round"></path></svg>
+            </div>
+            <span style="font-size:11px; color:#8A887F">Закрити (×)</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:13px; font-weight:700; color:#14181a; margin-bottom:10px">Text-action — без рамки й фону</div>
+        <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center">
+          <div style="display:flex; align-items:center; gap:6px"><span style="font-size:16px; font-weight:700; color:#0F6B52">+</span><span style="font-size:13px; font-weight:700; color:#0F6B52">Додати точку</span></div>
+          <div style="display:flex; align-items:center; gap:6px; opacity:.6"><span style="font-size:16px; font-weight:700; color:#0F6B52">+</span><span style="font-size:13px; font-weight:700; color:#0F6B52">Додати точку (press)</span></div>
+          <div style="display:flex; align-items:center; gap:4px"><svg width="11" height="11" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#B0AEA4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg><span style="font-size:13px; font-weight:700; color:#B0AEA4">Видалити маршрут (disabled/тихий)</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:13px; font-weight:700; color:#14181a; margin-bottom:10px">Dashed-картка (порожній день/додати маршрут)</div>
+        <div style="display:flex; align-items:center; justify-content:center; gap:6px; padding:13px 22px; border-radius:14px; border:1.5px dashed #C9C7BE; max-width:260px"><span style="font-size:16px; font-weight:700; color:#0F6B52">+</span><span style="font-size:14px; font-weight:800; color:#0F6B52">Додати маршрут</span></div>
+      </div>
+
+      <div>
+        <div style="font-size:13px; font-weight:700; color:#14181a; margin-bottom:10px">Сегментований перемикач (День / Тиждень / Місяць)</div>
+        <div style="display:flex; padding:3px; border-radius:999px; background:#E6EFEB; max-width:340px">
+          <div style="flex:1; height:38px; border-radius:999px; background:#14604a; display:flex; align-items:center; justify-content:center"><span style="font-size:13px; font-weight:800; color:#fff">День</span></div>
+          <div style="flex:1; height:38px; border-radius:999px; display:flex; align-items:center; justify-content:center"><span style="font-size:13px; font-weight:700; color:#0F6B52">Тиждень</span></div>
+          <div style="flex:1; height:38px; border-radius:999px; display:flex; align-items:center; justify-content:center"><span style="font-size:13px; font-weight:700; color:#0F6B52">Місяць</span></div>
+        </div>
+        <div style="font-size:12px; color:#8A887F; margin-top:8px">44px загальна висота тапа (38px сегмент + 3px padding пігулки з обох боків). Навігація між екранами День/Тиждень/Місяць, не бінарний toggle — та сама будова на всіх трьох.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="badge">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Бейдж сповіщень</div>
+    <div style="display:flex; gap:20px; align-items:center; background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:20px">
+      <div style="position:relative; width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9.5a6 6 0 0 1 12 0c0 3.2 1.2 5 2 6H4c.8-1 2-2.8 2-6z" stroke="#0F6B52" stroke-width="1.8" stroke-linejoin="round" /></svg>
+      </div>
+      <div style="position:relative; width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9.5a6 6 0 0 1 12 0c0 3.2 1.2 5 2 6H4c.8-1 2-2.8 2-6z" stroke="#0F6B52" stroke-width="1.8" stroke-linejoin="round" /></svg>
+        <div style="position:absolute; top:-3px; right:-3px; min-width:15px; height:15px; padding:0 3px; border-radius:8px; background:#C4453F; border:1px solid #fff; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:600; color:#fff">3</div>
+      </div>
+      <div style="position:relative; width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9.5a6 6 0 0 1 12 0c0 3.2 1.2 5 2 6H4c.8-1 2-2.8 2-6z" stroke="#0F6B52" stroke-width="1.8" stroke-linejoin="round" /></svg>
+        <div style="position:absolute; top:-3px; right:-3px; min-width:15px; height:15px; padding:0 3px; border-radius:8px; background:#C4453F; border:1px solid #fff; display:flex; align-items:center; justify-content:center; font-size:8.5px; font-weight:600; color:#fff">9+</div>
+      </div>
+      <div style="font-size:12.5px; color:#8A887F; max-width:260px; line-height:1.5">Рішення продукту: бейдж ховається при 0 непрочитаних (оголошення рідкі — раз на тиждень/місяць), з'являється лише коли є нове.</div>
+    </div>
+  </div>
+
+  <div id="toast">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Toast (скасування дії)</div>
+    <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:11px 12px; display:flex; align-items:center; gap:10px; max-width:361px; box-shadow:0 10px 24px -6px rgba(20,24,22,.18)">
+      <div style="width:26px; height:26px; border-radius:50%; background:#F3E3E1; display:flex; align-items:center; justify-content:center; flex:none">
+        <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#B23A3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+      <span style="flex:1; font-size:13.5px; font-weight:700; color:#14181a">Точку видалено</span>
+      <span style="font-size:13px; font-weight:800; color:#0F6B52">Скасувати</span>
+    </div>
+    <div style="font-size:12px; color:#8A887F; margin-top:8px">`box-shadow: 0 10px 24px -6px rgba(20,24,22,.18)` — другий і останній виняток з тінями в кіті, крім FAB.</div>
+  </div>
+
+  <div id="header-nav">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Хедер і нижня навігація</div>
+    <div style="display:flex; flex-direction:column; gap:14px">
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:14px 16px; display:flex; align-items:center; gap:12px">
+        <div style="width:44px; height:44px; border-radius:11px; background:#0F6B52; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+        <div style="flex:1; display:flex; flex-direction:column">
+          <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+          <div style="font-size:13px; color:#5F5B52">Vizitum</div>
+        </div>
+        <div style="position:relative; width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9.5a6 6 0 0 1 12 0c0 3.2 1.2 5 2 6H4c.8-1 2-2.8 2-6z" stroke="#0F6B52" stroke-width="1.8" stroke-linejoin="round" /><path d="M10 19.5a2 2 0 0 0 4 0" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <div style="position:absolute; top:-3px; right:-3px; min-width:15px; height:15px; padding:0 3px; border-radius:8px; background:#C4453F; border:1px solid #fff; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:600; color:#fff; line-height:1">3</div>
+        </div>
+        <div style="width:44px; height:44px; border:1px solid #C7D6D0; border-radius:11px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px">
+          <div style="width:17px; height:2px; border-radius:1px; background:#14604a"></div>
+          <div style="width:17px; height:2px; border-radius:1px; background:#14604a"></div>
+          <div style="width:17px; height:2px; border-radius:1px; background:#14604a"></div>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:10px 6px 14px">
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px">
+          <div style="position:absolute; top:-10px; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#14604a" stroke-width="1.8" stroke-linejoin="round" /></svg>
+          <span style="font-size:13px; font-weight:600; color:#14604a">Головна</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3.2" stroke="#5F6570" stroke-width="1.8" /><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="font-size:13px; font-weight:500; color:#5F6570">Задачі</span>
+        </div>
+        <div style="display:flex; justify-content:center; align-items:flex-end">
+          <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="1.8" stroke-linecap="round" /></svg>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6.3 6.5h6.7a3.5 3.5 0 0 1 0 7h-2a3.5 3.5 0 0 0 0 7h6.7" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" /><circle cx="6.3" cy="6.5" r="1.8" stroke="#5F6570" stroke-width="1.8" /><circle cx="17.7" cy="20.5" r="1.8" stroke="#5F6570" stroke-width="1.8" /></svg>
+          <span style="font-size:13px; font-weight:500; color:#5F6570">Маршрути</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#5F6570" stroke-width="1.8" /><path d="M12 7.6V12l3 2" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="font-size:13px; font-weight:500; color:#5F6570">Історія</span>
+        </div>
+      </div>
+      <div style="font-size:12.5px; color:#8A887F">Всі тап-зони хедера — 44×44px. FAB виступає над баром на 26px, без активного стану (відкриває задачу). Активна вкладка: зелена смужка зверху + зелений текст/іконка.</div>
+    </div>
+  </div>
+
+  <div id="point-card">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Картка точки — усі стани</div>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px">
+
+      <div style="display:flex; flex-direction:column; gap:6px">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">1. Default</div>
+        <div style="border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff; display:flex">
+          <div style="width:4px; background:#C98A22; flex:none"></div>
+          <div style="flex:1; display:flex; align-items:center; gap:10px; padding:11px">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px">
+              <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center">1</div>
+              <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px"><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span></div>
+            </div>
+            <div style="flex:1"><div style="font-size:14.5px; font-weight:700; color:#14181a">Вітасан Центральна</div><div style="font-size:12px; color:#5F5B52">вул. Хрещатик, 1</div></div>
+            <div style="flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">2. Press (active)</div>
+        <div style="border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff; display:flex; opacity:.7">
+          <div style="width:4px; background:#C98A22; flex:none"></div>
+          <div style="flex:1; display:flex; align-items:center; gap:10px; padding:11px">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px">
+              <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center">1</div>
+              <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px"><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span></div>
+            </div>
+            <div style="flex:1"><div style="font-size:14.5px; font-weight:700; color:#14181a">Вітасан Центральна</div><div style="font-size:12px; color:#5F5B52">вул. Хрещатик, 1</div></div>
+            <div style="flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px; grid-column:1 / -1">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">3. Свайп розкрито (Відвідано / Видалити)</div>
+        <div style="position:relative; border-radius:12px; overflow:hidden; max-width:340px">
+          <div style="position:absolute; inset:0; display:flex; justify-content:flex-end">
+            <div style="width:122px; background:#0F6B52; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; flex:none">
+              <svg width="19" height="19" viewBox="0 0 18 18" fill="none"><path d="M3.8 9.4 7.5 13.1 14.3 5.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              <div style="font-size:12.5px; font-weight:800">Відвідано</div>
+            </div>
+            <div style="width:92px; background:#B23A3A; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; flex:none">
+              <svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              <div style="font-size:11px; font-weight:700">Видалити</div>
+            </div>
+          </div>
+          <div style="position:relative; transform:translateX(-200px); display:flex; align-items:stretch; border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff">
+            <div style="width:4px; background:#C98A22; flex:none"></div>
+            <div style="flex:1; min-width:0; display:flex; align-items:center; gap:10px; padding:11px">
+              <div style="display:flex; flex-direction:column; align-items:center; gap:5px; flex:none">
+                <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center">1</div>
+                <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px"><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span></div>
+              </div>
+              <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:3px">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a; white-space:nowrap">Вітасан Центральна</div>
+                <div style="font-size:12px; color:#5F5B52; white-space:nowrap">вул. Хрещатик, 1 · Вітасан</div>
+                <div style="display:flex; align-items:center; gap:5px">
+                  <svg width="11" height="11" viewBox="0 0 14 14" fill="none" style="flex:none"><rect x="1.5" y="2.5" width="11" height="10" rx="2.2" stroke="#C98A22" stroke-width="1.8" /><path d="M1.5 5.5h11" stroke="#C98A22" stroke-width="1.8" /></svg>
+                  <div style="font-size:11.5px; font-weight:800; color:#C98A22; white-space:nowrap">2 задачі на сьогодні</div>
+                </div>
+              </div>
+              <div style="flex:none; opacity:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:12.5px; color:#8A887F; line-height:1.5">Увесь вміст картки (адреса, бейдж задачі, шеврон) зсувається разом — картку не скорочують, її просто зсовують ліворуч (translateX, максимум -200px), відкриваючи дії праворуч. Шеврон гасне під час свайпу (opacity → 0) — при розкритих діях відкривати звіт не потрібно.</div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">4. Відвідано (у списку "N точка відвідано")</div>
+        <div style="border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE; display:flex; align-items:center; gap:10px; padding:8px 10px">
+          <div style="width:28px; height:28px; border-radius:50%; background:#E6EFEB; display:flex; align-items:center; justify-content:center; flex:none; cursor:pointer" title="Відновити">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 9.5A8 8 0 0 1 18.5 6.5M20 9.5v-5m0 5h-5" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <div style="flex:1; min-width:0">
+            <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Фармацентр Либідська</div>
+            <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">вул. Либідська, 22 · Фармацентр</div>
+          </div>
+          <div style="flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8A887F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px; grid-column:1 / -1">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">5. Drag — переміщення точки (тримати за ⋮⋮ і тягнути)</div>
+        <div style="display:flex; flex-direction:column; gap:8px; padding:10px; background:#F3F2ED; border-radius:12px">
+          <div style="transform:scale(1.02); box-shadow:0 10px 22px -6px rgba(20,24,22,.28); border-radius:12px">
+            <div style="border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff; display:flex">
+              <div style="width:4px; background:#C98A22; flex:none"></div>
+              <div style="flex:1; display:flex; align-items:center; gap:10px; padding:11px">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:5px">
+                  <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center">1</div>
+                  <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px"><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span></div>
+                </div>
+                <div style="flex:1"><div style="font-size:14.5px; font-weight:700; color:#14181a">Вітасан Центральна</div></div>
+                <div style="flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              </div>
+            </div>
+          </div>
+          <div style="border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff; opacity:.5; display:flex">
+            <div style="width:4px; background:#B23A3A; flex:none"></div>
+            <div style="flex:1; display:flex; align-items:center; gap:10px; padding:11px">
+              <div style="display:flex; flex-direction:column; align-items:center; gap:5px">
+                <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center">2</div>
+                <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px"><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span></div>
+              </div>
+              <div style="flex:1"><div style="font-size:14.5px; font-weight:700; color:#14181a">Дентал Про Поділ</div></div>
+              <div style="flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:12.5px; color:#8A887F; line-height:1.5">Хендл ⋮⋮ — єдина точка захвату. Активна картка піднімається (тінь + z-index), сусідні тьмяніють (opacity .5). Номер точки перераховується після відпускання.</div>
+      </div>
+
+      <div>
+        <div style="font-size:13px; font-weight:700; color:#14181a; margin-bottom:10px">Три жести на одній картці — розділені зони</div>
+        <div style="font-size:12.5px; color:#8A887F; line-height:1.6; max-width:640px">
+          Картка точки поєднує три незалежні жести без конфліктів:<br/>
+          • <b>Свайп ліворуч</b> (Відвідано/Видалити) — <code>onPointerDown</code> на всій картці (окрім хендла), горизонтальний drag за threshold.<br/>
+          • <b>Перехід</b> — <code>onClick</code> лише на тексті (назва/адреса/задачі) і шевроні, НЕ на всій картці — інакше клік конфліктує зі свайпом і drag. Невідвідана точка → деталі точки; відвідана → звіт про візит (заповнений або форма заповнення, якщо ще не збережено).<br/>
+          • <b>Зміна порядку</b> — <code>onPointerDown</code> тільки на хендлі ⋮⋮, з <code>e.stopPropagation()</code> (і на <code>onClick</code> теж) — щоб тап по номеру/хендлу не бабблився в клік «Звіт» і не запускав свайп.<br/>
+          Колонка з номером і хендлом — некликабельна зона (<code>stopPropagation</code> на onClick), розділяє жести фізично.
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">6. Маршрут без точок (усі видалено)</div>
+        <div style="border-radius:12px; border:1px solid #E7E5E0; background:#fff; padding:16px 0 12px; display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center">
+          <span style="font-size:13px; font-weight:600; color:#8A887F">Усі точки видалено</span>
+          <span style="font-size:13.5px; font-weight:800; color:#0F6B52; display:flex; align-items:center; gap:6px">+ Додати точку</span>
+          <span style="font-size:11.5px; font-weight:600; color:#B0AEA4; display:flex; align-items:center; gap:4px">
+            <svg width="11" height="11" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#B0AEA4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Видалити маршрут
+          </span>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">7. Усі точки відвідано</div>
+        <div style="border-radius:12px; border:1px solid #E7E5E0; background:#fff; padding:16px 0 12px; display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center">
+          <span style="font-size:13px; font-weight:600; color:#8A887F">Усі точки відвідано</span>
+          <span style="font-size:13.5px; font-weight:800; color:#0F6B52; display:flex; align-items:center; gap:6px">+ Додати точку</span>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">8. Минулий день у межах 3 днів (як сьогодні, без drag-ручки)</div>
+        <div style="border-radius:12px; border:1px solid #D6D3C9; background:#fff; padding:10px; display:flex; flex-direction:column; gap:6px">
+          <div style="position:relative; border-radius:12px; overflow:hidden; isolation:isolate">
+            <div style="position:absolute; inset:0; display:flex; justify-content:flex-end">
+              <div style="width:70px; height:100%; background:#14604a; color:#fff; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800">Відвідано</div>
+              <div style="width:56px; height:100%; background:#B23A3A; color:#fff; display:flex; align-items:center; justify-content:center; font-size:10.5px; font-weight:700">Видалити</div>
+            </div>
+            <div style="position:relative; transform:translateX(-40px); display:flex; align-items:center; gap:10px; padding:8px 10px; border:1px solid #D6D3C9; border-radius:12px; background:#fff">
+              <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center; flex:none">1</div>
+              <div style="flex:1"><div style="font-size:14.5px; font-weight:700; color:#14181a">Клініка Медіка Центр</div></div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex:none; opacity:.4"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div style="height:1px; background:#EDEBE4"></div>
+          <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED">
+            <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3.3 8.3 6.7 11.7 12.7 4.7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <div style="flex:1; min-width:0">
+              <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Вітасан Центральна</div>
+              <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:flex; align-items:center; gap:3px; margin-top:1px">
+                <svg width="10" height="10" viewBox="0 0 14 14" fill="none" style="flex:none"><circle cx="7" cy="7" r="5.5" stroke="#B0AEA4" stroke-width="1.6" /><path d="M7 4.2V7l1.8 1.3" stroke="#B0AEA4" stroke-width="1.6" stroke-linecap="round" /></svg>
+                Додано пізніше
+              </div>
+            </div>
+            <div style="flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8A887F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+      <div style="font-size:12px; color:#8A887F; line-height:1.5">В межах 3-денного вікна заднього числа поведінка точно як сьогодні: свайп відкриває "Відвідано" та "Видалити", шеврон відкриває звіт після відвідування. Відмінності: без drag-ручки (6 крапок) — реордер минулого не має сенсу; без celebratory-оверлею навіть якщо все відвідано. Відвідана точка отримує тег "Додано пізніше".</div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">8b. Архів — 4+ днів тому (read-only)</div>
+        <div style="border-radius:12px; border:1px solid #D6D3C9; background:#fff; padding:10px; display:flex; align-items:center; gap:10px">
+          <div style="width:32px; height:32px; border-radius:50%; background:#F0EFEA; display:flex; align-items:center; justify-content:center; flex:none">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="m3.5 8.5 3 3 6-7" stroke="#8A887F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <div style="flex:1; min-width:0">
+            <div style="font-size:14px; font-weight:700; color:#14181a">Аптека Подорожник</div>
+            <div style="font-size:11.5px; font-weight:700; color:#8A887F; margin-top:2px">Відвідано · 14 бер, 10:32</div>
+          </div>
+        </div>
+      <div style="font-size:12px; color:#8A887F; line-height:1.5">За межами 3-денного вікна — чистий перегляд: без свайпу, без кнопки "Відвідано", без переходу на звіт. Дата/час фактичної дії — підпис прямо на картці, а не окрема "додано пізніше".</div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">Правила для минулих дат</div>
+        <div style="border-radius:12px; border:1px solid #D6D3C9; background:#fff; padding:14px; font-size:12.5px; color:#5F5B52; line-height:1.6">
+          • Звіт (шеврон, тап по рядку) — лише коли точка відвідана. Невідвідана точка не має куди переходити, звіту ще не існує.<br/>
+          • В межах 3-денного вікна заднього числа доступні свайп-дії "Відвідано" і "Видалити" — точно як сьогодні.<br/>
+          • Drag-ручка (6 крапок) не додається навіть у межах 3 днів — реордер минулого не має сенсу.<br/>
+          • Celebratory-оверлей "Молодець!" не показується в минулому навіть при 100% відвіданих точках — він доречний лише "в моменті" сьогодні.<br/>
+          • На майбутніх днях свайп точки відкриває лише "Видалити" — "Відвідано" не показується, бо відвідати ще не можна.<br/>
+          • "Додати точку"/"Додати маршрут" — лише для активного (сьогоднішнього) дня, майбутнього. Планування в минуле не має сенсу. Позаплановий візит додається окремою пунктирною кнопкою.<br/>
+          • За межами 3 днів — повний read-only: без свайпу, без дій, лише перегляд і підпис фактичного часу/дати відвідування на картці.<br/>
+          • Тап строчка/шеврон відкриває звіт (read-only) лише коли точка відвідана — для невідвіданої звіту ще не існує.<br/>
+          • Теорії застосовуються один раз при проєктуванні екрана; якщо елемент вже відповідає їм, додаткового обґрунтування чи повторної перевірки не потрібно.<br/>
+          • Підказка про 3-денне вікно — інлайн іконка "i" одразу після дати (не окремий рядок/картка, не в зоні тапу самої дати), тап показує спливаючу підказку. Це довідкова деталь, не основний захист від "запізно редагувати" — розглянути окрему позначку саме на межовому (третьому) дні, коли це реально критично.
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px">
+        <div style="font-size:12px; font-weight:700; color:#5F5B52">9. Позаплановий візит (bottom sheet, минулий день)</div>
+        <div style="border-radius:12px; border:1px solid #D6D3C9; background:#F3F2ED; padding:0; overflow:hidden">
+          <div style="display:flex; justify-content:center; padding:10px 0 2px"><div style="width:36px; height:4px; border-radius:2px; background:#D6D3C9"></div></div>
+          <div style="padding:8px 16px 14px; display:flex; align-items:center; gap:12px">
+            <div style="flex:1; min-width:0; font-size:16px; font-weight:800; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Позаплановий візит</div>
+            <div style="width:36px; height:36px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <div style="padding:0 16px 16px; display:flex; flex-direction:column; gap:12px">
+            <div style="display:flex; align-items:center; height:40px; border-radius:11px; border:1px solid #D6D3C9; padding:0 12px; background:#fff">
+              <span style="flex:1; min-width:0; font-size:13.5px; font-weight:700; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Поділ — центр</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="m6 9.5 6 6 6-6" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <div style="height:40px; border-radius:11px; border:1px solid #D6D3C9; background:#fff; display:flex; align-items:center; padding:0 12px; font-size:13.5px; color:#8A887F">Назва закладу</div>
+            <div style="height:40px; border-radius:11px; border:1px solid #D6D3C9; background:#fff; display:flex; align-items:center; padding:0 12px; font-size:13.5px; color:#8A887F">Адреса</div>
+            <div style="height:40px; width:120px; border-radius:11px; border:1px solid #D6D3C9; background:#fff; display:flex; align-items:center; padding:0 12px; font-size:13.5px; color:#8A887F">Час візиту</div>
+            <div style="height:64px; border-radius:11px; border:1px solid #D6D3C9; background:#fff; padding:10px 12px; font-size:13.5px; color:#8A887F">Нотатка (необов'язково)</div>
+            <div style="height:44px; border-radius:12px; background:#14604a; display:flex; align-items:center; justify-content:center"><span style="font-size:13.5px; font-weight:800; color:#fff">Зберегти</span></div>
+          </div>
+        </div>
+        <div style="font-size:12px; color:#8A887F; line-height:1.5">Елементи: заголовок шторки, вибір маршруту (dropdown — весь список маршрутів представника, не лише активні цього дня), назва закладу, адреса, час візиту, нотатка (необов'язкова), кнопка "Зберегти". Backdrop, тап поза шторкою закриває. Обмеження рядків: заголовок — 1 рядок з ellipsis; назва маршруту в полі і в кожному пункті списку — 1 рядок з ellipsis; назва закладу/адреса/час — однорядкові поля; нотатка — без обмеження (вільний ввід, не показ). Результат збереження: точка з'являється у списку відвіданих обраного маршруту з тегом "Позаплановий · Додано пізніше"; якщо маршрут не серед активних цього дня — у секції "Інші маршрути".</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="calendar">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Календар — місячна сітка</div>
+    <div style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:18px; display:flex; flex-direction:column; gap:16px">
+      <div style="font-size:12px; color:#8A887F">Показано один тиждень (3–9 серпня) для демонстрації станів клітинки; реальна сітка триває до кінця місяця (28–31 клітинка) без обриву на середині.</div>
+      <div style="display:flex; align-items:center; justify-content:space-between; max-width:280px">
+        <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m14.5 6-6 6 6 6" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div style="font-size:15px; font-weight:800; color:#14181a">серпень 2026</div>
+        <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(7,64px); gap:6px">
+        <div style="text-align:center; font-size:11px; font-weight:700; color:#5F6570">ПН</div>
+        <div style="text-align:center; font-size:11px; font-weight:700; color:#5F6570">ВТ</div>
+        <div style="text-align:center; font-size:11px; font-weight:700; color:#5F6570">СР</div>
+        <div style="text-align:center; font-size:11px; font-weight:700; color:#5F6570">ЧТ</div>
+        <div style="text-align:center; font-size:11px; font-weight:700; color:#5F6570">ПТ</div>
+        <div style="text-align:center; font-size:11px; font-weight:700; color:#5F5B52">СБ</div>
+        <div style="text-align:center; font-size:11px; font-weight:700; color:#5F5B52">НД</div>
+        <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">3</div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div>
+        <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">4</div><div style="display:flex; gap:3px"><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div><div style="width:5px; height:5px; border-radius:50%; background:#14604a"></div></div></div>
+        <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">5</div><div style="width:5px; height:5px"></div></div>
+        <div style="height:46px; border-radius:11px; background:#14604a; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:800; color:#fff">6</div><div style="width:5px; height:5px; border-radius:50%; background:#a9d6c6"></div></div>
+        <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px"><div style="font-size:15px; font-weight:700; color:#14181a">7</div><div style="width:5px; height:5px"></div></div>
+        <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#5F5B52">8</div><div style="width:5px; height:5px"></div></div>
+        <div style="height:46px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:#efece4"><div style="font-size:15px; font-weight:700; color:#5F5B52">9</div><div style="width:5px; height:5px"></div></div>
+      </div>
+      <div style="font-size:12.5px; color:#8A887F; line-height:1.6">
+        • Стрілки навігації: 44×44px, той самий компонент і розмір, що й у дата-навігаторі День/Тиждень — винесений на фон сторінки, а не всередину картки календаря.<br/>
+        • Назва місяця: 15/800 — токен "Назва картки".<br/>
+        • Літери днів тижня: 11px/700 (мінімум кіту), вихідні (СБ/НД) — приглушений теплий сірий `#5F5B52`, будні — `#5F6570`. Колірна різниця будня/вихідного — тільки на літерах заголовка, НЕ на кожній клітинці дня.<br/>
+        • "Сьогодні" — єдиний виняток із суцільною заливкою клітинки (як у тижні).<br/>
+        • Крапка = призначено маршрут. Максимум 3 крапки в клітинці незалежно від фактичної кількості.<br/>
+        • Дні поза видимим тижнем/вихідні — фон `#efece4` + приглушена цифра `#5F5B52`, без втрати контрасту 4.5:1.<br/>
+        • Сітка показує весь місяць повністю (до 31/30 числа, включно з неповним останнім тижнем) — не обрізається на довільному тижні.
+      </div>
+    </div>
+  </div>
+
+  <div id="celebratory">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:14px">Celebratory-оверлей (день/маршрут виконано)</div>
+    <div style="background:rgba(22,25,26,.42); border-radius:14px; padding:32px; display:flex; align-items:center; justify-content:center">
+      <div style="background:#F4F9F6; border:1px solid #E7E5DE; border-radius:14px; padding:28px 26px; display:flex; flex-direction:column; align-items:center; gap:12px; max-width:280px">
+        <div style="position:relative; width:64px; height:64px; display:flex; align-items:center; justify-content:center">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#0F6B52" style="position:absolute; top:-9px; right:-5px"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="#3B9A7D" style="position:absolute; bottom:-4px; right:8px; opacity:.85"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="#0F6B52" style="position:absolute; bottom:1px; left:-10px; opacity:.9"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+          <div style="width:64px; height:64px; border-radius:50%; background:radial-gradient(circle at 34% 28%, #18815f, #0F6B52 62%); display:flex; align-items:center; justify-content:center">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+        <div style="font-size:19px; font-weight:800; color:#1A1A17; text-align:center">Молодець!</div>
+        <div style="font-size:14px; font-weight:500; color:#5F6570; text-align:center">Всі точки закрито — гарний результат</div>
+      </div>
+    </div>
+    <div style="font-size:12.5px; color:#8A887F; text-align:center; margin-top:10px">Backdrop — стандартний нейтральний `rgba(22,25,26,.42)`, як і всі інші оверлеї в кіті (без винятків для брендового кольору). Картка: 14px радіус, без тіні, тепліший фон `#F4F9F6`. Іконка — м'який градієнт + 3-4 зірочки-спалахи навколо (twinkle-анімація в живих версіях). Авто-зникає за ~2.5с, без кнопок — миттєве підтвердження, а не постійний стан.</div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:6px">
+    <div style="font-size:12px; font-weight:700; color:#5F5B52">Правило: колір смужки картки точки</div>
+    <div style="border-radius:12px; border:1px solid #D6D3C9; background:#fff; padding:14px; font-size:12.5px; color:#5F5B52; line-height:1.6">
+      Ліва вертикальна смужка (4px) картки точки відображає стан задач цієї точки, не довільний колір:<br/>
+      • <span style="color:#B23A3A; font-weight:800">Червона (#B23A3A)</span> — є хоча б одна прострочена задача. Найвищий пріоритет: якщо серед задач точки є прострочена, смужка завжди червона, навіть якщо є ще й задачі на сьогодні.<br/>
+      • <span style="color:#C98A22; font-weight:800">Жовтогаряча (#C98A22)</span> — є задачі на сьогодні, прострочених немає.<br/>
+      • <span style="color:#5A8F78; font-weight:800">Зелена (#5A8F78)</span> — задач немає (звичайна точка маршруту без прив'язаних задач).<br/>
+      Колір смужки й колір/іконка підпису задач під адресою завжди узгоджені — не можна мати червону смужку з жовтогарячим підписом чи навпаки.
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:6px">
+    <div style="font-size:12px; font-weight:700; color:#5F5B52">Правило: екрани, дійсні лише для «сьогодні»</div>
+    <div style="border-radius:12px; border:1px solid #D6D3C9; background:#fff; padding:14px; font-size:12.5px; color:#5F5B52; line-height:1.6">
+      <code>home-day-all-visited.dc.html</code> («усі точки відвідано») та <code>home-day-complete.dc.html</code> («день виконано», celebratory-оверлей) моделюють стан, можливий лише сьогодні:<br/>
+      • Минулий день теж може мати всі точки відвіданими, але без лейбла «сьогодні» і без celebratory-оверлею (див. правило «Минулий день» вище) — це вже архів, не момент завершення.<br/>
+      • Майбутній день не може мати відвіданих точок узагалі — візит ще не стався.<br/>
+      Не використовувати ці два екрани як шаблон для минулого/майбутнього — для минулого є окремий, вже описаний паттерн.
+    </div>
+  </div>
+
+  <div id="gaps" style="background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:20px 22px">
+    <div style="font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#8A887F; margin-bottom:10px">Відомі прогалини (потребують рішення)</div>
+    <div style="font-size:13.5px; color:#5F5B52; line-height:1.7">
+      • Порожній день (0 маршрутів) — окремий екран `home-empty.dc.html`, підключається розробником<br/>
+      • Завантаження / помилка мережі — окремі екрани `loading-and-point.dc.html` (skeleton) і `visit-report-error.dc.html`<br/>
+      • Дуже довга назва точки — `text-overflow:ellipsis` (обрізка з трьома крапками)<br/>
+      • Ліміт маршрутів у списку — скрол, без пагінації<br/>
+      • Вертикальний скролбар праворуч у прев'ю — артефакт браузера цього середовища (десктопний рендер макета), НЕ частина мобільного дизайну; на реальному телефоні скролбари приховані/тимчасові — ігнорувати при оцінці дизайну
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#E7E5DE; font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+div::-webkit-scrollbar { display:none; }
+</style>
+</helmet>
+<div style="width:393px; height:852px; margin:0 auto; background:#f4f3f0; overflow:hidden; display:flex; flex-direction:column; position:relative" data-screen-label="home-week-empty">
+  <div style="display:flex; align-items:center; gap:12px; padding:10px 16px; background:#fff; border-bottom:1px solid #E6E4DD">
+    <div style="width:44px; height:44px; border-radius:11px; background:#0F6B52; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+    <div style="flex:1; line-height:1.15">
+      <div style="font-size:16px; font-weight:800; color:#14181a">Demo Team</div>
+      <div style="font-size:13px; color:#5F5B52">Vizitum</div>
+    </div>
+    <div style="position:relative; width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9.5a6 6 0 0 1 12 0c0 3.2 1.2 5 2 6H4c.8-1 2-2.8 2-6z" stroke="#0F6B52" stroke-width="1.8" stroke-linejoin="round" /><path d="M10 19.5a2 2 0 0 0 4 0" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" /></svg>
+    </div>
+    <div style="width:44px; height:44px; border-radius:11px; border:1px solid #C7D6D0; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px">
+      <div style="width:17px; height:2px; border-radius:1px; background:#14604a"></div>
+      <div style="width:17px; height:2px; border-radius:1px; background:#14604a"></div>
+      <div style="width:17px; height:2px; border-radius:1px; background:#14604a"></div>
+    </div>
+  </div>
+
+  <div style="flex:1; overflow:hidden; display:flex; flex-direction:column">
+    <div style="padding:20px 16px 8px; display:flex; flex-direction:column; gap:14px">
+      <div style="font-size:22px; font-weight:800; color:#14181a; letter-spacing:-.01em; line-height:1.4">Привіт, Олено!</div>
+      <div style="display:flex; padding:3px; border-radius:999px; background:#E6EFEB">
+        <div style="flex:1; height:38px; border-radius:999px; cursor:pointer; display:flex; align-items:center; justify-content:center" style-active="opacity:.6">
+          <span style="font-size:13px; font-weight:700; color:#0F6B52">День</span>
+        </div>
+        <div style="flex:1; height:38px; border-radius:999px; background:#14604a; cursor:pointer; display:flex; align-items:center; justify-content:center" style-active="opacity:.85">
+          <span style="font-size:13px; font-weight:800; color:#fff">Тиждень</span>
+        </div>
+        <div style="flex:1; height:38px; border-radius:999px; cursor:pointer; display:flex; align-items:center; justify-content:center" style-active="opacity:.6">
+          <span style="font-size:13px; font-weight:700; color:#0F6B52">Місяць</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:2px 16px 14px; display:flex; align-items:center; gap:6px">
+      <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center; color:#0F6B52; cursor:pointer; flex:none" style-active="opacity:.7; transform:scale(.92)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m14.5 6-6 6 6 6" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div style="flex:1; display:flex; align-items:center; justify-content:center">
+        <div style="font-size:15px; font-weight:800; color:#14181a; line-height:1.25; white-space:nowrap">10 — 16 серпня</div>
+      </div>
+      <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center; color:#0F6B52; cursor:pointer; flex:none" style-active="opacity:.7; transform:scale(.92)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div style="width:1px; height:24px; background:#e2dfd8; flex:none; margin:0 2px"></div>
+      <div style="width:44px; height:44px; border-radius:11px; border:1px solid #C7D6D0; background:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; flex:none" style-active="opacity:.7">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="8" y="8" width="12" height="12" rx="2.4" stroke="#0F6B52" stroke-width="1.8"></rect><path d="M16 8V6.4A2.4 2.4 0 0 0 13.6 4H6.4A2.4 2.4 0 0 0 4 6.4v7.2A2.4 2.4 0 0 0 6.4 16H8" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+    </div>
+
+    <div style="flex:1; overflow-y:auto; scrollbar-width:none; padding:6px 14px 14px; display:flex; flex-direction:column; gap:8px">
+      <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+        <div style="display:flex; gap:10px; padding:13px 12px; flex:none; border-radius:14px; border:1.5px dashed {{ d.borderColor }}">
+          <div style="width:44px; flex:none; text-align:center; border-radius:10px; padding:6px 0">
+            <div style="font-size:10.5px; font-weight:700; color:{{ d.dowColor }}">{{ d.dow }}</div>
+            <div style="font-size:19px; font-weight:800; color:{{ d.numColor }}; line-height:1.1">{{ d.num }}</div>
+          </div>
+          <div style="width:1px; background:#e2dfd8"></div>
+          <div style="flex:1; display:flex; align-items:center; cursor:pointer">
+            <div style="font-size:14px; font-weight:800; color:{{ d.ctaColor }}">+ Призначити маршрут</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="background:#fff; border-top:1px solid #e7e5e0; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px calc(14px + env(safe-area-inset-bottom, 0px)); box-shadow:0 -8px 20px -12px rgba(16,24,40,.12)">
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <div style="position:absolute; top:0; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#14604a" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+      <span style="font-size:13px; font-weight:600; color:#14604a">Головна</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3.2" stroke="#5F6570" stroke-width="1.8"></rect><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <span style="font-size:13px; font-weight:500; color:#5F6570">Задачі</span>
+    </div>
+    <div style="display:flex; justify-content:center; align-items:flex-end">
+      <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="1.8" stroke-linecap="round"></path></svg>
+      </div>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6.3 6.5h6.7a3.5 3.5 0 0 1 0 7h-2a3.5 3.5 0 0 0 0 7h6.7" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round"></path><circle cx="6.3" cy="6.5" r="1.8" stroke="#5F6570" stroke-width="1.8"></circle><circle cx="17.7" cy="20.5" r="1.8" stroke="#5F6570" stroke-width="1.8"></circle></svg>
+      <span style="font-size:13px; font-weight:500; color:#5F6570">Маршрути</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#5F6570" stroke-width="1.8"></circle><path d="M12 7.6V12l3 2" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round"></path></svg>
+      <span style="font-size:13px; font-weight:500; color:#5F6570">Історія</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:393,&quot;height&quot;:852}}">
+class Component extends DCLogic {
+  renderVals() {
+    const dows = ['ПН','ВТ','СР','ЧТ','ПТ','СБ','НД'];
+    const nums = [10,11,12,13,14,15,16];
+    const days = dows.map((dow, i) => {
+      const weekend = i >= 5;
+      return {
+        dow, num: nums[i],
+        borderColor: '#d3cfc6',
+        dowColor: weekend ? '#b6a99a' : '#9aa0a6',
+        numColor: weekend ? '#8f8878' : '#14181a',
+        ctaColor: weekend ? '#a89c8c' : '#14604a'
+      };
+    });
+    return { days };
+  }
+}
+</script>
+</body>
+</html>
