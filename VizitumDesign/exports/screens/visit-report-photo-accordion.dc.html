@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#E7E5DE; font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+@keyframes recPulse { 0%,100% { box-shadow:0 0 0 0 rgba(180,69,58,.6); transform:scale(1); } 50% { box-shadow:0 0 0 14px rgba(180,69,58,0); transform:scale(1.06); } }
+a { color:#14604a; text-decoration:none; }
+a:hover { color:#0d4636; }
+</style>
+</helmet>
+<div style="position:relative; width:393px; height:852px; margin:0 auto; background:#14604a; overflow:hidden; display:flex; flex-direction:column">
+
+  <div style="flex:1; min-height:0; overflow-y:auto; padding:30px 16px 36px; display:flex; flex-direction:column; gap:14px">
+
+    <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; padding-bottom:8px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex:none; cursor:pointer"><path d="M19 12H5.5m0 0 5.2-5.2M5.5 12l5.2 5.2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <div style="flex:1; min-width:0; font-size:19px; font-weight:800; color:#fff; letter-spacing:-.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">Звіт про візит</div>
+      <div onClick="{{ toggleDatePicker }}" style="position:relative; flex:none; box-sizing:border-box; height:36px; padding:0 11px; border-radius:11px; border:1.5px solid #D5D0C4; background:#fff; display:flex; align-items:center; gap:5px; cursor:pointer" style-hover="background:#F7F6F2">
+        <span style="font-size:13px; font-weight:800; color:#5A615F; white-space:nowrap">{{ selectedDateLabel }}</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex:none; transform:{{ dateChevronTransform }}; transition:transform .15s"><path d="m6 9.5 6 6 6-6" stroke="#8A8F98" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        <sc-if value="{{ datePickerOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute; right:0; top:calc(100% + 6px); width:172px; background:#fff; border:1px solid #E7E5E0; border-radius:12px; box-shadow:0 10px 24px -8px rgba(16,24,40,.2); overflow:hidden; z-index:5">
+          <div onClick="{{ selectToday }}" style="padding:10px 14px; font-size:13.5px; font-weight:700; color:{{ optTodayColor }}; background:{{ optTodayBg }}; cursor:pointer">Сьогодні</div>
+          <div onClick="{{ selectDate1 }}" style="padding:10px 14px; font-size:13.5px; font-weight:600; color:{{ optDate1Color }}; background:{{ optDate1Bg }}; border-top:1px solid #EDEBE5; cursor:pointer" style-hover="background:#F7F6F2">8 вер.</div>
+          <div onClick="{{ selectDate2 }}" style="padding:10px 14px; font-size:13.5px; font-weight:600; color:{{ optDate2Color }}; background:{{ optDate2Bg }}; border-top:1px solid #EDEBE5; cursor:pointer" style-hover="background:#F7F6F2">7 вер.</div>
+          <div onClick="{{ selectDate3 }}" style="padding:10px 14px; font-size:13.5px; font-weight:600; color:{{ optDate3Color }}; background:{{ optDate3Bg }}; border-top:1px solid #EDEBE5; cursor:pointer" style-hover="background:#F7F6F2">6 вер.</div>
+        </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <div style="background:#fff; border:1px solid #E7E5E0; border-radius:16px; padding:14px 15px; display:flex; flex-direction:column; gap:12px">
+
+      <div style="display:flex; align-items:flex-start; gap:10px; cursor:pointer" onClick="{{ toggleCard }}">
+        <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:2px">
+          <div style="font-size:24px; font-weight:800; color:#14181a; letter-spacing:-.01em; text-wrap:pretty">Клініка Медіка Центр</div>
+          <div style="font-size:17px; color:#6B7371; font-weight:500">вул. Хрещатик, 12, Київ</div>
+        </div>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex:none; margin-top:4px; transform:{{ cardChevronTransform }}; transition:transform .15s"><path d="m6 8.5 6 6 6-6" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+
+      <sc-if value="{{ cardExpanded }}" hint-placeholder-val="{{ true }}">
+      <div style="height:1px; background:#EDEBE5"></div>
+
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap">
+        <div style="padding:4px 10px; border-radius:8px; background:#E6EFEB; font-size:12.5px; font-weight:700; color:#14604a">Медіка</div>
+      </div>
+      <div style="align-self:flex-start; white-space:nowrap; padding:4px 10px; border-radius:8px; background:#EDEBE5; font-size:12.5px; font-weight:700; color:#5A615F">Без представника</div>
+
+      <div style="height:1px; background:#EDEBE5"></div>
+
+      <div style="display:flex; flex-direction:column">
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 2px; cursor:pointer">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" style="flex:none"><rect x="5" y="3.5" width="14" height="17" rx="2.5" stroke="#14604a" stroke-width="1.8" /><path d="M8.6 8.5h6.8M8.6 12h6.8M8.6 15.5h4.2" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:1px">
+            <span style="font-size:15.5px; font-weight:700; color:#14181a">Нотатка</span>
+            <span style="font-size:12.5px; color:#8A8F98; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">Просить привезти прайс на нову лінійку до наступного візиту…</span>
+          </div>
+          <span style="font-size:17px; font-weight:600; color:#C4BFB5">›</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 2px; border-top:1px solid #EDEBE5; cursor:pointer">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" style="flex:none"><circle cx="12" cy="8" r="3.6" stroke="#14604a" stroke-width="1.8" /><path d="M5.5 19.5c.6-3.4 3.3-5.2 6.5-5.2s5.9 1.8 6.5 5.2" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <span style="flex:1; font-size:15.5px; font-weight:700; color:#14181a">Контакти</span>
+          <span style="font-size:14.5px; font-weight:700; color:#8A8F98">2</span>
+          <span style="font-size:17px; font-weight:600; color:#C4BFB5">›</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 2px; border-top:1px solid #EDEBE5; cursor:pointer">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" style="flex:none"><path d="M3.5 12.5h4l2-5 4.5 9 2-6.5h4.5" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span style="flex:1; font-size:15.5px; font-weight:700; color:#14181a">Історія візитів</span>
+          <span style="font-size:13px; font-weight:700; color:#8A8F98">30 лип. 2026</span>
+          <span style="font-size:17px; font-weight:600; color:#C4BFB5">›</span>
+        </div>
+      </div>
+      </sc-if>
+
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:0; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+      <div onClick="{{ toggleTasks }}" style="display:flex; align-items:center; gap:12px; padding:13px 15px; cursor:pointer">
+      <div style="width:36px; height:36px; flex:none; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4.5 5.5h15v11h-8.4L6.5 20v-3.5H4.5v-11Z" stroke="#14604a" stroke-width="1.8" stroke-linejoin="round" /><path d="m8.5 11 2 2 4.5-4.5" stroke="#14604a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+      <div style="flex:1; font-size:16px; font-weight:800; color:#14181a">Задачі</div>
+      <div style="display:flex; align-items:center; gap:8px; white-space:nowrap">
+        <span style="width:7px; height:7px; border-radius:50%; background:#B4453A"></span>
+        <span style="font-size:13px; font-weight:700; color:#B4453A">2</span>
+        <span style="width:7px; height:7px; border-radius:50%; background:#9A7B1E"></span>
+        <span style="font-size:13px; font-weight:700; color:#9A7B1E">1</span>
+        <span style="font-size:13px; font-weight:700; color:#8A8F98">· 5 всього</span>
+        <span style="padding:2px 7px; border-radius:7px; background:#E6EFEB; font-size:12px; font-weight:800; color:#14604a">+2 нові</span>
+      </div>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex:none; transform:{{ tasksChevronTransform }}; transition:transform .15s"><path d="m6 9.5 6 6 6-6" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+      <sc-if value="{{ tasksExpanded }}" hint-placeholder-val="{{ true }}">
+      <div style="padding:0 15px 15px; display:flex; flex-direction:column; gap:10px">
+
+        <div style="display:flex; flex-direction:column; gap:6px">
+          <div style="font-size:11px; font-weight:700; letter-spacing:.06em; color:#B4453A; padding:0 2px">ПРОСТРОЧЕНІ</div>
+          <div style="display:flex; background:#F7F6F2; border-radius:11px; overflow:hidden; cursor:pointer">
+            <div style="width:46px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; padding:8px 0; background:#fdf1f0">
+              <div style="font-size:16px; font-weight:800; color:#b3392f; line-height:1">2</div>
+              <div style="font-size:8.5px; font-weight:700; letter-spacing:.05em; color:#c06a62">ВЕР</div>
+            </div>
+            <div style="flex:1; min-width:0; padding:9px 10px; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:700; color:#14181a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">Погодити нову викладку вітрини</div>
+            </div>
+          </div>
+          <div style="display:flex; background:#F7F6F2; border-radius:11px; overflow:hidden; cursor:pointer">
+            <div style="width:46px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; padding:8px 0; background:#fdf1f0">
+              <div style="font-size:16px; font-weight:800; color:#b3392f; line-height:1">4</div>
+              <div style="font-size:8.5px; font-weight:700; letter-spacing:.05em; color:#c06a62">ВЕР</div>
+            </div>
+            <div style="flex:1; min-width:0; padding:9px 10px; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:700; color:#14181a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">Передати зразки менеджеру</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:6px">
+          <div style="font-size:11px; font-weight:700; letter-spacing:.06em; color:#9A7B1E; padding:0 2px">ПРІОРИТЕТНІ</div>
+          <div style="display:flex; background:#F7F6F2; border-radius:11px; overflow:hidden; cursor:pointer">
+            <div style="width:46px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; padding:8px 0; background:#F5EFE3">
+              <div style="font-size:16px; font-weight:800; color:#9A7B1E; line-height:1">9</div>
+              <div style="font-size:8.5px; font-weight:700; letter-spacing:.05em; color:#b39a54">ВЕР</div>
+            </div>
+            <div style="flex:1; min-width:0; padding:9px 10px; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:700; color:#14181a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">Забрати підписаний договір</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:6px">
+          <div style="font-size:11px; font-weight:700; letter-spacing:.06em; color:#8A8F98; padding:0 2px">ПОТОЧНІ</div>
+          <div style="display:flex; background:#F7F6F2; border:1.5px solid #14604a; border-radius:11px; overflow:hidden; cursor:pointer">
+            <div style="width:46px; flex:none; display:flex; align-items:center; justify-content:center; padding:8px 0; background:#E6EFEB">
+              <div style="font-size:10.5px; font-weight:800; letter-spacing:.02em; color:#14604a; text-align:center; line-height:1.2">СЬО-<br />ГОДНІ</div>
+            </div>
+            <div style="flex:1; min-width:0; padding:9px 10px; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:700; color:#14181a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">Оновити прайс-лист</div>
+            </div>
+          </div>
+          <div style="display:flex; background:#F7F6F2; border-radius:11px; overflow:hidden; cursor:pointer">
+            <div style="width:46px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; padding:8px 0; background:#eef4f2">
+              <div style="font-size:16px; font-weight:800; color:#14594a; line-height:1">21</div>
+              <div style="font-size:8.5px; font-weight:700; letter-spacing:.05em; color:#5c8c80">ВЕР</div>
+            </div>
+            <div style="flex:1; min-width:0; padding:9px 10px; display:flex; align-items:center">
+              <div style="font-size:14px; font-weight:700; color:#14181a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">Запланувати наступний візит</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </sc-if>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:12px; padding:13px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px; cursor:pointer" style-hover="border-color:#C7D6D0">
+      <div style="width:36px; height:36px; flex:none; border-radius:11px; background:#F5EFE3; display:flex; align-items:center; justify-content:center">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 3.6 20 7.7v8.6L12 20.4 4 16.3V7.7l8-4.1Z" stroke="#9A7B1E" stroke-width="1.8" stroke-linejoin="round" /><path d="M4 7.7 12 12l8-4.3M12 12v8.4" stroke="#9A7B1E" stroke-width="1.8" stroke-linejoin="round" /></svg>
+      </div>
+      <div style="flex:1; font-size:16px; font-weight:800; color:#14181a">Асортимент</div>
+      <span style="width:8px; height:8px; border-radius:50%; background:#14604a"></span>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex:none"><path d="m6 9.5 6 6 6-6" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:0; background:#fff; border:1px solid {{ issueBorder }}; border-radius:14px">
+      <div onClick="{{ toggleIssue }}" style="display:flex; align-items:center; gap:12px; padding:13px 15px; cursor:pointer">
+        <div style="width:36px; height:36px; flex:none; border-radius:11px; background:{{ issueIconBg }}; display:flex; align-items:center; justify-content:center">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 4.6 21 19.4H3L12 4.6Z" stroke="{{ issueIconColor }}" stroke-width="1.8" stroke-linejoin="round" /><path d="M12 10v4.2M12 16.6v.2" stroke="{{ issueIconColor }}" stroke-width="1.9" stroke-linecap="round" /></svg>
+        </div>
+        <div style="flex:1; font-size:16px; font-weight:800; color:#14181a">Щось пішло не так?</div>
+        <sc-if value="{{ issueActive }}" hint-placeholder-val="{{ false }}">
+        <span style="width:8px; height:8px; border-radius:50%; background:#B4453A"></span>
+        </sc-if>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex:none; transform:{{ issueChevronTransform }}; transition:transform .15s"><path d="m6 9.5 6 6 6-6" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+      <sc-if value="{{ issueOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:0 15px 15px; display:flex; flex-direction:column; gap:12px">
+        <div style="height:1px; background:#EDEBE5"></div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px">
+          <div onClick="{{ toggleTag1 }}" style="padding:8px 14px; background:{{ tag1Bg }}; border:2px solid {{ tag1Border }}; border-radius:20px; font-size:13.5px; font-weight:700; color:{{ tag1Fg }}; cursor:pointer; box-shadow:{{ tag1Shadow }}">{{ tagLabel1 }}</div>
+          <div onClick="{{ toggleTag2 }}" style="padding:8px 14px; background:{{ tag2Bg }}; border:2px solid {{ tag2Border }}; border-radius:20px; font-size:13.5px; font-weight:700; color:{{ tag2Fg }}; cursor:pointer; box-shadow:{{ tag2Shadow }}" style-hover="background:#EDEBE5">{{ tagLabel2 }}</div>
+          <div onClick="{{ toggleTag3 }}" style="padding:8px 14px; background:{{ tag3Bg }}; border:2px solid {{ tag3Border }}; border-radius:20px; font-size:13.5px; font-weight:700; color:{{ tag3Fg }}; cursor:pointer; box-shadow:{{ tag3Shadow }}" style-hover="background:#EDEBE5">{{ tagLabel3 }}</div>
+          <div onClick="{{ toggleTag4 }}" style="padding:8px 14px; background:{{ tag4Bg }}; border:2px solid {{ tag4Border }}; border-radius:20px; font-size:13.5px; font-weight:700; color:{{ tag4Fg }}; cursor:pointer; box-shadow:{{ tag4Shadow }}" style-hover="background:#EDEBE5">Інше</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px">
+          <div style="width:64px; height:64px; flex:none; border-radius:11px; background:#EDD3CF; display:flex; align-items:center; justify-content:center; overflow:hidden; cursor:pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8.6h3.4l1.5-2.2h6.2l1.5 2.2H20v10.2H4V8.6Z" stroke="#A05248" stroke-width="1.6" stroke-linejoin="round" /><circle cx="12" cy="13.6" r="3" stroke="#A05248" stroke-width="1.6" /></svg>
+          </div>
+          <div style="width:64px; height:64px; flex:none; border-radius:11px; background:#F7F6F2; border:1.5px dashed #C7C2B6; display:flex; align-items:center; justify-content:center; cursor:pointer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" /></svg>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:10px; padding:13px 15px; background:#fff; border:1px solid #E7E5E0; border-radius:14px">
+      <div style="display:flex; align-items:center; gap:12px">
+        <div style="width:36px; height:36px; flex:none; border-radius:11px; background:#EDEBE5; display:flex; align-items:center; justify-content:center">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4.5 5.5h15v11h-8.4L6.5 20v-3.5H4.5v-11Z" stroke="#5A615F" stroke-width="1.8" stroke-linejoin="round" /></svg>
+        </div>
+        <div style="flex:1; font-size:16px; font-weight:800; color:#14181a">Нотатки візиту</div>
+      </div>
+      <div style="min-height:76px; padding:10px 12px; background:#F7F6F2; border-radius:11px; font-size:14px; line-height:1.5; color:#8A8F98; font-weight:500">Додайте нотатку про візит…</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:8px">
+      <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,.8); padding:0 2px">Фото з візиту</div>
+      <div style="display:flex; align-items:center; gap:8px">
+      <div style="width:64px; height:64px; flex:none; border-radius:11px; background:#F7F6F2; border:1.5px dashed #C7C2B6; display:flex; align-items:center; justify-content:center; cursor:pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" /></svg>
+      </div>
+      <div style="width:64px; height:64px; flex:none; border-radius:11px; background:#F7F6F2; border:1.5px dashed #C7C2B6; display:flex; align-items:center; justify-content:center; cursor:pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" /></svg>
+      </div>
+      <div style="width:64px; height:64px; flex:none; border-radius:11px; background:#F7F6F2; border:1.5px dashed #C7C2B6; display:flex; align-items:center; justify-content:center; cursor:pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#8A8F98" stroke-width="2" stroke-linecap="round" /></svg>
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="flex:none; padding:24px 16px 40px; border-top:1px solid #E6E4DD">
+    <div style="display:flex; justify-content:center">
+      <div onClick="{{ toggleRecording }}" style="width:72px; height:72px; background:{{ recordBg }}; border:2.5px solid #fff; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 10px -2px rgba(16,24,40,.18); animation:{{ recordAnim }}">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="9" y="2.8" width="6" height="10.4" rx="3" stroke="#fff" stroke-width="1.9" /><path d="M5.5 11.4a6.5 6.5 0 0 0 13 0M12 17.9v3.3" stroke="#fff" stroke-width="1.9" stroke-linecap="round" /></svg>
+      </div>
+    </div>
+
+    <div style="height:52px; background:#14604a; border:1.5px solid #fff; border-radius:14px; display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; cursor:pointer">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 5h11l3 3v11H5V5Z" stroke="#fff" stroke-width="1.9" stroke-linejoin="round" /><path d="M8.5 5v4.5h7V5M8.5 19v-5h7v5" stroke="#fff" stroke-width="1.9" stroke-linejoin="round" /></svg>
+      <span style="font-size:16px; font-weight:800; color:#fff">Зберегти звіт</span>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:393,&quot;height&quot;:852}}">class Component extends DCLogic {
+  state = { cardExpanded: false, tasksExpanded: false, datePickerOpen: false, selectedDate: "today", issueOpen: false, notesOpen: true, selectedTags: [], isRecording: false };
+  renderVals() {
+    const sel = this.state.selectedDate;
+    const labels = { today: "Сьогодні", d1: "8 вер.", d2: "7 вер.", d3: "6 вер." };
+    const mk = (key) => ({
+      Color: sel === key ? "#14604a" : "#14181a",
+      Bg: sel === key ? "#E6EFEB" : "transparent"
+    });
+    const today = mk("today"), d1 = mk("d1"), d2 = mk("d2"), d3 = mk("d3");
+    return {
+      selectedDateLabel: labels[sel],
+      datePickerOpen: this.state.datePickerOpen,
+      dateChevronTransform: this.state.datePickerOpen ? "rotate(180deg)" : "rotate(0deg)",
+      toggleDatePicker: () => this.setState(s => ({ datePickerOpen: !s.datePickerOpen })),
+      selectToday: () => this.setState({ selectedDate: "today", datePickerOpen: false }),
+      selectDate1: () => this.setState({ selectedDate: "d1", datePickerOpen: false }),
+      selectDate2: () => this.setState({ selectedDate: "d2", datePickerOpen: false }),
+      selectDate3: () => this.setState({ selectedDate: "d3", datePickerOpen: false }),
+      optTodayColor: today.Color, optTodayBg: today.Bg,
+      optDate1Color: d1.Color, optDate1Bg: d1.Bg,
+      optDate2Color: d2.Color, optDate2Bg: d2.Bg,
+      optDate3Color: d3.Color, optDate3Bg: d3.Bg,
+      cardExpanded: this.state.cardExpanded,
+      cardChevronTransform: this.state.cardExpanded ? "rotate(180deg)" : "rotate(0deg)",
+      toggleCard: () => this.setState(s => ({ cardExpanded: !s.cardExpanded })),
+      toggleTag1: () => this.setState(s => ({ selectedTags: s.selectedTags.includes(1) ? s.selectedTags.filter(t => t !== 1) : [...s.selectedTags, 1] })),
+      toggleTag2: () => this.setState(s => ({ selectedTags: s.selectedTags.includes(2) ? s.selectedTags.filter(t => t !== 2) : [...s.selectedTags, 2] })),
+      toggleTag3: () => this.setState(s => ({ selectedTags: s.selectedTags.includes(3) ? s.selectedTags.filter(t => t !== 3) : [...s.selectedTags, 3] })),
+      toggleTag4: () => this.setState(s => ({ selectedTags: s.selectedTags.includes(4) ? s.selectedTags.filter(t => t !== 4) : [...s.selectedTags, 4] })),
+      issueOpen: this.state.issueOpen,
+      issueActive: this.state.selectedTags.length > 0,
+      issueChevronTransform: this.state.issueOpen ? "rotate(180deg)" : "rotate(0deg)",
+      issueBorder: this.state.issueOpen || this.state.selectedTags.length > 0 ? "#E7A69E" : "#E7E5E0",
+      issueIconBg: "#F7F6F2",
+      issueIconColor: "#B4453A",
+      toggleIssue: () => this.setState(s => ({ issueOpen: !s.issueOpen })),
+      isRecording: this.state.isRecording,
+      toggleRecording: () => this.setState(s => ({ isRecording: !s.isRecording })),
+      recordBg: this.state.isRecording ? "#B4453A" : "#14604a",
+      recordAnim: this.state.isRecording ? "recPulse 1.1s ease-in-out infinite" : "none",
+      tagLabel1: "Не сподобалось",
+      tagLabel2: "Проблема з якістю",
+      tagLabel3: "Скарга",
+      tag1Bg: this.state.selectedTags.includes(1) ? "#F6E9E7" : "#fff",
+      tag1Fg: this.state.selectedTags.includes(1) ? "#B4453A" : "#14181a",
+      tag1Shadow: this.state.selectedTags.includes(1) ? "0 2px 6px -1px rgba(16,24,40,.25)" : "none",
+      tag1Border: this.state.selectedTags.includes(1) ? "#B4453A" : "transparent",
+      tag2Border: this.state.selectedTags.includes(2) ? "#B4453A" : "transparent",
+      tag3Border: this.state.selectedTags.includes(3) ? "#B4453A" : "transparent",
+      tag4Border: this.state.selectedTags.includes(4) ? "#B4453A" : "transparent",
+      tag2Bg: this.state.selectedTags.includes(2) ? "#F6E9E7" : "#F7F6F2",
+      tag2Fg: this.state.selectedTags.includes(2) ? "#B4453A" : "#14181a",
+      tag2Shadow: this.state.selectedTags.includes(2) ? "0 2px 6px -1px rgba(16,24,40,.25)" : "none",
+      tag3Bg: this.state.selectedTags.includes(3) ? "#F6E9E7" : "#F7F6F2",
+      tag3Fg: this.state.selectedTags.includes(3) ? "#B4453A" : "#14181a",
+      tag3Shadow: this.state.selectedTags.includes(3) ? "0 2px 6px -1px rgba(16,24,40,.25)" : "none",
+      tag4Bg: this.state.selectedTags.includes(4) ? "#F6E9E7" : "#F7F6F2",
+      tag4Fg: this.state.selectedTags.includes(4) ? "#B4453A" : "#14181a",
+      tag4Shadow: this.state.selectedTags.includes(4) ? "0 2px 6px -1px rgba(16,24,40,.25)" : "none",
+      toggleTag1: () => this.setState(s => ({ selectedTags: s.selectedTags.includes(1) ? s.selectedTags.filter(t => t !== 1) : [...s.selectedTags, 1] })),
+      toggleTag2: () => this.setState(s => ({ selectedTags: s.selectedTags.includes(2) ? s.selectedTags.filter(t => t !== 2) : [...s.selectedTags, 2] })),
+      toggleTag3: () => this.setState(s => ({ selectedTags: s.selectedTags.includes(3) ? s.selectedTags.filter(t => t !== 3) : [...s.selectedTags, 3] })),
+      toggleTag4: () => this.setState(s => ({ selectedTags: s.selectedTags.includes(4) ? s.selectedTags.filter(t => t !== 4) : [...s.selectedTags, 4] })),
+      tasksExpanded: this.state.tasksExpanded,
+      tasksChevronTransform: this.state.tasksExpanded ? "rotate(180deg)" : "rotate(0deg)",
+      toggleTasks: () => this.setState(s => ({ tasksExpanded: !s.tasksExpanded })),
+    };
+  }
+}</script>
+</body>
+</html>

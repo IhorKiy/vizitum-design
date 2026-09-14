@@ -48,7 +48,7 @@ a:hover { color: #0d4636; }
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #14604a;">01 · ГОЛОВНА</div>
       <div style="flex: 1; height: 1px; background: #D5D0C4;"></div>
     </div>
-    <div style="display: flex; flex-wrap: nowrap; gap: 32px; align-items: flex-start;">
+    <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start;">
       <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
         <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
           <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — новий дизайн</div>
@@ -82,6 +82,206 @@ a:hover { color: #0d4636; }
         <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Стан після свайпу вліво: дії «Відвідано» і «Видалити» під карткою.</div>
       </div>
 
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — день</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — сьогодні, один маршрут</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-today-single-route" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — день завершено</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-complete" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — день, всі відвідані</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-all-visited" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — день порожній</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-empty" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — майбутній день</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-future" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — майбутній день, свайп</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-future-swipe" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — майбутній день, свайп відкрито</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-future-swipe-open" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — позавчора, порожньо</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-before-yesterday-empty" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — вчора</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-yesterday" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — архів дня</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-archive" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — архів дня, порожньо</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-archive-empty" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — день, стиль звіту</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-day-report-style" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — тиждень</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-week" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — тиждень порожній</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-week-empty" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — попередній тиждень</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-week-previous" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — місяць</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-month" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — маршрут порожній</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-route-empty-state" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — тост видалення</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-delete-toast" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Головна — новий дизайн (інтерактив)</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
+          <dc-import name="home-new-design-interactive" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -95,15 +295,17 @@ a:hover { color: #0d4636; }
 
       
 
+
+
       <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
         <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
-          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт — старт</div>
+          <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.2px;">Звіт — фото замість лайка</div>
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #8A9190;">393 × 852</div>
         </div>
         <div style="border-radius: 20px; overflow: hidden; border: 1px solid #D5D0C4; background: #F3F2ED; box-shadow: 0 18px 40px rgba(22,25,26,0.08);">
-          <dc-import name="visit-report" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
+          <dc-import name="visit-report-photo-accordion" hint-size="393px,852px" style="width: 393px; height: 852px;"></dc-import>
         </div>
-        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Запис голосом і всі поля на одному екрані: результат візиту, «Наступні кроки» та ще два блоки згорнуто, дата й збереження.</div>
+        <div style="font-size: 13.5px; line-height: 1.5; color: #6B7371; font-weight: 500;">Без лайка — лише фото; «Щось пішло не так?» розгортається акордеоном із пігулками причин.</div>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 12px; width: 393px;">
@@ -749,6 +951,6 @@ a:hover { color: #0d4636; }
   </div>
 
 </div>
-<svg width="160" height="80" viewBox="0 0 160 80" preserveAspectRatio="none" style="position: absolute; left: 10px; top: 7px; width: 160px; height: 80px; overflow: visible; fill: none; stroke: #8a8378; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round"><defs><marker id="dc-arrow-head" orient="auto" markerWidth="5" markerHeight="5" refX="0.8" refY="2" overflow="visible"><path d="M-3.2 -1.7 L0.8 0 L-3.2 1.7" transform="translate(0 2)" fill="none" stroke="context-stroke" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></marker></defs><path d="M 0 80 L 160 0" marker-end="url(#dc-arrow-head)"></path></svg><div style="font-size: 16px; line-height: 1; position: absolute; left: 2px; top: 9px">Your text here</div></x-dc>
+</x-dc>
 </body>
 </html>
