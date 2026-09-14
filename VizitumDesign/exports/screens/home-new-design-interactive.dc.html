@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#E7E5DE; font-family:'Manrope',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+@keyframes checkPop { 0% { transform:scale(.4) rotate(-8deg); opacity:0; } 55% { transform:scale(1.14) rotate(5deg); opacity:1; } 100% { transform:scale(1) rotate(0); opacity:1; } }
+@keyframes twinkle { 0% { opacity:0; transform:scale(.3) rotate(0deg); } 40% { opacity:1; transform:scale(1) rotate(10deg); } 70% { opacity:1; transform:scale(.9) rotate(0deg); } 100% { opacity:0; transform:scale(.3) rotate(-10deg); } }
+@keyframes overlayFade { 0% { opacity:0; } 10% { opacity:1; } 82% { opacity:1; } 100% { opacity:0; } }
+@keyframes cardPop { 0% { transform:translateY(10px) scale(.96); opacity:0; } 14% { transform:translateY(0) scale(1); opacity:1; } 86% { transform:translateY(0) scale(1); opacity:1; } 100% { transform:translateY(-6px) scale(.98); opacity:0; } }
+@keyframes ringPulse { 0% { transform:scale(.8); opacity:0; } 30% { opacity:.35; } 100% { transform:scale(1.35); opacity:0; } }
+a { color:#0F6B52; text-decoration:none; }
+a:hover { color:#0B4E3B; }
+div::-webkit-scrollbar { display:none; }
+</style>
+</helmet>
+<div style="width:393px; height:852px; margin:0 auto; background:#F3F2ED; overflow:hidden; display:flex; flex-direction:column; position:relative">
+  <div style="background:#fff; padding:10px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #E6E4DD">
+    <div style="width:44px; height:44px; border-radius:11px; background:#0F6B52; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+    <div style="flex:1; display:flex; flex-direction:column; line-height:1.15">
+      <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+      <div style="font-size:13px; color:#5F5B52">Vizitum</div>
+    </div>
+    <div style="position:relative; width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center; cursor:pointer" style-active="opacity:.7" title="Оголошення" onClick="{{ openAnnouncements }}">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9.5a6 6 0 0 1 12 0c0 3.2 1.2 5 2 6H4c.8-1 2-2.8 2-6z" stroke="#0F6B52" stroke-width="1.8" stroke-linejoin="round" /><path d="M10 19.5a2 2 0 0 0 4 0" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <div style="position:absolute; top:-3px; right:-3px; min-width:15px; height:15px; padding:0 3px; border-radius:8px; background:#C4453F; border:1px solid #fff; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:600; color:#fff; line-height:1">3</div>
+    </div>
+    <div style="width:44px; height:44px; border:1px solid #C7D6D0; border-radius:11px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; cursor:pointer" style-active="opacity:.7" onClick="{{ openBurger }}">
+      <div style="width:17px; height:2px; border-radius:1px; background:#14604a"></div>
+      <div style="width:17px; height:2px; border-radius:1px; background:#14604a"></div>
+      <div style="width:17px; height:2px; border-radius:1px; background:#14604a"></div>
+    </div>
+  </div>
+
+  <div style="flex:1; min-height:0; display:flex; flex-direction:column">
+  <div style="flex:none; padding:18px 16px 0; display:flex; flex-direction:column; gap:18px">
+
+    <div style="display:flex; flex-direction:column; gap:14px; padding-top:2px">
+    <div style="font-size:22px; font-weight:800; color:#14181a; letter-spacing:-.01em; line-height:1.4">Привіт, Олено!</div>
+    <div style="display:flex; padding:3px; border-radius:999px; background:#E6EFEB">
+      <div style="flex:1; height:38px; border-radius:999px; background:#14604a; cursor:pointer; display:flex; align-items:center; justify-content:center" style-active="opacity:.85">
+        <span style="font-size:13px; font-weight:800; color:#fff">День</span>
+      </div>
+      <div style="flex:1; height:38px; border-radius:999px; cursor:pointer; display:flex; align-items:center; justify-content:center" style-active="opacity:.6" onClick="{{ openWeekPlan }}">
+        <span style="font-size:13px; font-weight:700; color:#0F6B52">Тиждень</span>
+      </div>
+      <div style="flex:1; height:38px; border-radius:999px; cursor:pointer; display:flex; align-items:center; justify-content:center" style-active="opacity:.6" onClick="{{ openMonthPlan }}">
+        <span style="font-size:13px; font-weight:700; color:#0F6B52">Місяць</span>
+      </div>
+    </div>
+    </div>
+
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:6px">
+      <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center; color:#0F6B52; font-size:20px; font-weight:700; cursor:pointer; flex:none" style-active="opacity:.7; transform:scale(.92)" onClick="{{ openYesterday }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m14.5 6-6 6 6 6" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0; flex:none">
+        <div style="font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#0F6B52; line-height:1.3">сьогодні</div>
+        <div style="font-size:15px; font-weight:800; color:#14181a; line-height:1.25; white-space:nowrap">середа, 5 серпня</div>
+      </div>
+      <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center; color:#0F6B52; font-size:20px; font-weight:700; cursor:pointer; flex:none" style-active="opacity:.7; transform:scale(.92)" onClick="{{ openTomorrow }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </div>
+  </div>
+
+  <div style="flex:1; min-height:0; overflow-y:auto; scrollbar-width:none; padding:14px 16px 92px">
+    <div style="display:flex; flex-direction:column; gap:10px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <div style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-weight:800; color:#5F6570">Маршрути</div>
+        <div style="flex:1; height:5px; border-radius:3px; background:#E7E5DE; overflow:hidden">
+          <div style="width:{{ totalProgressPct }}; height:100%; background:#0F6B52; border-radius:3px"></div>
+        </div>
+        <span style="font-size:12px; font-weight:700; color:#5F5B52; flex:none">{{ totalProgressLabel }}</span>
+      </div>
+
+      <sc-if value="{{ routeAVisible }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#fff; border-radius:14px; border:1px solid #E7E5DE; overflow:hidden">
+        <div style="display:flex; align-items:center; gap:10px; padding:12px 13px; cursor:pointer" style-active="opacity:.7" onClick="{{ toggleRouteA }}">
+          <div style="flex:1; min-width:0; font-size:15px; font-weight:800; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Поділ — центр</div>
+          <div style="font-size:13.5px; font-weight:800; color:#5A615F; flex:none">{{ routeAProgress }}</div>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex:none; transform:{{ routeAChevron }}"><path d="m6 9.5 6 6 6-6" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <sc-if value="{{ routeAExpanded }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex; flex-direction:column; gap:8px; padding:0 12px 12px">
+
+          <sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+          <div style="position:relative; border-radius:12px; overflow:hidden; order:{{ orderPtA }}; transform:{{ liftTransformA }}; box-shadow:{{ liftShadowA }}; z-index:{{ liftZA }}; opacity:{{ dimA }}; transition:transform .2s, opacity .2s">
+            <div style="position:absolute; inset:0; display:flex; justify-content:flex-end">
+              <div style="width:122px; height:100%; box-sizing:border-box; flex:none; background:#0F6B52; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer" style-active="opacity:.85" onClick="{{ visitA }}">
+                <svg width="19" height="19" viewBox="0 0 18 18" fill="none"><path d="M3.8 9.4 7.5 13.1 14.3 5.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <div style="font-size:12.5px; font-weight:800">Відвідано</div>
+              </div>
+              <div style="width:92px; height:100%; box-sizing:border-box; flex:none; background:#B23A3A; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; cursor:pointer; padding-left:14px" style-active="opacity:.75" onClick="{{ removeA }}">
+                <svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <div style="font-size:11px; font-weight:700">Видалити</div>
+              </div>
+            </div>
+            <div style="position:relative; transform:translateX({{ swipeAPx }}); transition:{{ transitionA }}; display:flex; align-items:stretch; height:100%; z-index:2; border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff; touch-action:pan-y; cursor:grab" onPointerDown="{{ onDownA }}">
+              <div style="width:4px; background:#C98A22; flex:none"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center; gap:10px; padding:11px">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:5px; flex:none" onClick="{{ stopClick }}">
+                  <sc-if value="{{ visitedA }}" hint-placeholder-val="{{ false }}">
+                    <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center">
+                      <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3.3 8.3 6.7 11.7 12.7 4.7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ notVisitedA }}" hint-placeholder-val="{{ true }}">
+                    <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center">{{ numberA }}</div>
+                  </sc-if>
+                  <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px; cursor:grab; touch-action:none" title="Змінити порядок" onPointerDown="{{ onReorderDownA }}">
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                  </div>
+                </div>
+                <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:3px; cursor:pointer" style-active="opacity:.7" onClick="{{ openA }}">
+                  <div style="font-size:14.5px; font-weight:700; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Вітасан Центральна</div>
+                  <div style="font-size:12px; color:#5F5B52; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">вул. Хрещатик, 1 · Вітасан</div>
+                  <div style="display:flex; align-items:center; gap:5px; min-width:0">
+                    <svg width="11" height="11" viewBox="0 0 14 14" fill="none" style="flex:none"><rect x="1.5" y="2.5" width="11" height="10" rx="2.2" stroke="#C98A22" stroke-width="1.8" /><path d="M1.5 5.5h11" stroke="#C98A22" stroke-width="1.8" /></svg>
+                    <div style="font-size:11.5px; font-weight:800; color:#C98A22; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">2 задачі на сьогодні</div>
+                  </div>
+                </div>
+                <div style="font-size:18px; color:#8C8A80; font-weight:700; flex:none; opacity:{{ chevronOpacityA }}; cursor:pointer" onClick="{{ openInfoA }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              </div>
+            </div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+          <div style="position:relative; border-radius:12px; overflow:hidden; order:{{ orderPtB }}; transform:{{ liftTransformB }}; box-shadow:{{ liftShadowB }}; z-index:{{ liftZB }}; opacity:{{ dimB }}; transition:transform .2s, opacity .2s">
+            <div style="position:absolute; inset:0; display:flex; justify-content:flex-end">
+              <div style="width:122px; height:100%; box-sizing:border-box; flex:none; background:#0F6B52; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer" style-active="opacity:.85" onClick="{{ visitB }}">
+                <svg width="19" height="19" viewBox="0 0 18 18" fill="none"><path d="M3.8 9.4 7.5 13.1 14.3 5.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <div style="font-size:12.5px; font-weight:800">Відвідано</div>
+              </div>
+              <div style="width:92px; height:100%; box-sizing:border-box; flex:none; background:#B23A3A; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; cursor:pointer; padding-left:14px" style-active="opacity:.75" onClick="{{ removeB }}">
+                <svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <div style="font-size:11px; font-weight:700">Видалити</div>
+              </div>
+            </div>
+            <div style="position:relative; transform:translateX({{ swipeBPx }}); transition:{{ transitionB }}; display:flex; align-items:stretch; height:100%; z-index:2; border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff; touch-action:pan-y; cursor:grab" onPointerDown="{{ onDownB }}">
+              <div style="width:4px; background:#B23A3A; flex:none"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center; gap:10px; padding:11px">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:5px; flex:none" onClick="{{ stopClick }}">
+                  <sc-if value="{{ visitedB }}" hint-placeholder-val="{{ false }}">
+                    <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center">
+                      <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3.3 8.3 6.7 11.7 12.7 4.7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ notVisitedB }}" hint-placeholder-val="{{ true }}">
+                    <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center">{{ numberB }}</div>
+                  </sc-if>
+                  <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px; cursor:grab; touch-action:none" title="Змінити порядок" onPointerDown="{{ onReorderDownB }}">
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                  </div>
+                </div>
+                <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:3px; cursor:pointer" style-active="opacity:.7" onClick="{{ openB }}">
+                  <div style="font-size:14.5px; font-weight:700; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Дентал Про Поділ</div>
+                  <div style="font-size:12px; color:#5F5B52; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">вул. Сагайдачного, 5 · Дентал Про</div>
+                  <div style="display:flex; align-items:center; gap:5px; min-width:0">
+                    <svg width="11" height="11" viewBox="0 0 14 14" fill="none" style="flex:none"><circle cx="7" cy="7" r="5.5" stroke="#B23A3A" stroke-width="1.8" /><path d="M7 4.2V7l1.8 1.3" stroke="#B23A3A" stroke-width="1.8" stroke-linecap="round" /></svg>
+                    <div style="font-size:11.5px; font-weight:800; color:#B23A3A; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">1 прострочена · 3 задачі</div>
+                  </div>
+                </div>
+                <div style="font-size:18px; color:#8C8A80; font-weight:700; flex:none; opacity:{{ chevronOpacityB }}; cursor:pointer" onClick="{{ openInfoB }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              </div>
+            </div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ showC }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative; border-radius:12px; overflow:hidden; order:{{ orderPtC }}; transform:{{ liftTransformC }}; box-shadow:{{ liftShadowC }}; z-index:{{ liftZC }}; opacity:{{ dimC }}; transition:transform .2s, opacity .2s">
+            <div style="position:absolute; inset:0; display:flex; justify-content:flex-end">
+              <div style="width:122px; height:100%; box-sizing:border-box; flex:none; background:#0F6B52; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer" style-active="opacity:.85" onClick="{{ visitC }}">
+                <svg width="19" height="19" viewBox="0 0 18 18" fill="none"><path d="M3.8 9.4 7.5 13.1 14.3 5.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <div style="font-size:12.5px; font-weight:800">Відвідано</div>
+              </div>
+              <div style="width:92px; height:100%; box-sizing:border-box; flex:none; background:#B23A3A; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; cursor:pointer; padding-left:14px" style-active="opacity:.75" onClick="{{ removeC }}">
+                <svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <div style="font-size:11px; font-weight:700">Видалити</div>
+              </div>
+            </div>
+            <div style="position:relative; transform:translateX({{ swipeCPx }}); transition:{{ transitionC }}; display:flex; align-items:stretch; height:100%; z-index:2; border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff; touch-action:pan-y; cursor:grab" onPointerDown="{{ onDownC }}">
+              <div style="width:4px; background:#5A8F78; flex:none"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center; gap:10px; padding:11px">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:5px; flex:none" onClick="{{ stopClick }}">
+                  <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center">{{ numberC }}</div>
+                  <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px; cursor:grab; touch-action:none" title="Змінити порядок" onPointerDown="{{ onReorderDownC }}">
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                  </div>
+                </div>
+                <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:3px; cursor:pointer" style-active="opacity:.7" onClick="{{ openC }}">
+                  <div style="font-size:14.5px; font-weight:700; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Фармацентр Либідська</div>
+                  <div style="font-size:12px; color:#5F5B52; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">вул. Либідська, 22 · Фармацентр</div>
+                </div>
+                <div style="font-size:18px; color:#8C8A80; font-weight:700; flex:none; opacity:{{ chevronOpacityC }}; cursor:pointer" onClick="{{ openInfoC }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              </div>
+            </div>
+          </div>
+          </sc-if>
+          <sc-if value="{{ isARouteEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:10px; padding:16px 0 6px; text-align:center; order:10">
+              <span style="font-size:13px; font-weight:600; color:#8A887F">Усі точки видалено</span>
+              <div style="display:flex; align-items:center; justify-content:center; gap:6px; padding:8px 14px; cursor:pointer" style-active="opacity:.6" onClick="{{ openAddPoint }}">
+                <span style="font-size:16px; font-weight:700; color:#0F6B52; line-height:1">+</span>
+                <span style="font-size:14px; font-weight:800; color:#0F6B52">Додати точку</span>
+              </div>
+              <span style="font-size:11.5px; font-weight:600; color:#B0AEA4; cursor:pointer; display:flex; align-items:center; gap:4px" style-active="opacity:.7" onClick="{{ removeRouteA }}"><svg width="11" height="11" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#B0AEA4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Видалити маршрут</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isARouteComplete }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:center; justify-content:center; padding:8px 0 2px; order:10">
+            <span style="font-size:13px; font-weight:600; color:#8A887F">Усі точки відвідано</span>
+          </div>
+          </sc-if>
+          <sc-if value="{{ !isARouteEmpty }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; align-items:center; justify-content:center; gap:6px; padding:8px 0; cursor:pointer; order:10" style-active="opacity:.6" onClick="{{ openAddPoint }}">
+            <span style="font-size:16px; font-weight:700; color:#0F6B52; line-height:1">+</span>
+            <span style="font-size:14px; font-weight:800; color:#0F6B52">Додати точку</span>
+          </div>
+          </sc-if>
+          <sc-if value="{{ hasADone }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; align-items:center; gap:9px; padding:7px 6px; margin-top:2px; border-top:1px solid #EDEBE4; cursor:pointer; order:10" style-active="opacity:.7" onClick="{{ toggleExpanded }}">
+            <div style="width:20px; height:20px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M3.3 8.3 6.7 11.7 12.7 4.7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <span style="flex:1; font-size:13px; font-weight:600; color:#5F5B52">{{ doneCount }} {{ doneLabel }}</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex:none; transform:{{ chevronRotate }}"><path d="m6 9.5 6 6 6-6" stroke="#7A776D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <sc-if value="{{ showADoneItems }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; gap:6px; padding:2px 0 0; order:10">
+              <sc-for list="{{ doneItems }}" as="item" hint-placeholder-count="1">
+                <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE; cursor:pointer" style-active="opacity:.7" onClick="{{ item.openDetail }}">
+                  <div style="width:28px; height:28px; border-radius:50%; background:#E6EFEB; display:flex; align-items:center; justify-content:center; flex:none; cursor:pointer" style-active="opacity:.7" onClick="{{ item.restore }}" title="Відновити">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 9.5A8 8 0 0 1 18.5 6.5M20 9.5v-5m0 5h-5" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                  </div>
+                  <div style="flex:1; min-width:0">
+                    <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ item.name }}</div>
+                    <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ item.address }}</div>
+                  </div>
+                  <div style="font-size:18px; color:#8C8A80; font-weight:700; flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8A887F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ routeBVisible }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#fff; border-radius:14px; border:1px solid #E7E5DE; overflow:hidden">
+        <div style="display:flex; align-items:center; gap:10px; padding:12px 13px; cursor:pointer" style-active="opacity:.7" onClick="{{ toggleRouteB }}">
+          <div style="flex:1; min-width:0; font-size:15px; font-weight:800; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Бровари + Троєщина</div>
+          <div style="font-size:13.5px; font-weight:800; color:#5A615F; flex:none">{{ routeBProgress }}</div>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex:none; transform:{{ routeBChevron }}"><path d="m6 9.5 6 6 6-6" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <sc-if value="{{ routeBExpanded }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex; flex-direction:column; gap:8px; padding:0 12px 12px">
+          <sc-if value="{{ showE }}" hint-placeholder-val="{{ true }}">
+          <div style="position:relative; border-radius:12px; overflow:hidden">
+            <div style="position:absolute; inset:0; display:flex; justify-content:flex-end">
+              <div style="width:122px; height:100%; box-sizing:border-box; flex:none; background:#0F6B52; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer" style-active="opacity:.85" onClick="{{ visitE }}">
+                <svg width="19" height="19" viewBox="0 0 18 18" fill="none"><path d="M3.8 9.4 7.5 13.1 14.3 5.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <div style="font-size:12.5px; font-weight:800">Відвідано</div>
+              </div>
+              <div style="width:92px; height:100%; box-sizing:border-box; flex:none; background:#B23A3A; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; cursor:pointer; padding-left:14px" style-active="opacity:.75" onClick="{{ removeE }}">
+                <svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <div style="font-size:11px; font-weight:700">Видалити</div>
+              </div>
+            </div>
+            <div style="position:relative; transform:translateX({{ swipeEPx }}); transition:{{ transitionE }}; display:flex; align-items:stretch; height:100%; z-index:2; border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff; touch-action:pan-y; cursor:grab" onPointerDown="{{ onDownE }}">
+              <div style="width:4px; background:#5A8F78; flex:none"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center; gap:10px; padding:11px; cursor:pointer" style-active="opacity:.7" onClick="{{ openE }}">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:5px; flex:none">
+                  <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center">{{ numberE }}</div>
+                  <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px" title="Змінити порядок">
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                  </div>
+                </div>
+                <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:3px">
+                  <div style="font-size:14.5px; font-weight:700; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Агроцентр Бровари</div>
+                  <div style="font-size:12px; color:#5F5B52; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">вул. Київська, 14 · Агроцентр</div>
+                </div>
+                <div style="font-size:18px; color:#8C8A80; font-weight:700; flex:none; opacity:{{ chevronOpacityE }}; cursor:pointer" onClick="{{ openInfoE }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              </div>
+            </div>
+          </div>
+          </sc-if>
+          <sc-if value="{{ showF }}" hint-placeholder-val="{{ true }}">
+          <div style="position:relative; border-radius:12px; overflow:hidden">
+            <div style="position:absolute; inset:0; display:flex; justify-content:flex-end">
+              <div style="width:122px; height:100%; box-sizing:border-box; flex:none; background:#0F6B52; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer" style-active="opacity:.85" onClick="{{ visitF }}">
+                <svg width="19" height="19" viewBox="0 0 18 18" fill="none"><path d="M3.8 9.4 7.5 13.1 14.3 5.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <div style="font-size:12.5px; font-weight:800">Відвідано</div>
+              </div>
+              <div style="width:92px; height:100%; box-sizing:border-box; flex:none; background:#B23A3A; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; cursor:pointer; padding-left:14px" style-active="opacity:.75" onClick="{{ removeF }}">
+                <svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <div style="font-size:11px; font-weight:700">Видалити</div>
+              </div>
+            </div>
+            <div style="position:relative; transform:translateX({{ swipeFPx }}); transition:{{ transitionF }}; display:flex; align-items:stretch; height:100%; z-index:2; border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff; touch-action:pan-y; cursor:grab" onPointerDown="{{ onDownF }}">
+              <div style="width:4px; background:#5A8F78; flex:none"></div>
+              <div style="flex:1; min-width:0; display:flex; align-items:center; gap:10px; padding:11px; cursor:pointer" style-active="opacity:.7" onClick="{{ openF }}">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:5px; flex:none">
+                  <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center">{{ numberF }}</div>
+                  <div style="display:grid; grid-template-columns:repeat(2,3px); grid-auto-rows:3px; gap:2.5px" title="Змінити порядок">
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                    <span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span><span style="width:3px; height:3px; border-radius:50%; background:#C4C2B9"></span>
+                  </div>
+                </div>
+                <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:3px">
+                  <div style="font-size:14.5px; font-weight:700; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Мед Плюс Троєщина</div>
+                  <div style="font-size:12px; color:#5F5B52; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">просп. Маяковського, 30 · Мед Плюс</div>
+                </div>
+                <div style="font-size:18px; color:#8C8A80; font-weight:700; flex:none; opacity:{{ chevronOpacityF }}; cursor:pointer" onClick="{{ openInfoF }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              </div>
+            </div>
+          </div>
+          </sc-if>
+          <sc-if value="{{ isBRouteEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:10px; padding:16px 0 6px; text-align:center">
+              <span style="font-size:13px; font-weight:600; color:#8A887F">Усі точки видалено</span>
+              <div style="display:flex; align-items:center; justify-content:center; gap:6px; padding:8px 14px; cursor:pointer" style-active="opacity:.6" onClick="{{ openAddPoint }}">
+                <span style="font-size:16px; font-weight:700; color:#0F6B52; line-height:1">+</span>
+                <span style="font-size:14px; font-weight:800; color:#0F6B52">Додати точку</span>
+              </div>
+              <span style="font-size:11.5px; font-weight:600; color:#B0AEA4; cursor:pointer; display:flex; align-items:center; gap:4px" style-active="opacity:.7" onClick="{{ removeRouteB }}"><svg width="11" height="11" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#B0AEA4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Видалити маршрут</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isBRouteComplete }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:center; justify-content:center; padding:8px 0 2px">
+            <span style="font-size:13px; font-weight:600; color:#8A887F">Усі точки відвідано</span>
+          </div>
+          </sc-if>
+          <sc-if value="{{ !isBRouteEmpty }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; align-items:center; justify-content:center; gap:6px; padding:8px 0; cursor:pointer" style-active="opacity:.6" onClick="{{ openAddPoint }}">
+            <span style="font-size:16px; font-weight:700; color:#0F6B52; line-height:1">+</span>
+            <span style="font-size:14px; font-weight:800; color:#0F6B52">Додати точку</span>
+          </div>
+          </sc-if>
+          <sc-if value="{{ hasBDone }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:center; gap:9px; padding:7px 6px; margin-top:2px; border-top:1px solid #EDEBE4; cursor:pointer" style-active="opacity:.7" onClick="{{ toggleBDone }}">
+            <div style="width:20px; height:20px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M3.3 8.3 6.7 11.7 12.7 4.7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <span style="flex:1; font-size:13px; font-weight:600; color:#5F5B52">{{ bDoneLabel }}</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex:none; transform:{{ bDoneChevron }}"><path d="m6 9.5 6 6 6-6" stroke="#7A776D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <sc-if value="{{ showBDoneItems }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; gap:6px; padding:2px 0 0; order:10">
+              <sc-for list="{{ bDoneItems }}" as="item" hint-placeholder-count="1">
+                <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE; cursor:pointer" style-active="opacity:.7" onClick="{{ item.openDetail }}">
+                  <div style="width:28px; height:28px; border-radius:50%; background:#E6EFEB; display:flex; align-items:center; justify-content:center; flex:none; cursor:pointer" style-active="opacity:.7" onClick="{{ item.restore }}" title="Відновити">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 9.5A8 8 0 0 1 18.5 6.5M20 9.5v-5m0 5h-5" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                  </div>
+                  <div style="flex:1; min-width:0">
+                    <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ item.name }}</div>
+                    <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ item.address }}</div>
+                  </div>
+                  <div style="font-size:18px; color:#8C8A80; font-weight:700; flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8A887F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          </sc-if>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <div style="display:flex; gap:10px; padding:13px 12px; border-radius:14px; border:1.5px dashed #C9C7BE; cursor:pointer" style-active="opacity:.6" onClick="{{ openCreateRoute }}">
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px">
+          <span style="font-size:16px; font-weight:700; color:#0F6B52; line-height:1">+</span>
+          <span style="font-size:14px; font-weight:800; color:#0F6B52">Додати маршрут</span>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ showToast }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; left:16px; right:16px; bottom:108px; z-index:11; background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:11px 12px; display:flex; align-items:center; gap:10px; box-shadow:0 10px 24px -6px rgba(20,24,22,.18)">
+      <div style="width:26px; height:26px; border-radius:50%; background:#F3E3E1; display:flex; align-items:center; justify-content:center; flex:none">
+        <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#B23A3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+      <span style="flex:1; font-size:13.5px; font-weight:700; color:#14181a">{{ toastMessage }}</span>
+      <span style="font-size:13px; font-weight:800; color:#0F6B52; cursor:pointer" onClick="{{ undoRemove }}">Скасувати</span>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute; left:0; right:0; bottom:0; margin:0; z-index:6; background:#fff; border-top:1px solid #e7e5e0; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px calc(14px + env(safe-area-inset-bottom, 0px)); box-shadow:0 -8px 20px -12px rgba(16,24,40,.12)">
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px; cursor:pointer">
+      <div style="position:absolute; top:0; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#14604a" stroke-width="1.8" stroke-linejoin="round" /></svg>
+      <span style="font-size:13px; font-weight:600; color:#14604a">Головна</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px; cursor:pointer" title="Немає окремого екрана задач у цьому дизайні">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3.2" stroke="#5F6570" stroke-width="1.8" /><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#5F6570">Задачі</span>
+    </div>
+    <div style="display:flex; justify-content:center; align-items:flex-end">
+      <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35); cursor:pointer" style-active="transform:scale(.92); box-shadow:0 4px 12px rgba(20,96,74,.35)" onClick="{{ openCreateTask }}">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="1.8" stroke-linecap="round" /></svg>
+      </div>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px; cursor:pointer" onClick="{{ openRoutes }}">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6.3 6.5h6.7a3.5 3.5 0 0 1 0 7h-2a3.5 3.5 0 0 0 0 7h6.7" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" /><circle cx="6.3" cy="6.5" r="1.8" stroke="#5F6570" stroke-width="1.8" /><circle cx="17.7" cy="20.5" r="1.8" stroke="#5F6570" stroke-width="1.8" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#5F6570">Маршрути</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px; cursor:pointer" onClick="{{ openHistory }}">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#5F6570" stroke-width="1.8" /><path d="M12 7.6V12l3 2" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#5F6570">Історія</span>
+    </div>
+  </div>
+
+  <sc-if value="{{ hasDetail }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; background:#F3F2ED; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="visit-report" on-back="{{ closeOverlay }}" on-save="{{ saveReport }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+  <sc-if value="{{ hasDetailFilled }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; background:#F3F2ED; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="visit-details" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+  <sc-if value="{{ hasInfo }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; background:#F3F2ED; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="point-info" point-name="{{ infoName }}" address="{{ infoAddress }}" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isAddPoint }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="point-for-day" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isAnnouncements }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="announcements" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isBurger }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="burger-menu" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isRoutes }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="routes" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isHistory }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="visit-history" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isCreateRoute }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="route-create-sheet" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isCreateTask }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="task-create-sheet" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isYesterday }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="home-yesterday" on-back="{{ closeOverlay }}" on-older="{{ openMonday }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isTomorrow }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="home-day-empty" on-back="{{ closeOverlay }}" on-newer="{{ openFriday }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isMonday }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="home-day-before-yesterday-empty" on-back="{{ closeOverlay }}" on-newer="{{ openYesterday }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isFriday }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="home-day-future" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ celebrate }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:20; background:rgba(22,25,26,.42); display:flex; align-items:center; justify-content:center; animation:overlayFade 2.6s ease forwards; pointer-events:none">
+      <div style="background:#F4F9F6; border:1px solid #E7E5DE; border-radius:14px; padding:32px 28px; display:flex; flex-direction:column; align-items:center; gap:14px; animation:cardPop 2.6s ease forwards">
+        <div style="position:relative; width:72px; height:72px; display:flex; align-items:center; justify-content:center">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#0F6B52" style="position:absolute; top:-10px; right:-6px; animation:twinkle 1.6s ease .3s infinite"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="#3B9A7D" style="position:absolute; bottom:-4px; right:10px; animation:twinkle 1.6s ease .7s infinite"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="#0F6B52" style="position:absolute; bottom:2px; left:-12px; animation:twinkle 1.6s ease .5s infinite"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="#3B9A7D" style="position:absolute; top:-2px; left:-14px; animation:twinkle 1.6s ease .9s infinite"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+          <div style="width:72px; height:72px; border-radius:50%; background:radial-gradient(circle at 34% 28%, #18815f, #0F6B52 62%); display:flex; align-items:center; justify-content:center; animation:checkPop .5s ease .1s both">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+        </div>
+        <div style="font-size:19px; font-weight:800; color:#1A1A17; text-align:center">Молодець!</div>
+        <div style="font-size:14px; font-weight:500; color:#5F6570; text-align:center">Всі точки закрито — гарний результат</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isWeekPlan }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="home-week" on-back="{{ closeOverlay }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isMonthPlan }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:10; display:flex; flex-direction:column">
+      <dc-import name="home-month" on-back="{{ closeOverlay }}" on-day="{{ closeOverlay }}" on-week="{{ openWeekPlan }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    swipe: { a: 0, b: 0, c: 0, e: 0, f: 0 },
+    dragKey: null,
+    visited: { a: false, b: false, c: true, d: false, e: false, f: false },
+    removed: { a: false, b: false, c: false, e: false, f: false },
+    expanded: false,
+    detailKey: null,
+    overlay: null,
+    period: 'week',
+    toastKey: null,
+    toastRoute: null,
+    routeARemoved: false,
+    routeBRemoved: false,
+    routeBExpanded: false,
+    routeAExpanded: true,
+    bDoneExpanded: false,
+    celebrate: false,
+    pointOrderA: ['a', 'b', 'c'],
+    dragReorderKey: null,
+    dragReorderY: 0
+  };
+  reorderInfo = null;
+  removeTimer = null;
+  cardMeta = {
+    a: { name: 'Вітасан Центральна', address: 'вул. Хрещатик, 1 · Вітасан' },
+    b: { name: 'Дентал Про Поділ', address: 'вул. Сагайдачного, 5 · Дентал Про' },
+    c: { name: 'Фармацентр Либідська', address: 'вул. Либідська, 22 · Фармацентр', time: '09:40' },
+    d: { name: 'Оптика Зір', address: 'вул. Володимирська, 8 · Оптика Зір', time: '11:15' },
+    e: { name: 'Агроцентр Бровари', address: 'вул. Київська, 14 · Агроцентр' },
+    f: { name: 'Мед Плюс Троєщина', address: 'просп. Маяковського, 30 · Мед Плюс' }
+  };
+  dragInfo = null;
+
+  handlePointerDown = (key, e) => {
+    if (this.state.removed[key] || this.state.visited[key]) return;
+    e.preventDefault();
+    this.dragInfo = { key, startX: e.clientX, baseX: this.state.swipe[key], moved: false };
+    this.setState({ dragKey: key });
+    window.addEventListener('pointermove', this.handlePointerMove);
+    window.addEventListener('pointerup', this.handlePointerUp);
+  };
+
+  handlePointerMove = (e) => {
+    if (!this.dragInfo) return;
+    let next = this.dragInfo.baseX + (e.clientX - this.dragInfo.startX);
+    if (Math.abs(next - this.dragInfo.baseX) > 4) this.dragInfo.moved = true;
+    next = Math.max(-200, Math.min(0, next));
+    const key = this.dragInfo.key;
+    this.setState(s => ({ swipe: { ...s.swipe, [key]: next } }));
+  };
+
+  handlePointerUp = () => {
+    if (!this.dragInfo) return;
+    const key = this.dragInfo.key;
+    const snapped = this.state.swipe[key] < -100 ? -200 : 0;
+    this.dragInfo = null;
+    this.setState(s => ({ swipe: { ...s.swipe, [key]: snapped }, dragKey: null }));
+    window.removeEventListener('pointermove', this.handlePointerMove);
+    window.removeEventListener('pointerup', this.handlePointerUp);
+  };
+
+  markVisited(key) {
+    this.setState({ detailKey: key, overlay: 'detail', unsavedVisitKey: key });
+    this.setState(s => ({ visited: { ...s.visited, [key]: true }, swipe: { ...s.swipe, [key]: 0 } }));
+  }
+
+  saveReport = () => {
+    const s = this.state;
+    const activeKeys = ['a', 'b', 'c', 'e', 'f'].filter(k => !s.removed[k]);
+    const allDone = activeKeys.length > 0 && activeKeys.every(k => s.visited[k]);
+    this.setState({ overlay: null, detailKey: null, unsavedVisitKey: null, celebrate: allDone }, () => {
+      if (this.state.celebrate) {
+        clearTimeout(this.celebrateTimer);
+        this.celebrateTimer = setTimeout(() => this.setState({ celebrate: false }), 2600);
+      }
+    });
+  };
+
+  unmarkVisited(key) {
+    this.setState(s => ({ visited: { ...s.visited, [key]: false }, swipe: { ...s.swipe, [key]: 0 } }));
+  }
+
+  toggleExpanded = () => {
+    this.setState(s => ({ expanded: !s.expanded }));
+  };
+
+  handleReorderDown = (key, e) => {
+    if (this.state.removed[key] || this.state.visited[key]) return;
+    e.preventDefault();
+    e.stopPropagation();
+    this.reorderInfo = { key, startY: e.clientY };
+    this.setState({ dragReorderKey: key, dragReorderY: 0 });
+    window.addEventListener('pointermove', this.handleReorderMove);
+    window.addEventListener('pointerup', this.handleReorderUp);
+  };
+
+  handleReorderMove = (e) => {
+    if (!this.reorderInfo) return;
+    const delta = e.clientY - this.reorderInfo.startY;
+    this.setState({ dragReorderY: delta });
+    const CARD_H = 84;
+    if (Math.abs(delta) > CARD_H) {
+      const dir = delta > 0 ? 1 : -1;
+      const key = this.reorderInfo.key;
+      this.setState(s => {
+        const order = [...s.pointOrderA];
+        const idx = order.indexOf(key);
+        const swapIdx = idx + dir;
+        if (swapIdx < 0 || swapIdx >= order.length) return null;
+        [order[idx], order[swapIdx]] = [order[swapIdx], order[idx]];
+        return { pointOrderA: order };
+      });
+      this.reorderInfo.startY = e.clientY;
+      this.setState({ dragReorderY: 0 });
+    }
+  };
+
+  handleReorderUp = () => {
+    this.reorderInfo = null;
+    this.setState({ dragReorderKey: null, dragReorderY: 0 });
+    window.removeEventListener('pointermove', this.handleReorderMove);
+    window.removeEventListener('pointerup', this.handleReorderUp);
+  };
+
+  openDetail = (key) => {
+    this.setState({ detailKey: key, overlay: 'detail' });
+  };
+
+  openVisitedDetail = (key) => {
+    this.setState({ detailKey: key, overlay: 'detailFilled' });
+  };
+
+  openInfo = (key, e) => {
+    if (e) e.stopPropagation();
+    this.setState({ infoKey: key, overlay: 'info' });
+  };
+
+  openCardIfNotSwiping(key) {
+    if (this.state.swipe[key] !== 0) return;
+    if (this.state.visited[key]) {
+      this.openVisitedDetail(key);
+    } else {
+      this.openInfo(key);
+    }
+  }
+
+  setPeriod = (period) => {
+    this.setState({ period });
+  };
+
+  closeOverlay = () => {
+    this.setState(s => {
+      const key = s.detailKey;
+      if ((s.overlay === 'detail' || s.overlay === 'detailFilled') && key && s.unsavedVisitKey === key) {
+        return { overlay: null, detailKey: null, unsavedVisitKey: null, visited: { ...s.visited, [key]: false } };
+      }
+      return { overlay: null, detailKey: null, unsavedVisitKey: null };
+    });
+  };
+
+  removeCard(key) {
+    clearTimeout(this.removeTimer);
+    this.setState(s => ({ removed: { ...s.removed, [key]: true }, toastKey: key }));
+    this.removeTimer = setTimeout(() => {
+      this.setState(s => (s.toastKey === key ? { toastKey: null } : null));
+    }, 5000);
+  }
+
+  undoRemove = () => {
+    const key = this.state.toastKey;
+    if (!key) return;
+    clearTimeout(this.removeTimer);
+    this.setState(s => ({ removed: { ...s.removed, [key]: false }, swipe: { ...s.swipe, [key]: 0 }, toastKey: null }));
+  };
+
+  removeRoute(routeKey) {
+    clearTimeout(this.routeRemoveTimer);
+    this.setState({ [routeKey === 'A' ? 'routeARemoved' : 'routeBRemoved']: true, toastRoute: routeKey });
+    this.routeRemoveTimer = setTimeout(() => {
+      this.setState(s => (s.toastRoute === routeKey ? { toastRoute: null } : null));
+    }, 5000);
+  }
+
+  undoRoute = () => {
+    const routeKey = this.state.toastRoute;
+    if (!routeKey) return;
+    clearTimeout(this.routeRemoveTimer);
+    this.setState({ [routeKey === 'A' ? 'routeARemoved' : 'routeBRemoved']: false, toastRoute: null });
+  };
+
+  renderVals() {
+    const s = this.state;
+    return {
+      swipeAPx: s.swipe.a + 'px',
+      swipeBPx: s.swipe.b + 'px',
+      chevronOpacityA: Math.max(0, 1 - Math.abs(s.swipe.a) / 30),
+      chevronOpacityB: Math.max(0, 1 - Math.abs(s.swipe.b) / 30),
+      transitionA: s.dragKey === 'a' ? 'none' : 'transform .25s cubic-bezier(.2,.8,.2,1)',
+      transitionB: s.dragKey === 'b' ? 'none' : 'transform .25s cubic-bezier(.2,.8,.2,1)',
+      visitedA: s.visited.a,
+      visitedB: s.visited.b,
+      notVisitedA: !s.visited.a,
+      notVisitedB: !s.visited.b,
+      showA: !s.removed.a && !s.visited.a,
+      showB: !s.removed.b && !s.visited.b,
+      onDownA: (e) => this.handlePointerDown('a', e),
+      onDownB: (e) => this.handlePointerDown('b', e),
+      openA: () => this.openCardIfNotSwiping('a'),
+      openB: () => this.openCardIfNotSwiping('b'),
+      visitA: () => this.markVisited('a'),
+      visitB: () => this.markVisited('b'),
+      openInfoA: (e) => this.openInfo('a', e),
+      openInfoB: (e) => this.openInfo('b', e),
+      removeA: () => this.removeCard('a'),
+      removeB: () => this.removeCard('b'),
+      swipeEPx: s.swipe.e + 'px',
+      swipeFPx: s.swipe.f + 'px',
+      chevronOpacityE: Math.max(0, 1 - Math.abs(s.swipe.e) / 30),
+      chevronOpacityF: Math.max(0, 1 - Math.abs(s.swipe.f) / 30),
+      transitionE: s.dragKey === 'e' ? 'none' : 'transform .25s cubic-bezier(.2,.8,.2,1)',
+      transitionF: s.dragKey === 'f' ? 'none' : 'transform .25s cubic-bezier(.2,.8,.2,1)',
+      showE: !s.removed.e && !s.visited.e,
+      showF: !s.removed.f && !s.visited.f,
+      onDownE: (e) => this.handlePointerDown('e', e),
+      onDownF: (e) => this.handlePointerDown('f', e),
+      visitE: () => this.markVisited('e'),
+      visitF: () => this.markVisited('f'),
+      openInfoE: (e) => this.openInfo('e', e),
+      openInfoF: (e) => this.openInfo('f', e),
+      removeE: () => this.removeCard('e'),
+      removeF: () => this.removeCard('f'),
+      routeBProgress: ['e', 'f'].filter(k => s.visited[k]).length + '/' + ['e', 'f'].filter(k => !s.removed[k]).length,
+      routeAProgress: ['a', 'b', 'c'].filter(k => s.visited[k]).length + '/' + ['a', 'b', 'c'].filter(k => !s.removed[k]).length,
+      numberA: (() => { const act = s.pointOrderA.filter(k => !s.removed[k] && !s.visited[k]); return act.indexOf('a') + 1; })(),
+      numberB: (() => { const act = s.pointOrderA.filter(k => !s.removed[k] && !s.visited[k]); return act.indexOf('b') + 1; })(),
+      numberC: (() => { const act = s.pointOrderA.filter(k => !s.removed[k] && !s.visited[k]); return act.indexOf('c') + 1; })(),
+      orderPtA: s.pointOrderA.indexOf('a'),
+      orderPtB: s.pointOrderA.indexOf('b'),
+      orderPtC: s.pointOrderA.indexOf('c'),
+      liftTransformA: s.dragReorderKey === 'a' ? ('translateY(' + s.dragReorderY + 'px)') : 'none',
+      liftTransformB: s.dragReorderKey === 'b' ? ('translateY(' + s.dragReorderY + 'px)') : 'none',
+      liftTransformC: s.dragReorderKey === 'c' ? ('translateY(' + s.dragReorderY + 'px)') : 'none',
+      liftShadowA: s.dragReorderKey === 'a' ? '0 10px 22px -6px rgba(20,24,22,.32)' : 'none',
+      liftShadowB: s.dragReorderKey === 'b' ? '0 10px 22px -6px rgba(20,24,22,.32)' : 'none',
+      liftShadowC: s.dragReorderKey === 'c' ? '0 10px 22px -6px rgba(20,24,22,.32)' : 'none',
+      liftZA: s.dragReorderKey === 'a' ? 5 : 1,
+      liftZB: s.dragReorderKey === 'b' ? 5 : 1,
+      liftZC: s.dragReorderKey === 'c' ? 5 : 1,
+      dimA: (s.dragReorderKey && s.dragReorderKey !== 'a') ? .5 : 1,
+      dimB: (s.dragReorderKey && s.dragReorderKey !== 'b') ? .5 : 1,
+      dimC: (s.dragReorderKey && s.dragReorderKey !== 'c') ? .5 : 1,
+      onReorderDownA: (e) => this.handleReorderDown('a', e),
+      onReorderDownB: (e) => this.handleReorderDown('b', e),
+      onReorderDownC: (e) => this.handleReorderDown('c', e),
+      stopClick: (e) => e.stopPropagation(),
+      showC: !s.removed.c && !s.visited.c,
+      swipeCPx: s.swipe.c + 'px',
+      chevronOpacityC: Math.max(0, 1 - Math.abs(s.swipe.c) / 30),
+      transitionC: s.dragKey === 'c' ? 'none' : 'transform .25s cubic-bezier(.2,.8,.2,1)',
+      onDownC: (e) => this.handlePointerDown('c', e),
+      openC: () => this.openCardIfNotSwiping('c'),
+      visitC: () => this.markVisited('c'),
+      openInfoC: (e) => this.openInfo('c', e),
+      removeC: () => this.removeCard('c'),
+      hasADone: ['a', 'b', 'c'].some(k => s.visited[k]),
+      isARouteEmpty: ['a', 'b', 'c'].every(k => s.removed[k]),
+      isARouteComplete: ['a','b','c'].filter(k => !s.removed[k]).length > 0 && ['a','b','c'].filter(k => !s.removed[k]).every(k => s.visited[k]),
+      totalProgressLabel: ['a','b','c','e','f'].filter(k => s.visited[k]).length + ' з ' + ['a','b','c','e','f'].filter(k => !s.removed[k]).length + ' точок',
+      totalProgressPct: (['a','b','c','e','f'].filter(k => s.visited[k]).length / Math.max(1, ['a','b','c','e','f'].filter(k => !s.removed[k]).length) * 100) + '%',
+      doneCount: ['a', 'b', 'c'].filter(k => s.visited[k]).length,
+      doneLabel: ['a', 'b', 'c'].filter(k => s.visited[k]).length === 1 ? 'точка відвідана' : 'точки відвідано',
+      expanded: s.expanded,
+      chevronRotate: s.expanded ? 'rotate(180deg)' : 'none',
+      toggleExpanded: this.toggleExpanded,
+      showADoneItems: (['a','b','c'].filter(k => !s.removed[k]).length > 0 && ['a','b','c'].filter(k => !s.removed[k]).every(k => s.visited[k])) || s.expanded,
+      doneItems: ['a', 'b', 'c'].filter(k => s.visited[k]).map(k => ({ ...this.cardMeta[k], key: k, openDetail: () => this.openVisitedDetail(k), restore: (e) => { e.stopPropagation(); this.unmarkVisited(k); } })),
+      hasBDone: ['e', 'f'].some(k => s.visited[k]),
+      isBRouteEmpty: ['e', 'f'].every(k => s.removed[k]),
+      isBRouteComplete: ['e','f'].filter(k => !s.removed[k]).length > 0 && ['e','f'].filter(k => !s.removed[k]).every(k => s.visited[k]),
+      bDoneExpanded: s.bDoneExpanded,
+      bDoneChevron: s.bDoneExpanded ? 'rotate(180deg)' : 'none',
+      toggleBDone: () => this.setState(st => ({ bDoneExpanded: !st.bDoneExpanded })),
+      showBDoneItems: (['e','f'].filter(k => !s.removed[k]).length > 0 && ['e','f'].filter(k => !s.removed[k]).every(k => s.visited[k])) || s.bDoneExpanded,
+      bDoneLabel: ['e', 'f'].filter(k => s.visited[k]).length === 1 ? '1 точка відвідана' : ['e', 'f'].filter(k => s.visited[k]).length + ' точки відвідано',
+      bDoneItems: ['e', 'f'].filter(k => s.visited[k]).map(k => ({ ...this.cardMeta[k], key: k, openDetail: () => this.openVisitedDetail(k), restore: (e) => { e.stopPropagation(); this.unmarkVisited(k); } })),
+      numberE: 1,
+      numberF: s.visited.e || s.removed.e ? 1 : 2,
+      celebrate: s.celebrate,
+      isWeekPlan: s.overlay === 'week',
+      isMonthPlan: s.overlay === 'month',
+      openWeekPlan: () => this.setState({ overlay: 'week' }),
+      openMonthPlan: () => this.setState({ overlay: 'month' }),
+      hasDetail: s.overlay === 'detail',
+      hasDetailFilled: s.overlay === 'detailFilled',
+      hasInfo: s.overlay === 'info',
+      infoName: s.infoKey ? this.cardMeta[s.infoKey].name : '',
+      infoAddress: s.infoKey ? this.cardMeta[s.infoKey].address : '',
+      isAddPoint: s.overlay === 'addPoint',
+      isAnnouncements: s.overlay === 'announcements',
+      isBurger: s.overlay === 'burger',
+      isRoutes: s.overlay === 'routes',
+      isHistory: s.overlay === 'history',
+      isCreateRoute: s.overlay === 'createRoute',
+      isCreateTask: s.overlay === 'createTask',
+      openCreateTask: () => this.setState({ overlay: 'createTask' }),
+      isYesterday: s.overlay === 'yesterday',
+      openYesterday: () => this.setState({ overlay: 'yesterday' }),
+      isTomorrow: s.overlay === 'tomorrow',
+      openTomorrow: () => this.setState({ overlay: 'tomorrow' }),
+      isMonday: s.overlay === 'monday',
+      openMonday: () => this.setState({ overlay: 'monday' }),
+      isFriday: s.overlay === 'friday',
+      openFriday: () => this.setState({ overlay: 'friday' }),
+      openAddPoint: () => this.setState({ overlay: 'addPoint' }),
+      openAnnouncements: () => this.setState({ overlay: 'announcements' }),
+      openBurger: () => this.setState({ overlay: 'burger' }),
+      openRoutes: () => this.setState({ overlay: 'routes' }),
+      openHistory: () => this.setState({ overlay: 'history' }),
+      openCreateRoute: () => this.setState({ overlay: 'createRoute' }),
+      routeAExpanded: s.routeAExpanded,
+      routeAChevron: s.routeAExpanded ? 'rotate(180deg)' : 'none',
+      toggleRouteA: () => this.setState(st => ({ routeAExpanded: !st.routeAExpanded })),
+      routeBExpanded: s.routeBExpanded,
+      routeBChevron: s.routeBExpanded ? 'rotate(180deg)' : 'none',
+      toggleRouteB: () => this.setState(st => ({ routeBExpanded: !st.routeBExpanded })),
+      openE: () => this.openCardIfNotSwiping('e'),
+      openF: () => this.openCardIfNotSwiping('f'),
+      closeOverlay: this.closeOverlay,
+      saveReport: this.saveReport,
+      showToast: !!s.toastKey || !!s.toastRoute,
+      toastMessage: s.toastRoute ? 'Маршрут видалено' : 'Точку видалено',
+      undoRemove: s.toastRoute ? this.undoRoute : this.undoRemove,
+      routeARemoved: s.routeARemoved,
+      routeBRemoved: s.routeBRemoved,
+      routeAVisible: !s.routeARemoved,
+      routeBVisible: !s.routeBRemoved,
+      removeRouteA: () => this.removeRoute('A'),
+      removeRouteB: () => this.removeRoute('B')
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#E7E5DE; font-family:'Manrope',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+@keyframes checkPop { 0% { transform:scale(.4) rotate(-8deg); opacity:0; } 55% { transform:scale(1.14) rotate(5deg); opacity:1; } 100% { transform:scale(1) rotate(0); opacity:1; } }
+</style>
+</helmet>
+<!-- Цей екран — celebratory-оверлей "день виконано" — коректний лише для СЬОГОДНІ (миттєве святкування в момент завершення останньої точки). Минулі й майбутні дні не показують цей оверлей. -->
+<div style="width:393px; height:852px; margin:0 auto; background:#F3F2ED; overflow:hidden; display:flex; flex-direction:column; position:relative">
+  <div style="background:#fff; padding:10px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #E6E4DD; filter:blur(2px); opacity:.6">
+    <div style="width:44px; height:44px; border-radius:11px; background:#0F6B52; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+    <div style="flex:1; display:flex; flex-direction:column">
+      <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+      <div style="font-size:13px; color:#5F5B52">Vizitum</div>
+    </div>
+    <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB"></div>
+    <div style="width:44px; height:44px; border:1px solid #C7D6D0; border-radius:11px"></div>
+  </div>
+
+  <div style="flex:1; min-height:0; padding:18px 16px 92px; display:flex; flex-direction:column; gap:18px; filter:blur(2px); opacity:.6">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+      <div style="font-size:22px; font-weight:800; color:#14181a">Привіт, Олено!</div>
+    </div>
+    <div style="height:120px; background:#fff; border-radius:14px; border:1px solid #e7e5e0"></div>
+    <div style="height:120px; background:#fff; border-radius:14px; border:1px solid #e7e5e0"></div>
+  </div>
+
+  <div style="position:absolute; left:0; right:0; bottom:0; height:82px; background:#fff; border-top:1px solid #e7e5e0; filter:blur(2px); opacity:.6"></div>
+
+  <div style="position:absolute; inset:0; background:rgba(22,25,26,.42); display:flex; align-items:center; justify-content:center">
+    <div style="background:#F4F9F6; border:1px solid #E7E5DE; border-radius:14px; padding:32px 28px; display:flex; flex-direction:column; align-items:center; gap:14px">
+      <div style="position:relative; width:72px; height:72px; display:flex; align-items:center; justify-content:center">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#0F6B52" style="position:absolute; top:-10px; right:-6px"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="#3B9A7D" style="position:absolute; bottom:-4px; right:10px; opacity:.85"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="#0F6B52" style="position:absolute; bottom:2px; left:-12px; opacity:.9"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+        <svg width="7" height="7" viewBox="0 0 24 24" fill="#3B9A7D" style="position:absolute; top:-2px; left:-14px; opacity:.75"><path d="M12 0 14 10 24 12 14 14 12 24 10 14 0 12 10 10Z" /></svg>
+        <div style="width:72px; height:72px; border-radius:50%; background:radial-gradient(circle at 34% 28%, #18815f, #0F6B52 62%); display:flex; align-items:center; justify-content:center">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+      </div>
+      <div style="font-size:19px; font-weight:800; color:#1A1A17; text-align:center">Молодець!</div>
+      <div style="font-size:14px; font-weight:500; color:#5F6570; text-align:center">Всі точки закрито — гарний результат</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:393,&quot;height&quot;:852}}"></script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+body { margin:0; background:#E7E5DE; font-family:'Manrope',system-ui,sans-serif; }
+a { color:#0F6B52; text-decoration:none; }
+a:hover { color:#0B4E3B; }
+div::-webkit-scrollbar { display:none; }
+</style>
+</helmet>
+<div style="width:393px; height:852px; margin:0 auto; background:#F3F2ED; overflow:hidden; display:flex; flex-direction:column; position:relative">
+  <div style="background:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #E6E4DD">
+    <div style="width:44px; height:44px; border-radius:11px; background:#0F6B52; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; letter-spacing:-.01em">DT</div>
+    <div style="flex:1; display:flex; flex-direction:column">
+      <div style="font-size:16px; font-weight:800; color:#1A1A17">Demo Team</div>
+      <div style="font-size:13px; color:#5F5B52">Vizitum</div>
+    </div>
+    <div style="position:relative; width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center; cursor:pointer" title="Оголошення">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9.5a6 6 0 0 1 12 0c0 3.2 1.2 5 2 6H4c.8-1 2-2.8 2-6z" stroke="#0F6B52" stroke-width="1.8" stroke-linejoin="round" /><path d="M10 19.5a2 2 0 0 0 4 0" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <div style="position:absolute; top:-3px; right:-3px; min-width:15px; height:15px; padding:0 3px; border-radius:8px; background:#C4453F; border:1px solid #fff; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:600; color:#fff; line-height:1">3</div>
+    </div>
+    <div style="width:44px; height:44px; border:1px solid #C7D6D0; border-radius:11px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; cursor:pointer">
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+      <div style="width:17px; height:2px; background:#14604a"></div>
+    </div>
+  </div>
+
+  <div style="flex:1; min-height:0; overflow-y:auto; scrollbar-width:none; padding:18px 16px 40px; display:flex; flex-direction:column; gap:18px">
+
+    <div style="display:flex; flex-direction:column; gap:14px; padding-top:2px">
+    <div style="font-size:22px; font-weight:800; color:#14181a; letter-spacing:-.01em; line-height:1.4">Привіт, Олено!</div>
+    <div style="display:flex; padding:3px; border-radius:999px; background:#E6EFEB">
+          <div style="flex:1; height:38px; border-radius:999px; background:#14604a; cursor:pointer; display:flex; align-items:center; justify-content:center" style-active="opacity:.85">
+            <span style="font-size:13px; font-weight:800; color:#fff">День</span>
+          </div>
+          <div style="flex:1; height:38px; border-radius:999px; cursor:pointer; display:flex; align-items:center; justify-content:center" style-active="opacity:.6">
+            <span style="font-size:13px; font-weight:700; color:#0F6B52">Тиждень</span>
+          </div>
+          <div style="flex:1; height:38px; border-radius:999px; cursor:pointer; display:flex; align-items:center; justify-content:center" style-active="opacity:.6">
+            <span style="font-size:13px; font-weight:700; color:#0F6B52">Місяць</span>
+          </div>
+        </div>
+    </div>
+
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:6px">
+      <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center; cursor:pointer; flex:none" style-active="opacity:.7" onClick="{{ handleOlder }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m14.5 6-6 6 6 6" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div style="display:flex; align-items:center; gap:5px; flex:none">
+        <div style="cursor:pointer" title="тап — повернутися на сьогодні" onClick="{{ handleBack }}">
+          <div style="font-size:15px; font-weight:800; color:#14181a; line-height:1.25; white-space:nowrap">вівторок, 4 серпня</div>
+        </div>
+        <div style="position:relative; width:18px; height:18px; border-radius:50%; background:#E6EFEB; display:flex; align-items:center; justify-content:center; cursor:pointer; flex:none" style-active="opacity:.7" onClick="{{ toggleEditInfo }}">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="#0F6B52" stroke-width="1.8" /><path d="M12 11v5.5" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" /><circle cx="12" cy="7.6" r="1.1" fill="#0F6B52" /></svg>
+          <sc-if value="{{ showEditInfo }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute; top:24px; left:50%; transform:translateX(-50%); width:200px; background:#fff; border:1px solid #E7E5DE; border-radius:10px; padding:9px 11px; box-shadow:0 10px 24px -6px rgba(20,24,22,.18); z-index:6">
+            <span style="font-size:11.5px; color:#5A615F; line-height:1.4">Редагування заднім числом доступне протягом 3 днів після дати візиту</span>
+          </div>
+          </sc-if>
+        </div>
+      </div>
+      <div style="width:44px; height:44px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center; cursor:pointer; flex:none" style-active="opacity:.7" onClick="{{ handleBack }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </div>
+
+
+    <div style="display:flex; flex-direction:column; gap:10px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <div style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-weight:800; color:#5F6570">Маршрути</div>
+        <div style="flex:1; height:5px; border-radius:3px; background:#E7E5DE; overflow:hidden">
+          <div style="width:{{ progressPct }}; height:100%; background:#0F6B52; border-radius:3px"></div>
+        </div>
+        <span style="font-size:12px; font-weight:700; color:#5F5B52; flex:none">{{ progressLabel }}</span>
+      </div>
+
+      <div style="background:#fff; border-radius:14px; border:1px solid #E7E5DE; overflow:hidden">
+        <div style="display:flex; align-items:center; gap:10px; padding:12px 13px">
+          <div style="flex:1; min-width:0; font-size:15px; font-weight:800; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Поділ — центр</div>
+          <div style="font-size:13.5px; font-weight:800; color:#5A615F; flex:none">{{ routeAProgress }}</div>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex:none"><path d="m6 9.5 6 6 6-6" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; padding:0 12px 12px">
+        <sc-if value="{{ showPoint }}" hint-placeholder-val="{{ true }}">
+        <div style="position:relative; border-radius:12px; overflow:hidden; isolation:isolate; z-index:0">
+          <div style="position:absolute; inset:0; display:flex; justify-content:flex-end">
+            <div style="width:122px; height:100%; box-sizing:border-box; flex:none; background:#14604a; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer" style-active="opacity:.85" onClick="{{ markPointVisited }}">
+              <svg width="19" height="19" viewBox="0 0 18 18" fill="none"><path d="M3.8 9.4 7.5 13.1 14.3 5.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              <div style="font-size:12.5px; font-weight:800">Відвідано</div>
+            </div>
+            <div style="width:92px; height:100%; box-sizing:border-box; flex:none; background:#B23A3A; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; cursor:pointer; padding-left:14px" style-active="opacity:.75" onClick="{{ removePoint }}">
+              <svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              <div style="font-size:11px; font-weight:700">Видалити</div>
+            </div>
+          </div>
+          <div style="position:relative; transform:translateX({{ swipePointPx }}); transition:{{ transitionPoint }}; display:flex; align-items:stretch; height:100%; z-index:2; border:1px solid #D6D3C9; border-radius:12px; overflow:hidden; background:#fff; touch-action:pan-y; cursor:grab" onPointerDown="{{ onDownPoint }}">
+            <div style="width:4px; background:#5A8F78; flex:none"></div>
+            <div style="flex:1; min-width:0; display:flex; align-items:center; gap:10px; padding:11px">
+              <div style="width:28px; height:28px; border-radius:50%; background:#F0EFEA; color:#4A4843; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center; flex:none">1</div>
+              <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:3px">
+                <div style="font-size:14.5px; font-weight:700; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Клініка Медіка центр</div>
+                <div style="font-size:12px; color:#5F5B52; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">вул. Хрещатик, 12, Київ</div>
+              </div>
+              <div style="font-size:18px; color:#8C8A80; font-weight:700; flex:none; opacity:{{ chevronOpacityPoint }}; cursor:pointer" style-active="opacity:.5" onClick="{{ openInfoPoint }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8C8A80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <div style="display:flex; align-items:center; gap:9px; padding:7px 6px; margin-top:2px; border-top:1px solid #EDEBE4; cursor:pointer" style-active="opacity:.7">
+          <div style="width:20px; height:20px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+            <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="m3.5 8.5 3 3 6-7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <span style="flex:1; font-size:13px; font-weight:600; color:#5F5B52">{{ doneLabel }}</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex:none; transform:rotate(180deg)"><path d="m6 9.5 6 6 6-6" stroke="#7A776D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:6px; padding:2px 0 0">
+          <sc-if value="{{ pointVisited }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE; cursor:pointer" style-active="opacity:.7" onClick="{{ openDetail }}">
+            <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="m3.5 8.5 3 3 6-7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <div style="flex:1; min-width:0">
+              <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Клініка Медіка Центр</div>
+              <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">вул. Хрещатик, 12, Київ</div>
+              <div style="display:flex; align-items:center; gap:3px; margin-top:1px">
+                <svg width="10" height="10" viewBox="0 0 14 14" fill="none" style="flex:none"><circle cx="7" cy="7" r="5.5" stroke="#B0AEA4" stroke-width="1.6" /><path d="M7 4.2V7l1.8 1.3" stroke="#B0AEA4" stroke-width="1.6" stroke-linecap="round" /></svg>
+                <span style="font-size:10.5px; font-weight:600; color:#B0AEA4; white-space:nowrap">Додано пізніше</span>
+              </div>
+            </div>
+            <div style="flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8A887F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          </sc-if>
+          <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE; cursor:pointer" style-active="opacity:.7" onClick="{{ openDetail }}">
+            <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="m3.5 8.5 3 3 6-7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <div style="flex:1; min-width:0">
+              <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Вітасан Центральна</div>
+              <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">вул. Хрещатик, 1 · Вітасан</div>
+            </div>
+            <div style="flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8A887F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE; cursor:pointer" style-active="opacity:.7" onClick="{{ openDetail }}">
+            <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="m3.5 8.5 3 3 6-7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <div style="flex:1; min-width:0">
+              <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Дентал Про Поділ</div>
+              <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">вул. Сагайдачного, 5 · Дентал Про</div>
+            </div>
+            <div style="flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8A887F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <sc-for list="{{ unplannedItemsA }}" as="item" hint-placeholder-count="0">
+          <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE">
+            <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="m3.5 8.5 3 3 6-7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <div style="flex:1; min-width:0">
+              <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ item.name }}</div>
+              <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ item.address }}</div>
+              <div style="display:flex; align-items:center; gap:3px; margin-top:1px">
+                <svg width="10" height="10" viewBox="0 0 14 14" fill="none" style="flex:none"><circle cx="7" cy="7" r="5.5" stroke="#B0AEA4" stroke-width="1.6" /><path d="M7 4.2V7l1.8 1.3" stroke="#B0AEA4" stroke-width="1.6" stroke-linecap="round" /></svg>
+                <span style="font-size:10.5px; font-weight:600; color:#B0AEA4; white-space:nowrap">Позаплановий · Додано пізніше</span>
+              </div>
+            </div>
+          </div>
+          </sc-for>
+        </div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border-radius:14px; border:1px solid #E7E5DE; overflow:hidden">
+        <div style="display:flex; align-items:center; gap:10px; padding:12px 13px; cursor:pointer" style-active="opacity:.7" onClick="{{ toggleRouteB }}">
+          <div style="flex:1; min-width:0; font-size:15px; font-weight:800; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Бровари + Троєщина</div>
+          <div style="font-size:13.5px; font-weight:800; color:#5A615F; flex:none">2/2</div>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex:none; transform:{{ routeBChevron }}"><path d="m6 9.5 6 6 6-6" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <sc-if value="{{ routeBExpanded }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex; flex-direction:column; gap:6px; padding:0 12px 12px">
+          <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE">
+            <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="m3.5 8.5 3 3 6-7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <div style="flex:1; min-width:0">
+              <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Агроцентр Бровари</div>
+              <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">вул. Київська, 14 · Агроцентр</div>
+            </div>
+            <div style="flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8A887F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE">
+            <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="m3.5 8.5 3 3 6-7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <div style="flex:1; min-width:0">
+              <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Мед Плюс Троєщина</div>
+              <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">просп. Маяковського, 30 · Мед Плюс</div>
+            </div>
+            <div style="flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="#8A887F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <sc-for list="{{ unplannedItemsB }}" as="item" hint-placeholder-count="0">
+          <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE">
+            <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="m3.5 8.5 3 3 6-7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <div style="flex:1; min-width:0">
+              <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ item.name }}</div>
+              <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ item.address }}</div>
+              <div style="display:flex; align-items:center; gap:3px; margin-top:1px">
+                <svg width="10" height="10" viewBox="0 0 14 14" fill="none" style="flex:none"><circle cx="7" cy="7" r="5.5" stroke="#B0AEA4" stroke-width="1.6" /><path d="M7 4.2V7l1.8 1.3" stroke="#B0AEA4" stroke-width="1.6" stroke-linecap="round" /></svg>
+                <span style="font-size:10.5px; font-weight:600; color:#B0AEA4; white-space:nowrap">Позаплановий · Додано пізніше</span>
+              </div>
+            </div>
+          </div>
+          </sc-for>
+        </div>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ hasUnplannedOther }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#fff; border-radius:14px; border:1px solid #E7E5DE; padding:12px 13px; display:flex; flex-direction:column; gap:8px">
+        <div style="font-size:13px; font-weight:800; color:#8A887F">Інші маршрути</div>
+        <sc-for list="{{ unplannedItemsOther }}" as="item" hint-placeholder-count="0">
+        <div style="display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:#F3F2ED; border:1px solid #E7E5DE">
+          <div style="width:28px; height:28px; border-radius:50%; background:#0F6B52; display:flex; align-items:center; justify-content:center; flex:none">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="m3.5 8.5 3 3 6-7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <div style="flex:1; min-width:0">
+            <div style="font-size:14px; font-weight:700; color:#8A887F; text-decoration:line-through; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ item.name }}</div>
+            <div style="font-size:11.5px; color:#8A887F; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ item.address }} · {{ item.routeName }}</div>
+            <div style="display:flex; align-items:center; gap:3px; margin-top:1px">
+              <svg width="10" height="10" viewBox="0 0 14 14" fill="none" style="flex:none"><circle cx="7" cy="7" r="5.5" stroke="#B0AEA4" stroke-width="1.6" /><path d="M7 4.2V7l1.8 1.3" stroke="#B0AEA4" stroke-width="1.6" stroke-linecap="round" /></svg>
+              <span style="font-size:10.5px; font-weight:600; color:#B0AEA4; white-space:nowrap">Позаплановий · Додано пізніше</span>
+            </div>
+          </div>
+        </div>
+        </sc-for>
+      </div>
+      </sc-if>
+
+      <div style="display:flex; align-items:center; justify-content:center; gap:6px; padding:11px 0; border-radius:14px; border:1.5px dashed #C9C7BE; cursor:pointer" style-active="opacity:.6" onClick="{{ addUnplanned }}">
+        <span style="font-size:16px; font-weight:700; color:#0F6B52; line-height:1">+</span>
+        <span style="font-size:14px; font-weight:800; color:#0F6B52">Додати позаплановий візит</span>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; z-index:15; display:flex; flex-direction:column">
+      <dc-import name="visit-details" on-back="{{ closeDetail }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+  <sc-if value="{{ isInfo }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; background:#F3F2ED; z-index:15; display:flex; flex-direction:column">
+      <dc-import name="point-info" point-name="Клініка Медіка центр" address="вул. Хрещатик, 12, Київ" on-back="{{ closeInfo }}" hint-size="393px,852px" style="flex:1; min-height:0"></dc-import>
+    </div>
+  </sc-if>
+
+  <!-- Обмеження рядків у шторці "Позаплановий візит": заголовок шторки — 1 рядок, ellipsis;
+       назва вибраного маршруту в полі — 1 рядок, ellipsis; кожен пункт у списку маршрутів — 1 рядок, ellipsis;
+       назва закладу / адреса / час — однорядкові input, браузер сам не переносить;
+       нотатка — єдине поле без обмеження рядків (textarea, вільний текст, не показ, а введення). -->
+  <sc-if value="{{ showUnplannedForm }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute; inset:0; z-index:20; background:rgba(20,24,22,.42); display:flex; flex-direction:column; justify-content:flex-end" onClick="{{ closeUnplannedForm }}">
+  <div style="background:#F3F2ED; border-radius:20px 20px 0 0; max-height:88%; display:flex; flex-direction:column; overflow:hidden" onClick="{{ stopSheetClick }}">
+    <div style="display:flex; justify-content:center; padding:10px 0 2px; flex:none"><div style="width:36px; height:4px; border-radius:2px; background:#D6D3C9"></div></div>
+    <div style="background:#F3F2ED; padding:8px 16px 14px; display:flex; align-items:center; gap:12px; flex:none">
+      <div style="flex:1; min-width:0; font-size:16px; font-weight:800; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">Позаплановий візит</div>
+      <div style="width:36px; height:36px; border-radius:11px; background:#E6EFEB; display:flex; align-items:center; justify-content:center; cursor:pointer; flex:none" style-active="opacity:.7" onClick="{{ closeUnplannedForm }}">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div style="flex:1; overflow-y:auto; scrollbar-width:none; padding:4px 16px 18px; display:flex; flex-direction:column; gap:16px">
+      <div style="display:flex; flex-direction:column; gap:8px">
+        <label style="font-size:12px; font-weight:700; color:#5F5B52; letter-spacing:.02em; text-transform:uppercase">Маршрут</label>
+        <div style="position:relative">
+          <div style="display:flex; align-items:center; height:46px; border-radius:11px; border:{{ routeFieldBorder }}; padding:0 14px; cursor:pointer; background:#fff" style-active="opacity:.85" onClick="{{ toggleRouteDropdown }}">
+            <span style="flex:1; font-size:14px; font-weight:700; color:#14181a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ selectedRouteName }}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex:none; transform:{{ routeDropdownChevron }}"><path d="m6 9.5 6 6 6-6" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <sc-if value="{{ showRouteDropdown }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute; left:0; right:0; top:52px; z-index:5; background:#fff; border:1px solid #E7E5DE; border-radius:12px; box-shadow:0 10px 24px -6px rgba(20,24,22,.18); padding:6px; display:flex; flex-direction:column; gap:2px">
+            <sc-for list="{{ routeOptions }}" as="opt" hint-placeholder-count="2">
+            <div style="display:flex; align-items:center; gap:8px; padding:10px 10px; border-radius:9px; cursor:pointer; background:{{ opt.bg }}" style-active="opacity:.8" onClick="{{ opt.pick }}">
+              <span style="flex:1; min-width:0; font-size:13.5px; font-weight:700; color:{{ opt.color }}; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ opt.name }}</span>
+              <sc-if value="{{ opt.selected }}" hint-placeholder-val="{{ false }}">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.3 8.3 6.7 11.7 12.7 4.7" stroke="#0F6B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </sc-if>
+            </div>
+            </sc-for>
+          </div>
+          </sc-if>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px">
+        <label style="font-size:12px; font-weight:700; color:#5F5B52; letter-spacing:.02em; text-transform:uppercase">Назва закладу</label>
+        <input value="{{ unplannedName }}" onInput="{{ setUnplannedName }}" placeholder="Напр. Аптека Подорожник" style="height:46px; border-radius:11px; border:1px solid #D6D3C9; padding:0 14px; font-size:14px; font-family:inherit; color:#14181a; background:#fff; box-sizing:border-box; outline:none" style-focus="border:1.5px solid #0F6B52; box-shadow:0 0 0 3px #E6EFEB" />
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px">
+        <label style="font-size:12px; font-weight:700; color:#5F5B52; letter-spacing:.02em; text-transform:uppercase">Адреса</label>
+        <input value="{{ unplannedAddress }}" onInput="{{ setUnplannedAddress }}" placeholder="вул., номер, місто" style="height:46px; border-radius:11px; border:1px solid #D6D3C9; padding:0 14px; font-size:14px; font-family:inherit; color:#14181a; background:#fff; box-sizing:border-box; outline:none" style-focus="border:1.5px solid #0F6B52; box-shadow:0 0 0 3px #E6EFEB" />
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px">
+        <label style="font-size:12px; font-weight:700; color:#5F5B52; letter-spacing:.02em; text-transform:uppercase">Час візиту</label>
+        <input value="{{ unplannedTime }}" onInput="{{ setUnplannedTime }}" placeholder="Напр. 14:30" style="height:46px; width:140px; border-radius:11px; border:1px solid #D6D3C9; padding:0 14px; font-size:14px; font-family:inherit; color:#14181a; background:#fff; box-sizing:border-box; outline:none" style-focus="border:1.5px solid #0F6B52; box-shadow:0 0 0 3px #E6EFEB" />
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px">
+        <label style="font-size:12px; font-weight:700; color:#5F5B52; letter-spacing:.02em; text-transform:uppercase">Нотатка (необов'язково)</label>
+        <textarea value="{{ unplannedNote }}" onInput="{{ setUnplannedNote }}" placeholder="Що відбулось під час візиту" style="height:88px; border-radius:11px; border:1px solid #D6D3C9; padding:12px 14px; font-size:14px; font-family:inherit; color:#14181a; background:#fff; resize:none; box-sizing:border-box; outline:none" style-focus="border:1.5px solid #0F6B52; box-shadow:0 0 0 3px #E6EFEB"></textarea>
+      </div>
+    </div>
+    <div style="padding:14px 16px calc(14px + env(safe-area-inset-bottom, 0px)); background:#F3F2ED; flex:none">
+      <div style="height:48px; border-radius:12px; background:{{ saveBg }}; display:flex; align-items:center; justify-content:center; cursor:pointer" style-active="opacity:.85" onClick="{{ saveUnplanned }}">
+        <span style="font-size:14px; font-weight:800; color:#fff">Зберегти</span>
+      </div>
+    </div>
+  </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ showToast }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; left:16px; right:16px; bottom:108px; z-index:11; background:#fff; border:1px solid #E7E5DE; border-radius:14px; padding:11px 12px; display:flex; align-items:center; gap:10px; box-shadow:0 10px 24px -6px rgba(20,24,22,.18)">
+      <div style="width:26px; height:26px; border-radius:50%; background:#F3E3E1; display:flex; align-items:center; justify-content:center; flex:none">
+        <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3.5 5h11M7 5V3.4h4V5M5 5l.8 9.2h6.4L13 5" stroke="#B23A3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+      <span style="flex:1; font-size:13.5px; font-weight:700; color:#14181a">Точку видалено</span>
+      <span style="font-size:13px; font-weight:800; color:#0F6B52; cursor:pointer" onClick="{{ undoRemove }}">Скасувати</span>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute; left:0; right:0; bottom:0; margin:0; background:#fff; border-top:1px solid #e7e5e0; display:grid; grid-template-columns:1fr 1fr 76px 1fr 1fr; align-items:end; padding:0 6px calc(14px + env(safe-area-inset-bottom, 0px)); box-shadow:0 -8px 20px -12px rgba(16,24,40,.12)">
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <div style="position:absolute; top:0; width:28px; height:3px; border-radius:2px; background:#14604a"></div>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10.6 12 4.2l8 6.4V20H4z" stroke="#14604a" stroke-width="1.8" stroke-linejoin="round" /></svg>
+      <span style="font-size:13px; font-weight:600; color:#14604a">Головна</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#5F6570" stroke-width="1.8" /><path d="m8.5 12.2 2.6 2.6L16 9.6" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#5F6570">Задачі</span>
+    </div>
+    <div style="display:flex; justify-content:center; align-items:flex-end">
+      <div style="width:62px; height:62px; border-radius:50%; background:#14604a; display:flex; align-items:center; justify-content:center; margin:-26px 0 6px; box-shadow:0 8px 20px rgba(20,96,74,.35)">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 5v16M5 13h16" stroke="#fff" stroke-width="1.8" stroke-linecap="round" /></svg>
+      </div>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6.3 6.5h6.7a3.5 3.5 0 0 1 0 7h-2a3.5 3.5 0 0 0 0 7h6.7" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" /><circle cx="6.3" cy="6.5" r="1.8" stroke="#5F6570" stroke-width="1.8" /><circle cx="17.7" cy="20.5" r="1.8" stroke="#5F6570" stroke-width="1.8" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#5F6570">Маршрути</span>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:12px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#5F6570" stroke-width="1.8" /><path d="M12 7.6V12l3 2" stroke="#5F6570" stroke-width="1.8" stroke-linecap="round" /></svg>
+      <span style="font-size:13px; font-weight:500; color:#5F6570">Історія</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:393,&quot;height&quot;:852}}">
+class Component extends DCLogic {
+  allRoutes = [
+    { key: 'A', name: 'Поділ — центр' },
+    { key: 'B', name: 'Бровари + Троєщина' },
+    { key: 'C', name: 'Дарниця' },
+    { key: 'D', name: 'Оболонь — Троєщина' }
+  ];
+  state = {
+    pointVisited: false, pointRemoved: false, routeBExpanded: false, isDetail: false, toastKey: null, showEditInfo: false,
+    swipePoint: 0, dragKey: null,
+    showUnplannedForm: false, unplannedRoute: 'A', showRouteDropdown: false,
+    unplannedName: '', unplannedAddress: '', unplannedTime: '', unplannedNote: '',
+    unplannedItemsA: [], unplannedItemsB: [], unplannedItemsOther: []
+  };
+  removeTimer = null;
+  dragInfo = null;
+
+  handlePointerDown = (e) => {
+    if (this.state.pointRemoved || this.state.pointVisited) return;
+    e.preventDefault();
+    this.dragInfo = { startX: e.clientX, baseX: this.state.swipePoint };
+    this.setState({ dragKey: 'point' });
+    window.addEventListener('pointermove', this.handlePointerMove);
+    window.addEventListener('pointerup', this.handlePointerUp);
+  };
+
+  handlePointerMove = (e) => {
+    if (!this.dragInfo) return;
+    let next = this.dragInfo.baseX + (e.clientX - this.dragInfo.startX);
+    next = Math.max(-200, Math.min(0, next));
+    this.setState({ swipePoint: next });
+  };
+
+  handlePointerUp = () => {
+    if (!this.dragInfo) return;
+    const snapped = this.state.swipePoint < -100 ? -200 : 0;
+    this.dragInfo = null;
+    this.setState({ swipePoint: snapped, dragKey: null });
+    window.removeEventListener('pointermove', this.handlePointerMove);
+    window.removeEventListener('pointerup', this.handlePointerUp);
+  };
+  componentDidMount() {
+    if (this.props.forceShowSheet) this.setState({ showUnplannedForm: true });
+  }
+  renderVals() {
+    const s = this.state;
+    const visitedCount = 2 + (s.pointVisited ? 1 : 0);
+    return {
+      pointVisited: s.pointVisited,
+      markPointVisited: () => this.setState({ pointVisited: true, swipePoint: 0, isDetail: true }),
+      showEditInfo: s.showEditInfo,
+      toggleEditInfo: () => this.setState(st => ({ showEditInfo: !st.showEditInfo })),
+      showPoint: !s.pointVisited && !s.pointRemoved,
+      swipePointPx: s.swipePoint + 'px',
+      transitionPoint: s.dragKey === 'point' ? 'none' : 'transform .25s cubic-bezier(.2,.8,.2,1)',
+      chevronOpacityPoint: Math.max(0, 1 - Math.abs(s.swipePoint) / 30),
+      onDownPoint: this.handlePointerDown,
+      removePoint: () => {
+        clearTimeout(this.removeTimer);
+        this.setState({ pointRemoved: true, toastKey: 'point', swipePoint: 0 });
+        this.removeTimer = setTimeout(() => this.setState(st => (st.toastKey === 'point' ? { toastKey: null } : null)), 5000);
+      },
+      showToast: s.toastKey === 'point',
+      undoRemove: () => { clearTimeout(this.removeTimer); this.setState({ pointRemoved: false, toastKey: null }); },
+      isDetail: s.isDetail,
+      openDetail: () => this.setState({ isDetail: true }),
+      closeDetail: () => this.setState({ isDetail: false }),
+      isInfo: s.isInfo,
+      openInfoPoint: (e) => { if (e) e.stopPropagation(); this.setState({ isInfo: true }); },
+      closeInfo: () => this.setState({ isInfo: false }),
+      progressPct: (s.pointVisited ? 100 : 80) + '%',
+      progressLabel: (s.pointVisited ? '5 з 5' : '4 з 5') + ' точок',
+      routeAProgress: (s.pointVisited ? '3/3' : '2/3'),
+      doneLabel: visitedCount + ' точки відвідано',
+      routeBExpanded: s.routeBExpanded,
+      routeBChevron: s.routeBExpanded ? 'rotate(180deg)' : 'none',
+      toggleRouteB: () => this.setState(st => ({ routeBExpanded: !st.routeBExpanded })),
+      addUnplanned: () => this.setState({ showUnplannedForm: true, unplannedRoute: 'A', unplannedName: '', unplannedAddress: '', unplannedTime: '', unplannedNote: '' }),
+      handleBack: this.props.onBack || (() => {}),
+      handleOlder: this.props.onOlder || (() => {}),
+      showUnplannedForm: s.showUnplannedForm,
+      closeUnplannedForm: () => this.setState({ showUnplannedForm: false }),
+      stopSheetClick: (e) => e.stopPropagation(),
+      pickRouteA: () => this.setState({ unplannedRoute: 'A' }),
+      pickRouteB: () => this.setState({ unplannedRoute: 'B' }),
+      routeOptions: this.allRoutes.map(r => ({
+        key: r.key, name: r.name, selected: s.unplannedRoute === r.key,
+        bg: s.unplannedRoute === r.key ? '#E6EFEB' : '#fff',
+        color: s.unplannedRoute === r.key ? '#0F6B52' : '#14181a',
+        pick: () => this.setState({ unplannedRoute: r.key, showRouteDropdown: false })
+      })),
+      selectedRouteName: (this.allRoutes.find(r => r.key === s.unplannedRoute) || {}).name || '',
+      showRouteDropdown: s.showRouteDropdown,
+      toggleRouteDropdown: () => this.setState(st => ({ showRouteDropdown: !st.showRouteDropdown })),
+      routeDropdownChevron: s.showRouteDropdown ? 'rotate(180deg)' : 'none',
+      routeFieldBorder: s.showRouteDropdown ? '1.5px solid #0F6B52' : '1px solid #D6D3C9',
+      hasUnplannedOther: s.unplannedItemsOther.length > 0,
+      unplannedItemsOther: s.unplannedItemsOther,
+      unplannedName: s.unplannedName,
+      setUnplannedName: (e) => this.setState({ unplannedName: e.target.value }),
+      unplannedAddress: s.unplannedAddress,
+      setUnplannedAddress: (e) => this.setState({ unplannedAddress: e.target.value }),
+      unplannedTime: s.unplannedTime,
+      setUnplannedTime: (e) => this.setState({ unplannedTime: e.target.value }),
+      unplannedNote: s.unplannedNote,
+      setUnplannedNote: (e) => this.setState({ unplannedNote: e.target.value }),
+      saveBg: s.unplannedName.trim() ? '#14604a' : '#B7C4BC',
+      unplannedItemsA: s.unplannedItemsA,
+      unplannedItemsB: s.unplannedItemsB,
+      saveUnplanned: () => {
+        if (!this.state.unplannedName.trim()) return;
+        const item = { name: this.state.unplannedName, address: this.state.unplannedAddress, time: this.state.unplannedTime, note: this.state.unplannedNote };
+        this.setState(st => {
+          if (st.unplannedRoute === 'A') return { showUnplannedForm: false, unplannedItemsA: [...st.unplannedItemsA, item] };
+          if (st.unplannedRoute === 'B') return { showUnplannedForm: false, unplannedItemsB: [...st.unplannedItemsB, item] };
+          const routeName = this.allRoutes.find(r => r.key === st.unplannedRoute)?.name || '';
+          return { showUnplannedForm: false, unplannedItemsOther: [...st.unplannedItemsOther, { ...item, routeName }] };
+        });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
